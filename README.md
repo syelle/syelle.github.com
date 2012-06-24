@@ -1,17 +1,21 @@
-# Install & Run Jekyll
-gem install jekyll
-sudo easy_install Pygments
-jekyll --server
+## Setup
 
-# Install & Run SASS
-gem install sass
-sass --watch assets/stylesheets/sass/:assets/stylesheets/compiled
+### Install & Run Jekyll
+- gem install jekyll
+- sudo easy_install Pygments
+- jekyll --server
 
-# Install Juicer
-gem install juicer
-juicer install yui_compressor
-juicer install jslint
+### Install & Run SASS
+- gem install sass
+- sass --watch assets/stylesheets/sass/:assets/stylesheets/compiled
 
-# Compile CSS & JS
-juicer merge assets/stylesheets/main.css
-juicer merge -i assets/js/main.js
+### Install Juicer
+- gem install juicer
+- juicer install yui_compressor
+- juicer install jslint
+
+## Build
+
+### Compile CSS & JS
+- juicer merge assets/stylesheets/main.css
+- juicer merge -i assets/js/main.js
