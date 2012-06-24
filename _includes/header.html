@@ -11,10 +11,10 @@
 		<meta itemprop="name" content="{{ site.name }}"/>
 		<meta itemprop="description" content="{{ site.description }}"/>
 {% when 'blog' %}
-		<title>{ page.title }} | {{ site.name }}</title>
+		<title>{{ page.title }} | {{ site.name }}</title>
 		<meta name="description" content="{{ site.description }}"/>
 
-		<meta itemprop="name" content="{ page.title }} | {{ site.name }}}"/>
+		<meta itemprop="name" content="{{ page.title }} | {{ site.name }}}"/>
 		<meta itemprop="description" content="{{ site.description }}"/>
 {% else %}
 		<title>{{ page.title }} | {{ site.name }}</title>
