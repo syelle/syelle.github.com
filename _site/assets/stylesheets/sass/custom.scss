@@ -1,0 +1,91 @@
+header {
+	h1 {
+		font-size: 3em;
+		line-height: 1.5em;
+	}
+}
+
+article {
+	header {
+		ul {
+			list-style: none outside none;
+			margin: 0 0 12px 0;
+
+			li {
+				color: #666;
+				display: inline-block;
+				font-size: 0.875em;
+				padding-left: 10px;
+
+				i {
+					margin-top: 1px;
+					padding-right: 4px;
+				}
+			}
+		}
+	}
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4, h5, h6 {
+	font-size: 1em;
+    padding: 0 0 0.5em 0;
+}
+
+i { /* Twitter Bootstrap icon class */
+	margin-top: 3px;
+}
+
+hr	{
+	margin: 5px 0;
+}
+
+.container footer {
+	border-top: 1px solid #EEEEEE;
+	margin-top: 20px;
+	padding-top: 20px;
+
+	p {
+		font-size: .8125em;
+	}
+}
+
+.subnav {
+    margin-bottom: 18px;
+
+    i {
+    	margin-top: 1px;
+    }
+}
+
+@media (max-width: 400px){
+    #contact-picture {
+        display: none;
+    }
+}
+
+@media (min-width: 401px){
+    #contact-picture {
+        float: left;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 979px){
+    .navbar {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 980px){
+    body {
+        padding-top: 40px;
+    }
+}
