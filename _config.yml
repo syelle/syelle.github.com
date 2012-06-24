@@ -1,9 +1,9 @@
-auto:		true
-permalink:	/blog/:year/:month/:day/:title
+auto: true
+permalink: /blog/:year/:month/:day/:title
 
-name: 			Min-Maxing
-tagline: 		Experiments in optimizing web pages, business processes, and life in general.
-description: 	Experiments in optimizing web pages, business processes, and life in general.
+name: Min-Maxing
+tagline: Experiments in optimizing web pages, business processes, and life in general.
+description: Experiments in optimizing web pages, business processes, and life in general.
 
 url: http://min-maxing.com
 tag_dir: /blog/tag/
