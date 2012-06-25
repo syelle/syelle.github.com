@@ -1,7 +1,7 @@
 #!/bin/sh
 # generate site
 git checkout source
-jekyll
+jekyll --no-auto
 
 # Push master branch
 git checkout master
