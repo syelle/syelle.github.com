@@ -1,5 +1,6 @@
 auto: true
 destination: ../_site
+exclude: [publish.sh]
 
 permalink: /blog/:year/:month/:day/:title
 
