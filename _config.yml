@@ -1,4 +1,6 @@
 auto: true
+destination: ../_site
+
 permalink: /blog/:year/:month/:day/:title
 
 name: Min-Maxing
