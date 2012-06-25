@@ -19,3 +19,7 @@
 ### Compile CSS & JS
 - juicer merge assets/stylesheets/main.css
 - juicer merge -i assets/js/main.js
+
+### Publish to web
+- git checkout source
+- ./publish.sh
