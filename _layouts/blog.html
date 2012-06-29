@@ -1,7 +1,21 @@
 {% include header.html %}
             <header>
+                <div>
+                	<a href="/blog/feed/index.xml">
+                		<img src="/assets/img/rss-32.png" alt="Subscribe to the Min-Maxing blog RSS feed." title="Subscribe to the Min-Maxing blog RSS feed."/>
+                	</a>
+                </div>
                 <h1>{{page.title}}</h1>
             </header>
-			{{content}}
+
+			<div class="row">
+				<div class="span8">
+					{{content}}
+				</div>
+
+				<div class="span4">
+					{% include sidebar.html %}
+				</div>
+			</div>
 
 {% include footer.html %}
