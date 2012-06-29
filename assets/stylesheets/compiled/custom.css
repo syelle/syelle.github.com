@@ -1,6 +1,9 @@
 header h1 {
   font-size: 3em;
   line-height: 1.5em; }
+header div {
+  float: right;
+  padding-top: 20px; }
 
 article header ul {
   list-style: none outside none;
@@ -31,12 +34,21 @@ i {
 hr {
   margin: 5px 0; }
 
-.container footer {
+footer {
   border-top: 1px solid #EEEEEE;
-  margin-top: 20px;
   padding-top: 20px; }
-  .container footer p {
+  footer p {
     font-size: .8125em; }
+
+.container .row div {
+  padding-bottom: 10px; }
+
+.sidebar {
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  box-shadow: 2px 2px #999;
+  font-size: .875em;
+  padding: 10px; }
 
 .navbar {
   margin-bottom: 0; }
