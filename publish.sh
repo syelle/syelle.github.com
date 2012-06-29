@@ -10,3 +10,6 @@ cp -r ../_site/* .
 git add . 
 git commit  
 git push origin master
+
+# move back to source code
+git checkout source
