@@ -1,0 +1,10 @@
+@media (max-width: 400px) {
+  #contact-picture {
+    display: none; } }
+@media (min-width: 401px) {
+  #contact-picture {
+    float: left;
+    padding-right: 10px; } }
+@media (min-width: 980px) {
+  .navbar .container {
+    width: 1170px; } }
