@@ -1,0 +1,12 @@
+@mixin rounded-corners($radius) {
+    -moz-border-radius: $radius;    
+    -webkit-border-radius: $radius; 
+    border-radius: $radius;         
+}
+
+@mixin box-shadow($hor, $vert, $blur, $color) {
+    -webkit-box-shadow: $hor $vert $blur $color;
+    -moz-box-shadow: $hor $vert $blur $color;
+    -o-box-shadow: $hor $vert $blur $color;
+    box-shadow: $hor $vert $blur $color;
+}
