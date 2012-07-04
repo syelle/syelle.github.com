@@ -1,3 +1,6 @@
+body {
+  background: url("/assets/img/grid-tile.png") center top repeat; }
+
 header h1 {
   font-size: 3em;
   line-height: 1.5em; }
@@ -16,6 +19,8 @@ article header ul {
     article header ul li i {
       margin-top: 1px;
       padding-right: 4px; }
+article img {
+  margin: 10px auto; }
 
 h2 {
   font-size: 2em; }

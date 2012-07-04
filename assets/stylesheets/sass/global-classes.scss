@@ -1,6 +1,21 @@
 @import 'global-mixins.scss';
 
-.container {
+body > div.navbar {
+    margin-bottom: 0;
+}
+
+body > div.container {
+    @include round-bottom-corners();
+	/*@include box-shadow(4px, 4px, 10px, #999);*/
+
+    background: white;
+    
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    
+	padding: 10px;    
+
 	.row {
 		div {
 			padding-bottom: 10px;
@@ -9,19 +24,25 @@
 
 }
 
-.sidebar {
-	border: 1px solid #CCC;
-	@include rounded-corners(4px);
+article {
+    @include round-corners();
+	@include box-shadow(4px, 4px, 10px, #999);
 
-	@include box-shadow(2px, 2px, 1px, #999);
+    border: 1px solid #CCC;
 
+    margin-bottom: 10px;
+	padding: 10px;    
+}
+
+.sidebar {	
+	@include round-corners();
+	@include box-shadow(4px, 4px, 10px, #999);
+
+    border: 1px solid #CCC;
+    
 	font-size: .875em;
 
 	padding: 10px;
-}
-
-.navbar {
-	margin-bottom: 0;
 }
 
 .subnav {
