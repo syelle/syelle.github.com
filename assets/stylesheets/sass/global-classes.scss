@@ -1,0 +1,54 @@
+@import 'global-mixins.scss';
+
+body > div.navbar {
+    margin-bottom: 0;
+}
+
+body > div.container {
+    @include round-bottom-corners();
+	/*@include box-shadow(4px, 4px, 10px, #999);*/
+
+    background: white;
+    
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    
+	padding: 10px;    
+
+	.row {
+		div {
+			padding-bottom: 10px;
+		}
+	}
+
+}
+
+article {
+    @include round-corners();
+	@include box-shadow(4px, 4px, 10px, #999);
+
+    border: 1px solid #CCC;
+
+    margin-bottom: 10px;
+	padding: 10px;    
+}
+
+.sidebar {	
+	@include round-corners();
+	@include box-shadow(4px, 4px, 10px, #999);
+
+    border: 1px solid #CCC;
+    
+	font-size: .875em;
+
+	padding: 10px;
+}
+
+.subnav {
+    margin-bottom: 18px;
+
+    i {
+    	margin-top: 1px;
+    }
+}
