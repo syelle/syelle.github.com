@@ -1,11 +1,20 @@
 $('[rel=popover]').popover({
     animation: false, 
-    placement: 'top',
+    placement: get_popover_placement,
     trigger: 'manual', 
     delay: 0 
 }).click(function(){
     $(this).popover('toggle')
 });
+
+function get_popover_placement(tip, element) {
+    var windowWidth = window.innerWidth;
+    var left_pos = $(element).offset().left;
+    if (windowWidth > 900 ) return 'top';
+    if (windowWidth - left_pos > 400) return 'right';
+    if (left_pos > 400) return 'left';
+    return 'top';
+}    
 
 /*
 $(document).scroll(function(){
