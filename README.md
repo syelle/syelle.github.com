@@ -17,9 +17,16 @@
 ## Build
 
 ### Compile CSS & JS
-- juicer merge assets/stylesheets/main.css
-- juicer merge -i assets/js/main.js
+- juicer merge assets/stylesheets/main.css --force --document-root .
+- juicer merge -i assets/js/main.js --force
 
 ### Publish to web
 - git checkout source
-- ./publish.sh
+- jekyll --no-auto
+- git checkout master
+- git rm -r . > /dev/null
+- cp -r ../_site/* .
+- git add . 
+- git commit
+- git push origin master
+- git checkout source
