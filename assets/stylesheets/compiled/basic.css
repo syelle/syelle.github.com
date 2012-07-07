@@ -44,8 +44,5 @@ i {
 hr {
   margin: 5px 0; }
 
-footer {
-  border-top: 1px solid #EEEEEE;
-  padding-top: 20px; }
-  footer p {
-    font-size: .8125em; }
+footer p {
+  font-size: .8125em; }

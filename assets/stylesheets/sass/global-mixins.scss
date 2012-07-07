@@ -1,3 +1,12 @@
+@mixin content-container() {
+	@include round-corners();
+	@include box-shadow(4px, 4px, 10px, #999);
+
+    background: white;    
+    border: 1px solid #CCC;
+    padding: 10px;
+}
+
 @mixin box-shadow($hor, $vert, $blur, $color) {
     -webkit-box-shadow: $hor $vert $blur $color;
     -moz-box-shadow: $hor $vert $blur $color;
