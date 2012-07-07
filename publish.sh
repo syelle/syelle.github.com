@@ -5,7 +5,7 @@ jekyll --no-auto
 
 # Push master branch
 git checkout master
-git rm -r . > /dev/null
+git rm -r .
 cp -r ../_site/* .
 git add . 
 git commit  
