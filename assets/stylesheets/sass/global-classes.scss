@@ -1,18 +1,26 @@
 @import 'global-mixins.scss';
 
 body > div.navbar {
-    margin-bottom: 0;
+    @include box-shadow(2px, 2px, 10px, #999);
+    
+    margin-bottom: 0;       
+    
+    .navbar-inner {
+        @include round-corners(0);
+    }
 }
 
 body > div.container {
+    /*
     @include round-bottom-corners();
-	/*@include box-shadow(4px, 4px, 10px, #999);*/
+	
 
     background: white;
     
     border-left: 1px solid #CCC;
     border-right: 1px solid #CCC;
     border-bottom: 1px solid #CCC;
+    */
     
 	padding: 10px;    
 
@@ -25,24 +33,15 @@ body > div.container {
 }
 
 article {
-    @include round-corners();
-	@include box-shadow(4px, 4px, 10px, #999);
+    @include content-container();
 
-    border: 1px solid #CCC;
-
-    margin-bottom: 10px;
-	padding: 10px;    
+    margin-bottom: 10px;  
 }
 
 .sidebar {	
-	@include round-corners();
-	@include box-shadow(4px, 4px, 10px, #999);
-
-    border: 1px solid #CCC;
+	@include content-container();
     
 	font-size: .875em;
-
-	padding: 10px;
 }
 
 .subnav {
