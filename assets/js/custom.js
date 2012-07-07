@@ -11,8 +11,8 @@ function get_popover_placement(tip, element) {
     var windowWidth = window.innerWidth;
     var left_pos = $(element).offset().left;
     if (windowWidth > 900 ) return 'top';
-    if (windowWidth - left_pos > 400) return 'right';
-    if (left_pos > 400) return 'left';
+    if (windowWidth - left_pos > 300) return 'right';
+    if (left_pos > 300) return 'left';
     return 'top';
 }    
 
