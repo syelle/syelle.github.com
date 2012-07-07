@@ -1,3 +1,13 @@
+$('[rel=popover]').popover({
+    animation: false, 
+    placement: 'top',
+    trigger: 'manual', 
+    delay: 0 
+}).click(function(){
+    $(this).popover('toggle')
+});
+
+/*
 $(document).scroll(function(){
     // If has not activated (has no attribute "data-top"
     if (!$('.subnav').attr('data-top')) {
@@ -13,3 +23,4 @@ $(document).scroll(function(){
     else
         $('.subnav').removeClass('subnav-fixed');
 });
+*/
