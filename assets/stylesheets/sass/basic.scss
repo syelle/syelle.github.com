@@ -2,7 +2,7 @@ body {
     background: url('/assets/img/grid-tile.png') center top repeat;
 }
 
-a[rel=popover]  {
+a[rel=popover], a[data-toggle=modal]  {
     border-bottom: 1px dotted #999;
     cursor: help;
     text-decoration: none;
