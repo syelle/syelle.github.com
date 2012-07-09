@@ -1,0 +1,98 @@
+---
+layout: post
+title: Multi-Channel Funnels in Google Analytics
+teaser: Google Analytics recently added the ability to see which channels are contributing to conversions. This report is a great tool for quantifying the value of your traffic sources. If you customize it based on your marketing efforts, it becomes an even more powerful tool.
+description: Learn how to customize and use the Multi-Channel Funnel report in Google Analytics.
+tags:
+- google analytics
+- funnels
+- marketing
+- introduction
+- customization
+---
+<p>When reviewing the success of your <a data-toggle="modal" href="#funnel-definition" >funnels</a>, one way you can <a data-toggle="modal" href="#segment-definition" >segment</a> your users is by where they came from when they arrived on your site. This can give you a better idea of which traffic sources are proving valuable to your efforts.</p> 
+
+<p>However, not everyone will perform a key action on their first visit to your site, and it may take some users several visits to reach the end of your primary funnel, and each visit can come from a different source. To assess the value of each of these sources properly, you'll need to understand multi-channel funnels and how to analyze them.</p>
+
+<h2>What are multi-channel funnels?</h2>
+<p>In marketing parlance, a channel is one avenue via which your site is advertized. How you categorize these sources differs depending on what's important to you, but some general categories for your marketing efforts might include:</p>
+<ul>
+	<li>Display (banner) ads</li>
+	<li>Web video ads</li>	
+	<li>Promotional emails</li>	
+	<li>Referrals from another site</li>
+	<li>Paid and organic search</li>	
+	<li>Social media</li>	
+</ul>
+<p>Anytime you rely on multiple strategies to help drive traffic through a funnel on your site, you're using a multi-channel funnel.</p>
+
+<h2>What can I learn from a multi-channel funnel report?</h2>
+<p>There are several aspects to a multi-channel funnel that you may want to pay attention to when figuring out the value of each channel to your site. Different companies will place importance on each of these aspects differently depending on their use-case.</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/multi-channel-funnel-anatomy.png" alt="Google Analytics multi-channel funnel overview" title="Anatomy of a conversion path - Taken from Google Analytics" width="469px" height="184px"/> 
+
+<h3>Last Interactions</h3>
+<p>The channel that drove a user to your site right before they completed a conversion funnel is flagged as a 'last interaction' channel. If a marketing effort has a high percentage of last interactions, it's helping to close the deal with your users. While this is the initial place most companies look when assessing the value of their marketing efforts, it doesn't paint the full picture.</p>
+
+<h3>First Interactions</h3>
+<p>By discovering what is driving a user to visit your site for the first time, you can discover which marketing efforts are helping spread initial awareness or interest about your brand. This will not allow you to easily differentiate between users who are just hearing about your site and users who have heard about it before and who simply saw something new that was convincing enough to check out your site. However, the value in either case is that a channel with a high percent of first interactions is clearly successful at driving initial interest in your brand.</p>
+
+<h3>Assisted Interactions</h3>
+<p>While both the first and last interactions are key conversions points, any channel along the way that engages the user will get credit for an 'assisted conversion'.</p>
+
+<p>Many marketing efforts that have a seemingly-low return on investment (ROI) can actually turn out to be fairly important. You may have an email campaign you use to nudge new users to offer them help as they learn more about your site or product. This email itself may not convert a lot of users and it won't be how they discover your site, but noting that this effort assists in a lot of conversions will help identify whether this nudge email is truly succeeding at nudging users along your conversion funnel.</p>
+
+<h3>Popular Conversion Paths</h3>
+<p>This report will show which paths of first, assisted, and last conversions are responsible for converting the most users. While this information can be useful, the utility is somewhat limited. It helps to visualize channel funnels from a high level, but most of the actions you take will be related to first, last, and assisted conversions.</p>
+
+<h3>Time Through Path</h3>
+<p>One way to assess the success of marketing efforts is how much time passed between a user's first interaction and last interaction to conversion. You can use it to assess whether your efforts are resulting in people making decisions quickly. If you see that users are taking their time, you can use this information to experiment with ways to speed up their decision-making process.</p>
+
+<h2>How can I customize this report with my marketing channels in mind?</h2>
+<p>The default channels make a few assumptions about how you tag your marketing campaigns. When your existing tags don't match those assumptions, it can create a rather messy report.</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/multi-channel-funnel-duplication.png" alt="Google Analytics default channel grouping issues" title="Well, that's repetitively redundant." width="534px" height="109px"/> 
+
+<p>Fortunately, Google Analytics allows you to override their default grouping and fix any issues you're encountering. You can do this through the admin menus, but I recommend starting by copying their default and editing it to meet your needs.</p>
+
+<p>To copy the default grouping, click on "Channel Groupings" in the menu above the "Assisted Conversions" report and select "Copy Basic Channel Grouping template...".</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/multi-channel-funnel-channel-grouping.png" alt="Google Analytics channel grouping menu " title="Channel Grouping menu" width="787px" height="114px"/> 
+
+<p>On the next screen, you can give your new template a name. then, hover over any of the "Label Rules" to get an option to edit. This will allow you to see what rules are used to create these groups.</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/multi-channel-funnel-social-media-channel-default-filter.png" alt="Google Analytics social network channel default filter" title="What a difference one character can make." width="903px" height="35px"/>
+
+<p>As you can see, my original example used an underscore ("social_media") whereas Google Analytics uses dashes or spaces in its original filter. I can easily edit the filter to include my variant so all of my existing campaigns are caught by the "Social Network" channel.</p>
+
+<p>This screen also allows you to add new filters. For example, if you had a mobile app that has several links to your site, you might tag your links with a utm_medium parameter set to "mobile". Then, you can create a custom label rule to group all links with a utm_medium of "mobile" as a channel called "Mobile App".  </p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/multi-channel-funnel-mobile-app-example.png" alt="Google Analytics mobile app example" title="Go back! I liked that channel!" width="132px" height="140px"/>
+
+<p>Armed with a report customized for your website, it's much easier to make informed decisions on which of your marketing efforts are working and which ones need improvement.</p>
+
+<div class="modal hide" id="funnel-definition">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Funnels</h3>
+    </div>
+    <div class="modal-body">
+    	<p>Paths through your site whose ends are major conversion points. For example, a sign-up funnel would end with the user registering successfully on your site.</p>
+    </div>
+    <div class="modal-footer">
+    	<a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<div class="modal hide" id="segment-definition">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Segments</h3>
+    </div>
+    <div class="modal-body">
+    	<p>Groups of similar users on your site. For example, you can segment all users who came to your site from a specific source or all uusers who performed a certain key action on your site.</p>
+    </div>
+    <div class="modal-footer">
+    	<a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
