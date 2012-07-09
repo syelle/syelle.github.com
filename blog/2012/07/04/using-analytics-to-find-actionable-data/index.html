@@ -93,10 +93,10 @@
 
 <img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/dashboard-top-level.png" alt="Google Analytics top-level dashboard metrics: visits, unique visitors, pageviews, pages per visit, average visit duration, bounce rate, and percent of visits that are new visits" title="That's... good, right?" width="328px" height="303px"/>
 
-</p>These stats are displayed so prominently that it's easy to think that they're <a rel="popover" data-original-title="Key Performance Indicators" data-content="Metrics that are used to determine whether or not something is successful.">key performance indicators</a> (KPIs), and many companies treat them as such. The problem is that these aren't true KPIs; They're vanity metrics.</p>
+</p>These stats are displayed so prominently that it's easy to think that they're <a data-toggle="modal" href="#kpi-definition">key performance indicators</a> (KPIs), and many companies treat them as such. The problem is that these aren't true KPIs; They're vanity metrics.</p>
 
 <h2>What are vanity metrics?</h2>
-<p>Vanity metrics are metrics whose changes don't directly correlate to increased <a rel="popover" data-original-title="conversions" data-content="Favorable actions, whether they be direct product purchases or other significant events such as user registrations.">conversions</a>. While they might look pretty, they're only important in that they are the core building blocks for the data you <em>really</em> want to be analyzing. If you focus on vanity metrics, you cannot answer the questions you need to answer to make sure your site is healthy.</p>
+<p>Vanity metrics are metrics whose changes don't directly correlate to increased <a data-toggle="modal" href="#conversion-definition">conversions</a>. While they might look pretty, they're only important in that they are the core building blocks for the data you <em>really</em> want to be analyzing. If you focus on vanity metrics, you cannot answer the questions you need to answer to make sure your site is healthy.</p>
 
 <h2>Why are vanity metrics dangerous to use as performance indicators?</h2>
 
@@ -118,13 +118,67 @@
 
 <p>Note that these questions all focus not just on raw numbers, but attempt to get answers that can result in direct action to improve the site.</p>
 
-<p>In my previous example, I mentioned a site that saw 50% more new visitors but only 5% increased revenue. To figure out why, a good step would be to see how those users progressed through the purchase <a rel="popover" data-original-title="Funnel" data-content="Funnels are paths through your site whose ends are major conversion points. For example, a sign-up funnel would end with the user registering successfully on your site.">funnel</a>.</p>
+<p>In my previous example, I mentioned a site that saw 50% more new visitors but only 5% increased revenue. To figure out why, a good step would be to see how those users progressed through the purchase <a data-toggle="modal" href="#funnel-definition">funnel</a>.</p>
 
 <img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/funnel.png" alt="Google Analytics example conversion funnel" title="Come back! I have stuff!" width="258px" height="805px"/>
 
-<p>Now, the problem in the example is a bit more clear. The ad landing page had a lot of traffic that never got to the product page. The product page was pretty successful in that most people added the product to the cart, but most of those people didn't follow through with the purchase. Armed with this kind of information, it's easy to identify part of the site that should be considered for <a rel="popover" data-original-title="Split-testing" data-content="Testing multiple versions of a page side-by-side by splitting visitors between the pages to see which one is most likely to convert a user.">split-testing</a>. With some tweaks, it's possible to reduce the friction of this funnel and end up with more sales.</p>
+<p>Now, the problem in the example is a bit more clear. The ad landing page had a lot of traffic that never got to the product page. The product page was pretty successful in that most people added the product to the cart, but most of those people didn't follow through with the purchase. Armed with this kind of information, it's easy to identify part of the site that should be considered for <a data-toggle="modal" href="#split-testing-definition">split-testing</a>. With some tweaks, it's possible to reduce the friction of this funnel and end up with more sales.</p>
 
 <p>You'll have to dig deeper for actionable metrics than you do for vanity metrics, but it's worth it. Fortunately, most modern web analytics solutions provide standard reports that help discover many common actionable metrics pretty quickly. For information that's specific to your organization, you can also create custom reports that you can refer back to for tracking the progress of important actionable metrics.</p>
+
+<div class="modal hide" id="kpi-definition">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Key Performance Indicators</h3>
+    </div>
+    <div class="modal-body">
+    	<p>Metrics that are used to determine whether or not something is successful.</p>
+    </div>
+    <div class="modal-footer">
+    	<a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<div class="modal hide" id="conversion-definition">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Conversion</h3>
+    </div>
+    <div class="modal-body">
+    	<p>Favorable actions, whether they be direct product purchases or other significant events such as user registrations.</p>
+    </div>
+    <div class="modal-footer">
+    	<a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+<div class="modal hide" id="funnel-definition">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Funnel</h3>
+    </div>
+    <div class="modal-body">
+    	<p>Funnels are paths through your site whose ends are major conversion points. For example, a sign-up funnel would end with the user registering successfully on your site.</p>
+    </div>
+    <div class="modal-footer">
+    	<a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
+
+<div class="modal hide" id="split-testing-definition">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal">×</button>
+    	<h3>Split-testing</h3>
+    </div>
+    <div class="modal-body">
+    	<p>Testing multiple versions of a page side-by-side by splitting visitors between the pages to see which one is most likely to convert a user.</p>
+    </div>
+    <div class="modal-footer">
+    	<a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+</div>
+
                 
                 <footer>
                     <hr/>

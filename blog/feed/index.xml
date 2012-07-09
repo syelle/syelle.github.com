@@ -6,15 +6,107 @@
 		<link>http://min-maxing.com</link>
 		
 			<item>
+				<title>Multi-Channel Funnels in Google Analytics</title>
+				<description>&lt;p&gt;When reviewing the success of your &lt;a data-toggle=&quot;modal&quot; href=&quot;#funnel-definition&quot; &gt;funnels&lt;/a&gt;, one way you can &lt;a data-toggle=&quot;modal&quot; href=&quot;#segment-definition&quot; &gt;segment&lt;/a&gt; your users is by where they came from when they arrived on your site. This can give you a better idea of which traffic sources are proving valuable to your efforts.&lt;/p&gt; 
+
+&lt;p&gt;However, not everyone will perform a key action on their first visit to your site, and it may take some users several visits to reach the end of your primary funnel, and each visit can come from a different source. To assess the value of each of these sources properly, you'll need to understand multi-channel funnels and how to analyze them.&lt;/p&gt;
+
+&lt;h2&gt;What are multi-channel funnels?&lt;/h2&gt;
+&lt;p&gt;In marketing parlance, a channel is one avenue via which your site is advertized. How you categorize these sources differs depending on what's important to you, but some general categories for your marketing efforts might include:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;Display (banner) ads&lt;/li&gt;
+	&lt;li&gt;Web video ads&lt;/li&gt;	
+	&lt;li&gt;Promotional emails&lt;/li&gt;	
+	&lt;li&gt;Referrals from another site&lt;/li&gt;
+	&lt;li&gt;Paid and organic search&lt;/li&gt;	
+	&lt;li&gt;Social media&lt;/li&gt;	
+&lt;/ul&gt;
+&lt;p&gt;Anytime you rely on multiple strategies to help drive traffic through a funnel on your site, you're using a multi-channel funnel.&lt;/p&gt;
+
+&lt;h2&gt;What can I learn from a multi-channel funnel report?&lt;/h2&gt;
+&lt;p&gt;There are several aspects to a multi-channel funnel that you may want to pay attention to when figuring out the value of each channel to your site. Different companies will place importance on each of these aspects differently depending on their use-case.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-anatomy.png&quot; alt=&quot;Google Analytics multi-channel funnel overview&quot; title=&quot;Anatomy of a conversion path - Taken from Google Analytics&quot; width=&quot;469px&quot; height=&quot;184px&quot;/&gt; 
+
+&lt;h3&gt;Last Interactions&lt;/h3&gt;
+&lt;p&gt;The channel that drove a user to your site right before they completed a conversion funnel is flagged as a 'last interaction' channel. If a marketing effort has a high percentage of last interactions, it's helping to close the deal with your users. While this is the initial place most companies look when assessing the value of their marketing efforts, it doesn't paint the full picture.&lt;/p&gt;
+
+&lt;h3&gt;First Interactions&lt;/h3&gt;
+&lt;p&gt;By discovering what is driving a user to visit your site for the first time, you can discover which marketing efforts are helping spread initial awareness or interest about your brand. This will not allow you to easily differentiate between users who are just hearing about your site and users who have heard about it before and who simply saw something new that was convincing enough to check out your site. However, the value in either case is that a channel with a high percent of first interactions is clearly successful at driving initial interest in your brand.&lt;/p&gt;
+
+&lt;h3&gt;Assisted Interactions&lt;/h3&gt;
+&lt;p&gt;While both the first and last interactions are key conversions points, any channel along the way that engages the user will get credit for an 'assisted conversion'.&lt;/p&gt;
+
+&lt;p&gt;Many marketing efforts that have a seemingly-low return on investment (ROI) can actually turn out to be fairly important. You may have an email campaign you use to nudge new users to offer them help as they learn more about your site or product. This email itself may not convert a lot of users and it won't be how they discover your site, but noting that this effort assists in a lot of conversions will help identify whether this nudge email is truly succeeding at nudging users along your conversion funnel.&lt;/p&gt;
+
+&lt;h3&gt;Popular Conversion Paths&lt;/h3&gt;
+&lt;p&gt;This report will show which paths of first, assisted, and last conversions are responsible for converting the most users. While this information can be useful, the utility is somewhat limited. It helps to visualize channel funnels from a high level, but most of the actions you take will be related to first, last, and assisted conversions.&lt;/p&gt;
+
+&lt;h3&gt;Time Through Path&lt;/h3&gt;
+&lt;p&gt;One way to assess the success of marketing efforts is how much time passed between a user's first interaction and last interaction to conversion. You can use it to assess whether your efforts are resulting in people making decisions quickly. If you see that users are taking their time, you can use this information to experiment with ways to speed up their decision-making process.&lt;/p&gt;
+
+&lt;h2&gt;How can I customize this report with my marketing channels in mind?&lt;/h2&gt;
+&lt;p&gt;The default channels make a few assumptions about how you tag your marketing campaigns. When your existing tags don't match those assumptions, it can create a rather messy report.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-duplication.png&quot; alt=&quot;Google Analytics default channel grouping issues&quot; title=&quot;Well, that's repetitively redundant.&quot; width=&quot;534px&quot; height=&quot;109px&quot;/&gt; 
+
+&lt;p&gt;Fortunately, Google Analytics allows you to override their default grouping and fix any issues you're encountering. You can do this through the admin menus, but I recommend starting by copying their default and editing it to meet your needs.&lt;/p&gt;
+
+&lt;p&gt;To copy the default grouping, click on &quot;Channel Groupings&quot; in the menu above the &quot;Assisted Conversions&quot; report and select &quot;Copy Basic Channel Grouping template...&quot;.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-channel-grouping.png&quot; alt=&quot;Google Analytics channel grouping menu &quot; title=&quot;Channel Grouping menu&quot; width=&quot;787px&quot; height=&quot;114px&quot;/&gt; 
+
+&lt;p&gt;On the next screen, you can give your new template a name. then, hover over any of the &quot;Label Rules&quot; to get an option to edit. This will allow you to see what rules are used to create these groups.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-social-media-channel-default-filter.png&quot; alt=&quot;Google Analytics social network channel default filter&quot; title=&quot;What a difference one character can make.&quot; width=&quot;903px&quot; height=&quot;35px&quot;/&gt;
+
+&lt;p&gt;As you can see, my original example used an underscore (&quot;social_media&quot;) whereas Google Analytics uses dashes or spaces in its original filter. I can easily edit the filter to include my variant so all of my existing campaigns are caught by the &quot;Social Network&quot; channel.&lt;/p&gt;
+
+&lt;p&gt;This screen also allows you to add new filters. For example, if you had a mobile app that has several links to your site, you might tag your links with a utm_medium parameter set to &quot;mobile&quot;. Then, you can create a custom label rule to group all links with a utm_medium of &quot;mobile&quot; as a channel called &quot;Mobile App&quot;.  &lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-mobile-app-example.png&quot; alt=&quot;Google Analytics mobile app example&quot; title=&quot;Go back! I liked that channel!&quot; width=&quot;132px&quot; height=&quot;140px&quot;/&gt;
+
+&lt;p&gt;Armed with a report customized for your website, it's much easier to make informed decisions on which of your marketing efforts are working and which ones need improvement.&lt;/p&gt;
+
+&lt;div class=&quot;modal hide&quot; id=&quot;funnel-definition&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;
+    	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;×&lt;/button&gt;
+    	&lt;h3&gt;Funnels&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+    	&lt;p&gt;Paths through your site whose ends are major conversion points. For example, a sign-up funnel would end with the user registering successfully on your site.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+    	&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;modal hide&quot; id=&quot;segment-definition&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;
+    	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;×&lt;/button&gt;
+    	&lt;h3&gt;Segments&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+    	&lt;p&gt;Groups of similar users on your site. For example, you can segment all users who came to your site from a specific source or all uusers who performed a certain key action on your site.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+    	&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</description>
+				<published>2012-07-08 00:00:00 -0700</published>
+				<link>http://min-maxing.com/blog/2012/07/08/multi-channel-funnels-in-google-analytics</link>
+			</item>
+		
+			<item>
 				<title>Using Analytics to Find Actionable Data</title>
 				<description>&lt;p&gt;Pageviews don't make a site successful, but it's usually the first thing you see when you look at an analytics dashboard.&lt;/p&gt;
 
 &lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/dashboard-top-level.png&quot; alt=&quot;Google Analytics top-level dashboard metrics: visits, unique visitors, pageviews, pages per visit, average visit duration, bounce rate, and percent of visits that are new visits&quot; title=&quot;That's... good, right?&quot; width=&quot;328px&quot; height=&quot;303px&quot;/&gt;
 
-&lt;/p&gt;These stats are displayed so prominently that it's easy to think that they're &lt;a rel=&quot;popover&quot; data-original-title=&quot;Key Performance Indicators&quot; data-content=&quot;Metrics that are used to determine whether or not something is successful.&quot;&gt;key performance indicators&lt;/a&gt; (KPIs), and many companies treat them as such. The problem is that these aren't true KPIs; They're vanity metrics.&lt;/p&gt;
+&lt;/p&gt;These stats are displayed so prominently that it's easy to think that they're &lt;a data-toggle=&quot;modal&quot; href=&quot;#kpi-definition&quot;&gt;key performance indicators&lt;/a&gt; (KPIs), and many companies treat them as such. The problem is that these aren't true KPIs; They're vanity metrics.&lt;/p&gt;
 
 &lt;h2&gt;What are vanity metrics?&lt;/h2&gt;
-&lt;p&gt;Vanity metrics are metrics whose changes don't directly correlate to increased &lt;a rel=&quot;popover&quot; data-original-title=&quot;conversions&quot; data-content=&quot;Favorable actions, whether they be direct product purchases or other significant events such as user registrations.&quot;&gt;conversions&lt;/a&gt;. While they might look pretty, they're only important in that they are the core building blocks for the data you &lt;em&gt;really&lt;/em&gt; want to be analyzing. If you focus on vanity metrics, you cannot answer the questions you need to answer to make sure your site is healthy.&lt;/p&gt;
+&lt;p&gt;Vanity metrics are metrics whose changes don't directly correlate to increased &lt;a data-toggle=&quot;modal&quot; href=&quot;#conversion-definition&quot;&gt;conversions&lt;/a&gt;. While they might look pretty, they're only important in that they are the core building blocks for the data you &lt;em&gt;really&lt;/em&gt; want to be analyzing. If you focus on vanity metrics, you cannot answer the questions you need to answer to make sure your site is healthy.&lt;/p&gt;
 
 &lt;h2&gt;Why are vanity metrics dangerous to use as performance indicators?&lt;/h2&gt;
 
@@ -36,13 +128,67 @@
 
 &lt;p&gt;Note that these questions all focus not just on raw numbers, but attempt to get answers that can result in direct action to improve the site.&lt;/p&gt;
 
-&lt;p&gt;In my previous example, I mentioned a site that saw 50% more new visitors but only 5% increased revenue. To figure out why, a good step would be to see how those users progressed through the purchase &lt;a rel=&quot;popover&quot; data-original-title=&quot;Funnel&quot; data-content=&quot;Funnels are paths through your site whose ends are major conversion points. For example, a sign-up funnel would end with the user registering successfully on your site.&quot;&gt;funnel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In my previous example, I mentioned a site that saw 50% more new visitors but only 5% increased revenue. To figure out why, a good step would be to see how those users progressed through the purchase &lt;a data-toggle=&quot;modal&quot; href=&quot;#funnel-definition&quot;&gt;funnel&lt;/a&gt;.&lt;/p&gt;
 
 &lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/funnel.png&quot; alt=&quot;Google Analytics example conversion funnel&quot; title=&quot;Come back! I have stuff!&quot; width=&quot;258px&quot; height=&quot;805px&quot;/&gt;
 
-&lt;p&gt;Now, the problem in the example is a bit more clear. The ad landing page had a lot of traffic that never got to the product page. The product page was pretty successful in that most people added the product to the cart, but most of those people didn't follow through with the purchase. Armed with this kind of information, it's easy to identify part of the site that should be considered for &lt;a rel=&quot;popover&quot; data-original-title=&quot;Split-testing&quot; data-content=&quot;Testing multiple versions of a page side-by-side by splitting visitors between the pages to see which one is most likely to convert a user.&quot;&gt;split-testing&lt;/a&gt;. With some tweaks, it's possible to reduce the friction of this funnel and end up with more sales.&lt;/p&gt;
+&lt;p&gt;Now, the problem in the example is a bit more clear. The ad landing page had a lot of traffic that never got to the product page. The product page was pretty successful in that most people added the product to the cart, but most of those people didn't follow through with the purchase. Armed with this kind of information, it's easy to identify part of the site that should be considered for &lt;a data-toggle=&quot;modal&quot; href=&quot;#split-testing-definition&quot;&gt;split-testing&lt;/a&gt;. With some tweaks, it's possible to reduce the friction of this funnel and end up with more sales.&lt;/p&gt;
 
-&lt;p&gt;You'll have to dig deeper for actionable metrics than you do for vanity metrics, but it's worth it. Fortunately, most modern web analytics solutions provide standard reports that help discover many common actionable metrics pretty quickly. For information that's specific to your organization, you can also create custom reports that you can refer back to for tracking the progress of important actionable metrics.&lt;/p&gt;</description>
+&lt;p&gt;You'll have to dig deeper for actionable metrics than you do for vanity metrics, but it's worth it. Fortunately, most modern web analytics solutions provide standard reports that help discover many common actionable metrics pretty quickly. For information that's specific to your organization, you can also create custom reports that you can refer back to for tracking the progress of important actionable metrics.&lt;/p&gt;
+
+&lt;div class=&quot;modal hide&quot; id=&quot;kpi-definition&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;
+    	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;×&lt;/button&gt;
+    	&lt;h3&gt;Key Performance Indicators&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+    	&lt;p&gt;Metrics that are used to determine whether or not something is successful.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+    	&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;modal hide&quot; id=&quot;conversion-definition&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;
+    	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;×&lt;/button&gt;
+    	&lt;h3&gt;Conversion&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+    	&lt;p&gt;Favorable actions, whether they be direct product purchases or other significant events such as user registrations.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+    	&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;modal hide&quot; id=&quot;funnel-definition&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;
+    	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;×&lt;/button&gt;
+    	&lt;h3&gt;Funnel&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+    	&lt;p&gt;Funnels are paths through your site whose ends are major conversion points. For example, a sign-up funnel would end with the user registering successfully on your site.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+    	&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&quot;modal hide&quot; id=&quot;split-testing-definition&quot;&gt;
+    &lt;div class=&quot;modal-header&quot;&gt;
+    	&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot;&gt;×&lt;/button&gt;
+    	&lt;h3&gt;Split-testing&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-body&quot;&gt;
+    	&lt;p&gt;Testing multiple versions of a page side-by-side by splitting visitors between the pages to see which one is most likely to convert a user.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;modal-footer&quot;&gt;
+    	&lt;a href=&quot;#&quot; class=&quot;btn&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</description>
 				<published>2012-07-04 00:00:00 -0700</published>
 				<link>http://min-maxing.com/blog/2012/07/04/using-analytics-to-find-actionable-data</link>
 			</item>
