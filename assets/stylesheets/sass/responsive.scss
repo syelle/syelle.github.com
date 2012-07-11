@@ -1,34 +1,7 @@
-@media (max-width: 400px){
-    #contact-picture {
-        display: none;
-    }
-}
-
-@media (min-width: 401px){
-    #contact-picture {
-        float: left;
-        padding-right: 10px;
-    }
-}
-
 @media (max-width: 767px){
     body {
+        /* no side padding on small screens */
         padding-left: 0;
         padding-right: 0;
     }
-}
-
-@media (max-width: 979px){
-	.navbar {
-        border-left: 1px solid #CCC;
-        border-right: 1px solid #CCC;
-    }
-}
-
-@media (min-width: 980px){
-	.navbar {
-		.container {
-			width: 1170px;
-		}
-	}
 }
