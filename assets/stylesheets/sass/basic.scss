@@ -1,5 +1,16 @@
 body {
     background: url('/assets/img/grid-tile.png') center top repeat;
+    padding-top: 40px;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    margin-left: 0;
+    margin-right: 0;
 }
 
 a[rel=popover], a[data-toggle=modal]  {
