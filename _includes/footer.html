@@ -6,6 +6,13 @@
             </div>
 		</footer>        
         
+        
+{% if site.production %}
         <script src="/assets/js/main.min.js"></script>
+{% else %}
+		<script src="/assets/js/jquery-1.7.2.min.js"></script>
+		<script src="/assets/js/bootstrap-2.0.4.min.js"></script>
+        <script src="/assets/js/custom.js"></script>
+{% endif %}        
     </body>
 </html>
