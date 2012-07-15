@@ -1,0 +1,14 @@
+#header > #rss {
+  float: right;
+  padding-top: 6px; }
+
+#nav li:before {
+  content: ""; }
+
+.btn-primary {
+  background-color: #FAA732;
+  background-image: -moz-linear-gradient(center top, #fbb450, #f89406);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); }
+  .btn-primary:hover, .btn-primary:active, .btn-primary .active, .btn-primary .disabled, .btn-primary[disabled] {
+    background-color: #F89406; }

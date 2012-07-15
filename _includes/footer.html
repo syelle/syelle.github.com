@@ -1,17 +1,31 @@
-        </div><!-- /container -->
-        
-		<footer>
-            <div class="container">
-                <p>&copy; 2012 by <a href="mailto:shaun@min-maxing.com">Shaun Yelle</a>. This site was built using <a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, and uses icons from <a href="http://glyphicons.com/">Glyphicons Free</a>.</p>
-            </div>
-		</footer>        
-        
+            </div> <!-- /content -->  
+
+            <footer id="footer">
+                <!-- no footer content for now -->
+            </footer>   
+
+            <footer id="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div id="rights" class="grid-6">
+                            <p>&copy; 2012 by <a href="mailto:shaun@min-maxing.com">Shaun Yelle</a>.</p> 
+                        </div> <!-- /grid-6 -->
+                        
+                        <div id="totop" class="grid-6">
+                            <p>Built with <a href="/about">&lt;3</a>.</a></p>
+                        </div> <!-- /grid-6 -->
+                    </div> <!-- /row --> 
+                </div> <!-- /container -->  
+            </footer> <!-- /copyright -->
+
+        </div> <!-- /wrapper -->       
         
 {% if site.production %}
         <script src="/assets/js/main.min.js"></script>
 {% else %}
 		<script src="/assets/js/jquery-1.7.2.min.js"></script>
 		<script src="/assets/js/bootstrap-2.0.4.min.js"></script>
+        <script src="/assets/js/focus.js"></script>
         <script src="/assets/js/custom.js"></script>
 {% endif %}        
     </body>

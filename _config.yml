@@ -16,3 +16,6 @@ navigation:
 - text: Blog
   url: /blog/
   layout: blog
+- text: About
+  url: /about/
+  layout: about
