@@ -7,7 +7,7 @@
 
 ### Install & Run SASS
 - gem install sass
-- sass --watch assets/stylesheets/sass/:assets/stylesheets/compiled
+- sass --watch assets/css/sass/:assets/css
 
 ### Install Juicer
 - gem install juicer
@@ -17,7 +17,7 @@
 ## Build
 
 ### Compile CSS & JS
-- juicer merge assets/stylesheets/main.css --force --document-root .
+- juicer merge assets/css/main.css --force --document-root .
 - juicer merge -i assets/js/main.js --force
 
 ### Publish to web
