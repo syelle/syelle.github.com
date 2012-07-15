@@ -1,5 +1,0 @@
-@media (max-width: 767px) {
-  body {
-    /* no side padding on small screens */
-    padding-left: 0;
-    padding-right: 0; } }
