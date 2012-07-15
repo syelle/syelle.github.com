@@ -7,6 +7,7 @@ jekyll --no-auto
 git checkout master
 git rm -r .
 cp -r ../_site/* .
+rm -rf .sass-cache
 git add . 
 git commit  
 git push origin master
