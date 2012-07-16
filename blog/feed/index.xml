@@ -6,6 +6,122 @@
 		<link>http://min-maxing.com</link>
 		
 			<item>
+				<title>Importing Google Analytics Data into Your Data Warehouse with Pentaho</title>
+				<description>&lt;p&gt;Many companies that sell applications and games for desktop and mobile users build a data warehouse so they can create dashboards that show information about user patterns in these applications. By including web funnel data from your website into the data warehouse, you can go a step futher and get complete picture of your user acquisition and retention.&lt;/p&gt;
+
+&lt;h2&gt;Prerequisites&lt;/h2&gt;
+
+&lt;h3&gt;Data Source&lt;/h3&gt;
+&lt;p&gt;Our data source is &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt;. To access the data, we'll need access to the profiles via a username and password.&lt;/p&gt;
+
+&lt;p&gt;For the purposes of this project, I recommend creating a new Google Analytics account for this project and giving it read-only access to the specific profiles you want to retrieve. Since you'll need to enter this account's password in another piece of software, it's generally a better practice never to use your own accounts.&lt;/p&gt;
+
+&lt;h3&gt;ETL Software&lt;/h3&gt;
+&lt;p&gt;To get the data into your data warehouse, you will need software that can extract the data, transform it into the necessary format, then load it into your data warehouse. Such software is called Extract, Transform, and Load (ETL) software. For this project, I'll be using &lt;a href=&quot;http://www.pentaho.com/explore/pentaho-data-integration/&quot;&gt;Pentaho Data Integration&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The ETL software will need to be able to connect to your data warehouse. You will also need the ability to create new tables and insert/update data into these tables.&lt;/p&gt;
+
+&lt;h2&gt;Retrieving &amp;amp; Storing Data with Pentaho&lt;/h2&gt;
+&lt;p&gt;Pentaho comes with a free connector that you can use to query data from Google Analytics. It uses the same syntax as the &lt;a href=&quot;ga-etl-query-ga-transformation.png&quot;&gt;Google Analytics Core Reporting API&lt;/a&gt; to define filters.&lt;/p&gt;
+
+&lt;p&gt;Before you query Google Analytics, you'll need to grab the following information with the ETL:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;A date range&lt;/li&gt;
+	&lt;li&gt;The filters for each filter step you want&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On top of that, we will hard-code the user authentication information, the dimension (time), and metric (visitors).&lt;/p&gt;
+
+&lt;h3&gt;Job: Master&lt;/h3&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-master-job.png&quot; alt=&quot;master Pentaho job for Google Analytics ETL&quot; title=&quot;Pentaho: master job for Google Analytics data retrieval&quot; width=&quot;567px&quot; height=&quot;197px&quot;/&gt; 
+&lt;p&gt;The main thing you should ensure is that the &lt;mark&gt;Get Web Funnel Data&lt;/mark&gt; job is set to execute for every input row on the &quot;Advanced&quot; properties tab. This will cause it to execute for every row that is returned in the previous transformation where we look up the web funnel steps.&lt;/p&gt;
+
+&lt;p&gt;Beyond that, this job houses little direct logic. The notification emails are helpful if you schedule your ETL to run daily so you know whether or not it succeeded.&lt;/p&gt;
+
+&lt;h3&gt;Transformation: Lookup Web Funnel Steps&lt;/h3&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-lookup-web-funnel-steps-transformation.png&quot; alt=&quot;Pentaho transformation for looking up funnel steps for Google Analytics&quot; title=&quot;Pentaho: transformation for retrieving funnel lookup table from the data warehouse&quot; width=&quot;368px&quot; height=&quot;68px&quot;/&gt; 
+&lt;p&gt;To make the ETL more dynamic, it is helpful to store information about each funnel step in a database table. This will allow you to query for a new step in the future simply by adding a new row to this table. The table schema should look something like this:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;funnel_step_id&lt;/strong&gt;
+		&lt;ul&gt;
+			&lt;li&gt;auto-incrementing sequence (primary key)&lt;/li&gt;
+			&lt;li&gt;Calling it &quot;funnel_step_id&quot; instead of &quot;id&quot; will make things easier for software that automatically links related tables together&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;name&lt;/strong&gt;
+		&lt;ul&gt;
+			&lt;li&gt;String representation of the funnel step for reports.&lt;/li&gt;
+			&lt;li&gt;Example: Landing Page Visitors&lt;/li&gt;
+		&lt;/ul&gt; 
+	&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;ga_filter&lt;/strong&gt;
+		&lt;ul&gt;
+			&lt;li&gt;String representation of the filter that Google Analytics will use to execute the query for this funnel step.&lt;/li&gt;
+			&lt;li&gt;Example: ga:eventAction==Start Registration&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &quot;Copy Rows to result&quot; output ensures the data is carried over into the next step of the ETL.&lt;/p&gt;
+
+&lt;h3&gt;Job: Get Web Funnel Data&lt;/h3&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-web-funnel-data-job.png&quot; alt=&quot;Pentaho job for querying Google Analytics&quot; title=&quot;Pentaho: job that manages Google Analytics query&quot; width=&quot;411px&quot; height=&quot;181px&quot;/&gt; 
+&lt;p&gt;Like the master job, this one has little direct logic. It represents the loop that should execute for each funnel step that is returned from your earlier lookup.&lt;/p&gt;
+
+&lt;h3&gt;Transformation: Set Variables for GA Query&lt;/h3&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-variables-transformation.png&quot; alt=&quot;Pentaho transformation for getting date and funnel information to set as global variables&quot; title=&quot;Pentaho: transformation for getting dynamic date and funnel data to store as global variables&quot; width=&quot;584px&quot; height=&quot;61px&quot;/&gt; 
+&lt;p&gt;This transformation is responsible for setting up the variables that you will need to feed into the actual query to Google Analytics.&lt;/p&gt;
+
+&lt;h4&gt;Get rows from result&lt;/h4&gt;
+&lt;p&gt;For this input, you should specify each of the table columns from your lookup table that you'll eventually set as an environment variable:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-lookup-rows.png&quot; alt=&quot;Pentaho dialog to get rows from previous result&quot; title=&quot;Pentaho: 'Get rows from previous result' input dialog&quot; width=&quot;304px&quot; height=&quot;217px&quot;/&gt; 
+
+&lt;h4&gt;Get Start and End Dates&lt;/h4&gt;
+&lt;p&gt;Because Google Analytics sometimes doesn't update their data for 24 hours, you want to be sure you're fetching data for the past few days so you can update days that might have incomplete data. The easiest way to do that is to use the start of last week for your beginning date and yesterday for your end date. This will mean you're always retrieving between 7-14 days of data.&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-dates.png&quot; alt=&quot;Pentaho dialog for getting system data&quot; title=&quot;Pentaho: 'Get System Dialog' input dialog&quot; width=&quot;399px&quot; height=&quot;209px&quot;/&gt; 
+
+&lt;h4&gt;Scrub Date Fields&lt;/h4&gt;
+&lt;p&gt;Pentaho's date format differs from the format you have to use to query Google Analytics. You can use JavaScript to transform the data into the proper format.&lt;/p&gt;
+&lt;pre&gt;var dateFormat = &quot;yyyy-MM-dd&quot;;
+
+sYesterday = date2str(sYesterday, dateFormat);
+sStartLastWeek = date2str(sStartLastWeek, dateFormat);
+&lt;/pre&gt;
+
+&lt;p&gt;Afterward, make sure you set up the fields to update with the new values in the table below the JavaScript text area:&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-scrub-dates.png&quot; alt=&quot;Pentaho dialog for modifying values with JavaScript&quot; title=&quot;Pentaho: 'Script Values / Mod' transformation dialog&quot; width=&quot;609px&quot; height=&quot;448px&quot;/&gt; 
+
+&lt;h4&gt;Set Global Variables&lt;/h4&gt;
+&lt;p&gt;Now that you have all the variables you'll need for the query, make sure you set them with a scope of &quot;Valid in the root job&quot; so that other transformations and jobs have access to the them:&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-vars.png&quot; alt=&quot;Pentaho dialog for setting environment variables&quot; title=&quot;Pentaho: 'Set Environment Variables' output dialog&quot; width=&quot;454px&quot; height=&quot;261px&quot;/&gt; 
+
+&lt;h3&gt;Transformation: Query GA and Store Results&lt;/h3&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga-transformation.png&quot; alt=&quot;Pentaho transformation for sending a query to Google Analytics and storing the results&quot; title=&quot;Pentaho: transformation for sending the query to Google Analytics and storing the result&quot; width=&quot;366px&quot; height=&quot;67px&quot;/&gt; 
+&lt;p&gt;At this point, the ETL has all the data it needs. All that is left is to execute the query and store the results.&lt;/p&gt;
+
+&lt;h4&gt;Get Visitors&lt;/h4&gt;
+&lt;p&gt;Enter your user credentials, select the appropriate Google Analytics profile, then enter all of the static and variable information as part of your query definition:&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga.png&quot; alt=&quot;Pentaho dialog for getting environment variables&quot; title=&quot;Pentaho: 'Google Analytics' input dialog&quot; width=&quot;632px&quot; height=&quot;589px&quot;/&gt; 
+&lt;p&gt;Google Analytics will return several fields that you do not need. To remove them, select them in the &quot;Output Fields&quot; section, right-click on them, and choose &quot;Delete selected lines&quot; from the menu.&lt;/p&gt;
+
+&lt;h4&gt;Get funnel_step_id&lt;/h4&gt;
+&lt;p&gt;At this stage, the date and visitor count is part of your result set. You'll need to add the funnel_step_id to the result set so we can link this result to the correct funnel step in your lookup table:&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-funnel-step-id.png&quot; alt=&quot;Pentaho dialog for getting environment variables&quot; title=&quot;Pentaho: 'Get Variable' input dialog&quot; width=&quot;417px&quot; height=&quot;202px&quot;/&gt; 
+
+&lt;h4&gt;Insert / Update&lt;/h4&gt;
+&lt;p&gt;Now that we have  the date, funnel step, and visitor count in our result set, we can insert the data into our data warehouse (or update existing rows):&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-insert-update.png&quot; alt=&quot;Pentaho dialog for inserting or updating to a database table&quot; title=&quot;Pentaho: 'Insert / Update' output dialog&quot; width=&quot;457px&quot; height=&quot;507px&quot;/&gt; 
+
+&lt;p&gt;In the first table, make sure to specify both the date and the funnel_step_id as the keys to use to look up the values. If Pentaho finds an existing record for that date and funnel_step_id, it will simply update it with the new results rather than add a duplicate entry.&lt;/p&gt;
+
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;In one of my next articles, I will show how you can take the information you have just imported into your data warehouse and create funnel visualizations using &lt;a href=&quot;http://www.qlikview.com&quot;&gt;QlikView&lt;/a&gt;. This will allow you to connect the dots between all of your funnels and allow you to visualize the end-to-end flow of your users.&lt;/p&gt;</description>
+				<published>2012-07-15 00:00:00 -0700</published>
+				<link>http://min-maxing.com/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho</link>
+			</item>
+		
+			<item>
 				<title>Multi-Channel Funnels in Google Analytics</title>
 				<description>&lt;p&gt;When reviewing the success of your &lt;a data-toggle=&quot;modal&quot; href=&quot;#funnel-definition&quot; &gt;funnels&lt;/a&gt;, one way you can &lt;a data-toggle=&quot;modal&quot; href=&quot;#segment-definition&quot; &gt;segment&lt;/a&gt; your users is by where they came from when they arrived on your site. This can give you a better idea of which traffic sources are proving valuable to your efforts.&lt;/p&gt; 
 
@@ -26,7 +142,7 @@
 &lt;h2&gt;What can I learn from a multi-channel funnel report?&lt;/h2&gt;
 &lt;p&gt;There are several aspects to a multi-channel funnel that you may want to pay attention to when figuring out the value of each channel to your site. Different companies will place importance on each of these aspects differently depending on their use-case.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-anatomy.png&quot; alt=&quot;Google Analytics multi-channel funnel overview&quot; title=&quot;Anatomy of a conversion path - Taken from Google Analytics&quot; width=&quot;469px&quot; height=&quot;184px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-anatomy.png&quot; alt=&quot;Google Analytics multi-channel funnel overview&quot; title=&quot;Anatomy of a conversion path - Taken from Google Analytics&quot; width=&quot;469px&quot; height=&quot;184px&quot;/&gt; 
 
 &lt;h3&gt;Last Interactions&lt;/h3&gt;
 &lt;p&gt;The channel that drove a user to your site right before they completed a conversion funnel is flagged as a 'last interaction' channel. If a marketing effort has a high percentage of last interactions, it's helping to close the deal with your users. While this is the initial place most companies look when assessing the value of their marketing efforts, it doesn't paint the full picture.&lt;/p&gt;
@@ -48,23 +164,23 @@
 &lt;h2&gt;How can I customize this report with my marketing channels in mind?&lt;/h2&gt;
 &lt;p&gt;The default channels make a few assumptions about how you tag your marketing campaigns. When your existing tags don't match those assumptions, it can create a rather messy report.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-duplication.png&quot; alt=&quot;Google Analytics default channel grouping issues&quot; title=&quot;Well, that's repetitively redundant.&quot; width=&quot;534px&quot; height=&quot;109px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-duplication.png&quot; alt=&quot;Google Analytics default channel grouping issues&quot; title=&quot;Well, that's repetitively redundant.&quot; width=&quot;534px&quot; height=&quot;109px&quot;/&gt; 
 
 &lt;p&gt;Fortunately, Google Analytics allows you to override their default grouping and fix any issues you're encountering. You can do this through the admin menus, but I recommend starting by copying their default and editing it to meet your needs.&lt;/p&gt;
 
 &lt;p&gt;To copy the default grouping, click on &quot;Channel Groupings&quot; in the menu above the &quot;Assisted Conversions&quot; report and select &quot;Copy Basic Channel Grouping template...&quot;.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-channel-grouping.png&quot; alt=&quot;Google Analytics channel grouping menu &quot; title=&quot;Channel Grouping menu&quot; width=&quot;787px&quot; height=&quot;114px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-channel-grouping.png&quot; alt=&quot;Google Analytics channel grouping menu &quot; title=&quot;Channel Grouping menu&quot; width=&quot;787px&quot; height=&quot;114px&quot;/&gt; 
 
 &lt;p&gt;On the next screen, you can give your new template a name. then, hover over any of the &quot;Label Rules&quot; to get an option to edit. This will allow you to see what rules are used to create these groups.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-social-media-channel-default-filter.png&quot; alt=&quot;Google Analytics social network channel default filter&quot; title=&quot;What a difference one character can make.&quot; width=&quot;903px&quot; height=&quot;35px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-social-media-channel-default-filter.png&quot; alt=&quot;Google Analytics social network channel default filter&quot; title=&quot;What a difference one character can make.&quot; width=&quot;903px&quot; height=&quot;35px&quot;/&gt;
 
 &lt;p&gt;As you can see, my original example used an underscore (&quot;social_media&quot;) whereas Google Analytics uses dashes or spaces in its original filter. I can easily edit the filter to include my variant so all of my existing campaigns are caught by the &quot;Social Network&quot; channel.&lt;/p&gt;
 
 &lt;p&gt;This screen also allows you to add new filters. For example, if you had a mobile app that has several links to your site, you might tag your links with a utm_medium parameter set to &quot;mobile&quot;. Then, you can create a custom label rule to group all links with a utm_medium of &quot;mobile&quot; as a channel called &quot;Mobile App&quot;.  &lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/multi-channel-funnel-mobile-app-example.png&quot; alt=&quot;Google Analytics mobile app example&quot; title=&quot;Go back! I liked that channel!&quot; width=&quot;132px&quot; height=&quot;140px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-mobile-app-example.png&quot; alt=&quot;Google Analytics mobile app example&quot; title=&quot;Go back! I liked that channel!&quot; width=&quot;132px&quot; height=&quot;140px&quot;/&gt;
 
 &lt;p&gt;Armed with a report customized for your website, it's much easier to make informed decisions on which of your marketing efforts are working and which ones need improvement.&lt;/p&gt;
 

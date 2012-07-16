@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+
+
+		<title>Importing Google Analytics Data into Your Data Warehouse with Pentaho | Min-Maxing</title>
+		<meta name="description" content="Learn how to import Google Analytics data into your data warehouse."/>
+
+		<meta itemprop="name" content="Importing Google Analytics Data into Your Data Warehouse with Pentaho | Min-Maxing"/>
+		<meta itemprop="description" content="Learn how to import Google Analytics data into your data warehouse."/>
+
+
+		<link rel="author" href="https://plus.google.com/108114208358329302855/posts"/>
+
+
+	
+		<link rel="canonical" href="http://min-maxing.com/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho"/>
+	
+
+
+
+        <link href="/assets/css/fonts.css" rel="stylesheet">
+
+        <link href="/assets/css/main.min.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">  
+
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-32891765-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+
+
+	<body>
+		<div id="wrapper" class="clearfix">
+			<div id="header">
+
+                <div id="rss">
+                	<a href="http://feeds.feedburner.com/min-maxing">
+                		<img src="/assets/img/rss-32.png" alt="Subscribe to the Min-Maxing blog RSS feed." title="Subscribe to the Min-Maxing blog RSS feed."/>
+                	</a>
+                </div>			
+				<div class="container">					
+					<h1 id="title">
+						<a href="/">
+							Min Maxing
+						</a>
+					</h1>					
+				</div> <!-- /container -->				
+			</div> <!-- /header -->	
+
+			<div id="nav" class="clearfix">
+				<div class="container">		
+					<ul id="main-nav">
+	
+		
+		
+			
+		
+						<li class="active"><a href="/blog/">Blog</a></li>
+	
+		
+		
+						<li class=""><a href="/about/">About</a></li>
+					
+					</ul>				
+				</div> <!-- /container -->			
+			</div> <!-- /nav -->
+
+			<div id="content">
+			
+			<article>
+				<header>
+					<h1>Importing Google Analytics Data into Your Data Warehouse with Pentaho</h1>
+					<hr/>
+					<ul>
+						<li><i class="icon-calendar"></i><time datetime="2012-07-15" pubdate="pubdate">July 15, 2012</time></li>
+						<li><i class="icon-tags"></i>
+						
+							
+								<a href="/blog/tag/google analytics" title="Posts tagged 'google analytics' | Min-Maxing">google analytics</a>,
+							
+						
+							
+								<a href="/blog/tag/pentaho" title="Posts tagged 'pentaho' | Min-Maxing">pentaho</a>,
+							
+						
+							
+								<a href="/blog/tag/data warehouse" title="Posts tagged 'data warehouse' | Min-Maxing">data warehouse</a>
+							
+						
+						</li>
+					</ul>
+				</header>
+
+				<p>Many companies that sell applications and games for desktop and mobile users build a data warehouse so they can create dashboards that show information about user patterns in these applications. By including web funnel data from your website into the data warehouse, you can go a step futher and get complete picture of your user acquisition and retention.</p>
+
+<h2>Prerequisites</h2>
+
+<h3>Data Source</h3>
+<p>Our data source is <a href="http://www.google.com/analytics/">Google Analytics</a>. To access the data, we'll need access to the profiles via a username and password.</p>
+
+<p>For the purposes of this project, I recommend creating a new Google Analytics account for this project and giving it read-only access to the specific profiles you want to retrieve. Since you'll need to enter this account's password in another piece of software, it's generally a better practice never to use your own accounts.</p>
+
+<h3>ETL Software</h3>
+<p>To get the data into your data warehouse, you will need software that can extract the data, transform it into the necessary format, then load it into your data warehouse. Such software is called Extract, Transform, and Load (ETL) software. For this project, I'll be using <a href="http://www.pentaho.com/explore/pentaho-data-integration/">Pentaho Data Integration</a>.</p>
+
+<p>The ETL software will need to be able to connect to your data warehouse. You will also need the ability to create new tables and insert/update data into these tables.</p>
+
+<h2>Retrieving &amp; Storing Data with Pentaho</h2>
+<p>Pentaho comes with a free connector that you can use to query data from Google Analytics. It uses the same syntax as the <a href="ga-etl-query-ga-transformation.png">Google Analytics Core Reporting API</a> to define filters.</p>
+
+<p>Before you query Google Analytics, you'll need to grab the following information with the ETL:</p>
+<ul>
+	<li>A date range</li>
+	<li>The filters for each filter step you want</li>
+</ul>
+
+<p>On top of that, we will hard-code the user authentication information, the dimension (time), and metric (visitors).</p>
+
+<h3>Job: Master</h3>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-master-job.png" alt="master Pentaho job for Google Analytics ETL" title="Pentaho: master job for Google Analytics data retrieval" width="567px" height="197px"/> 
+<p>The main thing you should ensure is that the <mark>Get Web Funnel Data</mark> job is set to execute for every input row on the "Advanced" properties tab. This will cause it to execute for every row that is returned in the previous transformation where we look up the web funnel steps.</p>
+
+<p>Beyond that, this job houses little direct logic. The notification emails are helpful if you schedule your ETL to run daily so you know whether or not it succeeded.</p>
+
+<h3>Transformation: Lookup Web Funnel Steps</h3>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-lookup-web-funnel-steps-transformation.png" alt="Pentaho transformation for looking up funnel steps for Google Analytics" title="Pentaho: transformation for retrieving funnel lookup table from the data warehouse" width="368px" height="68px"/> 
+<p>To make the ETL more dynamic, it is helpful to store information about each funnel step in a database table. This will allow you to query for a new step in the future simply by adding a new row to this table. The table schema should look something like this:</p>
+<ul>
+	<li><strong>funnel_step_id</strong>
+		<ul>
+			<li>auto-incrementing sequence (primary key)</li>
+			<li>Calling it "funnel_step_id" instead of "id" will make things easier for software that automatically links related tables together</li>
+		</ul>
+	</li>
+	<li><strong>name</strong>
+		<ul>
+			<li>String representation of the funnel step for reports.</li>
+			<li>Example: Landing Page Visitors</li>
+		</ul> 
+	</li>
+	<li><strong>ga_filter</strong>
+		<ul>
+			<li>String representation of the filter that Google Analytics will use to execute the query for this funnel step.</li>
+			<li>Example: ga:eventAction==Start Registration</li>
+		</ul>
+	</li>
+</ul>
+
+<p>The "Copy Rows to result" output ensures the data is carried over into the next step of the ETL.</p>
+
+<h3>Job: Get Web Funnel Data</h3>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-web-funnel-data-job.png" alt="Pentaho job for querying Google Analytics" title="Pentaho: job that manages Google Analytics query" width="411px" height="181px"/> 
+<p>Like the master job, this one has little direct logic. It represents the loop that should execute for each funnel step that is returned from your earlier lookup.</p>
+
+<h3>Transformation: Set Variables for GA Query</h3>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-variables-transformation.png" alt="Pentaho transformation for getting date and funnel information to set as global variables" title="Pentaho: transformation for getting dynamic date and funnel data to store as global variables" width="584px" height="61px"/> 
+<p>This transformation is responsible for setting up the variables that you will need to feed into the actual query to Google Analytics.</p>
+
+<h4>Get rows from result</h4>
+<p>For this input, you should specify each of the table columns from your lookup table that you'll eventually set as an environment variable:</p>
+
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-lookup-rows.png" alt="Pentaho dialog to get rows from previous result" title="Pentaho: 'Get rows from previous result' input dialog" width="304px" height="217px"/> 
+
+<h4>Get Start and End Dates</h4>
+<p>Because Google Analytics sometimes doesn't update their data for 24 hours, you want to be sure you're fetching data for the past few days so you can update days that might have incomplete data. The easiest way to do that is to use the start of last week for your beginning date and yesterday for your end date. This will mean you're always retrieving between 7-14 days of data.</p>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-dates.png" alt="Pentaho dialog for getting system data" title="Pentaho: 'Get System Dialog' input dialog" width="399px" height="209px"/> 
+
+<h4>Scrub Date Fields</h4>
+<p>Pentaho's date format differs from the format you have to use to query Google Analytics. You can use JavaScript to transform the data into the proper format.</p>
+<pre>var dateFormat = "yyyy-MM-dd";
+
+sYesterday = date2str(sYesterday, dateFormat);
+sStartLastWeek = date2str(sStartLastWeek, dateFormat);
+</pre>
+
+<p>Afterward, make sure you set up the fields to update with the new values in the table below the JavaScript text area:</p>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-scrub-dates.png" alt="Pentaho dialog for modifying values with JavaScript" title="Pentaho: 'Script Values / Mod' transformation dialog" width="609px" height="448px"/> 
+
+<h4>Set Global Variables</h4>
+<p>Now that you have all the variables you'll need for the query, make sure you set them with a scope of "Valid in the root job" so that other transformations and jobs have access to the them:</p>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-vars.png" alt="Pentaho dialog for setting environment variables" title="Pentaho: 'Set Environment Variables' output dialog" width="454px" height="261px"/> 
+
+<h3>Transformation: Query GA and Store Results</h3>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga-transformation.png" alt="Pentaho transformation for sending a query to Google Analytics and storing the results" title="Pentaho: transformation for sending the query to Google Analytics and storing the result" width="366px" height="67px"/> 
+<p>At this point, the ETL has all the data it needs. All that is left is to execute the query and store the results.</p>
+
+<h4>Get Visitors</h4>
+<p>Enter your user credentials, select the appropriate Google Analytics profile, then enter all of the static and variable information as part of your query definition:</p>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga.png" alt="Pentaho dialog for getting environment variables" title="Pentaho: 'Google Analytics' input dialog" width="632px" height="589px"/> 
+<p>Google Analytics will return several fields that you do not need. To remove them, select them in the "Output Fields" section, right-click on them, and choose "Delete selected lines" from the menu.</p>
+
+<h4>Get funnel_step_id</h4>
+<p>At this stage, the date and visitor count is part of your result set. You'll need to add the funnel_step_id to the result set so we can link this result to the correct funnel step in your lookup table:</p>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-funnel-step-id.png" alt="Pentaho dialog for getting environment variables" title="Pentaho: 'Get Variable' input dialog" width="417px" height="202px"/> 
+
+<h4>Insert / Update</h4>
+<p>Now that we have  the date, funnel step, and visitor count in our result set, we can insert the data into our data warehouse (or update existing rows):</p>
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-insert-update.png" alt="Pentaho dialog for inserting or updating to a database table" title="Pentaho: 'Insert / Update' output dialog" width="457px" height="507px"/> 
+
+<p>In the first table, make sure to specify both the date and the funnel_step_id as the keys to use to look up the values. If Pentaho finds an existing record for that date and funnel_step_id, it will simply update it with the new results rather than add a duplicate entry.</p>
+
+<h2>Next Steps</h2>
+<p>In one of my next articles, I will show how you can take the information you have just imported into your data warehouse and create funnel visualizations using <a href="http://www.qlikview.com">QlikView</a>. This will allow you to connect the dots between all of your funnels and allow you to visualize the end-to-end flow of your users.</p>
+                
+                <footer>
+                    <hr/>
+                    <h2>If you liked this article, you may want to:</h2>                    
+                    <ul>                    
+                        <li>Read other articles with similar tags:
+                            <ul>
+						    
+							<li><a href="/blog/tag/google analytics" title="Posts tagged 'google analytics' | Min-Maxing">google analytics</a></li>
+						    
+							<li><a href="/blog/tag/pentaho" title="Posts tagged 'pentaho' | Min-Maxing">pentaho</a></li>
+						    
+							<li><a href="/blog/tag/data warehouse" title="Posts tagged 'data warehouse' | Min-Maxing">data warehouse</a></li>
+						
+                            </ul>
+                        </li>
+                        <li><a href="http://feeds.feedburner.com/min-maxing"><img src="/assets/img/rss-16.png" alt="Subscribe to the Min-Maxing blog RSS feed." title="Subscribe to the Min-Maxing blog RSS feed."/></a> <a href="http://feeds.feedburner.com/min-maxing">Subscribe to the RSS feed</a></li>                        
+                    </ul>
+                </footer>
+			</article>
+
+            </div> <!-- /content -->  
+
+            <footer id="footer">
+                <!-- no footer content for now -->
+            </footer>   
+
+            <footer id="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div id="rights" class="grid-6">
+                            <p>&copy; 2012 by <a href="mailto:shaun@min-maxing.com">Shaun Yelle</a>.</p> 
+                        </div> <!-- /grid-6 -->
+                        
+                        <div id="totop" class="grid-6">
+                            <p>Built with <a href="/about">&lt;3</a>.</a></p>
+                        </div> <!-- /grid-6 -->
+                    </div> <!-- /row --> 
+                </div> <!-- /container -->  
+            </footer> <!-- /copyright -->
+
+        </div> <!-- /wrapper -->       
+        
+
+        <script src="/assets/js/main.min.js"></script>
+        
+    </body>
+</html>
+
