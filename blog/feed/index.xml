@@ -6,6 +6,67 @@
 		<link>http://min-maxing.com</link>
 		
 			<item>
+				<title>Easy Date Range Selection with Qlikview</title>
+				<description>&lt;p&gt;By default, Qlikview allows you to use a date picker or slider object to select dates you can use as ranges to apply to a database field. There are a few problems with this approach:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Slider objects don't allow you to easily select specific dates when you have lots of possible dates.&lt;/li&gt;
+&lt;li&gt;Calendar objects don't allow for easy range selection across multiple months.&lt;/li&gt;
+&lt;li&gt;Using list selection boxes can flood the screen with lists of months and years.&lt;/li&gt;
+&lt;li&gt;By default, these date ranges will not affect charts based on different date fields.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Fortunately, it's easy to set up Qlikview with a more standard &quot;select two dates&quot; widget that will affect all of your charts, regardless of what database date fields drive their display ranges.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/qlikview-calendar-objects.png&quot; alt=&quot;Qlikview calendar date pickers&quot; title=&quot;I want to go to there.&quot; width=&quot;245px&quot; height=&quot;47px&quot;/&gt;
+
+&lt;p&gt;The process consists of three steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Define variables to hold your start and end dates.&lt;/li&gt;
+&lt;li&gt;Create calendar widgets that set the values for these variables.&lt;/li&gt;
+&lt;li&gt;Make your charts filter their different database date fields based on the values of these variables.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;How do I set up variables in Qlikview?&lt;/h2&gt;
+&lt;p&gt;In the 'Settings' menu, there's an item labeled 'Variable Overview...' which will allow you to define variables.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/qlikview-menu-variable-overview.png&quot; alt=&quot;Qlikview menu option for variable overview dialog&quot; title=&quot;Access the Variable Overview via the Settings menu option.&quot; width=&quot;248px&quot; height=&quot;137px&quot;/&gt;
+
+&lt;p&gt;After clicking on the menu item, use the 'Add' button to define your variables. For this example, I'll use &lt;mark&gt;vStartDate&lt;/mark&gt; and &lt;mark&gt;vEndDate&lt;/mark&gt;.&lt;/p&gt;
+
+&lt;h2&gt;How do I make my date selectors use variables?&lt;/h2&gt;
+&lt;p&gt;On the 'General' tab of the 'Slider/Calendar Object', you'll see that the 'Data' option is set to 'Field' by default, this causing the object to affect the range of values for the chosen database field. Change this option to 'Variable(s)', then enter the name of one of the two date fields.&lt;/p&gt;
+
+&lt;p&gt;To limit the ranges a user can select, you can define a minimum and maximum value.&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png&quot; alt=&quot;Qlikview calendar object properties dialog&quot; title=&quot;Properties for the Calendar object in Qlikview&quot; width=&quot;358px&quot; height=&quot;352px&quot;/&gt;
+
+&lt;p&gt;The cleanest way to do this is base the minimum and maximum of your start date selector on the minimum and maximum values that your database table holds with the &lt;mark&gt;Min&lt;/mark&gt; and &lt;mark&gt;Max&lt;/mark&gt; functions:&lt;/p&gt;
+
+&lt;pre&gt;=Max(database_field_date)&lt;/pre&gt;
+
+&lt;p&gt;For the end date selector, base the minimum value on the current value for the start date variable:&lt;/p&gt;
+
+&lt;pre&gt;=$(vStartDate)&lt;/pre&gt;
+
+&lt;h2&gt;How do I make my date selectors affect multiple charts?&lt;/h2&gt;
+
+&lt;p&gt;For each chart, go to the 'Expressions' tab in the properties, then click on the 'Definition' field and enter an expression to filter based on the variables your date selectors are now affecting:&lt;/p&gt;
+
+&lt;pre&gt;=Sum( if( database_field_date &gt;= $(vStartDate) AND database_field_date &lt;= $(vEndDate), ga_visitors) )&lt;/pre&gt;
+
+&lt;p&gt;The above statement will only select records where the database_field_date is between the two dates picked with the calendar selectors. For only those records, it will sum up the values in the ga_visitors field.&lt;/p&gt;
+
+&lt;p&gt;Of course, you can use any other aggregate function you choose. You can, for example, count distinct instances of users based on date ranges as well:&lt;/p&gt;
+
+&lt;pre&gt;=Count( DISTINCT if( database_field2_date &gt;= $(vStartDate) AND database_field2_date &lt;= $(vEndDate), visitor_id) )&lt;/pre&gt;
+
+&lt;p&gt;So long as the result of this expression is a number, your charts will be able to use it to display the appropriate data.&lt;/p&gt;
+
+&lt;p&gt;Once you've updated your charts, you are done! Simply adjust the dates using your selectors and watch as the charts update in real-time.&lt;/p&gt;</description>
+				<published>2012-07-20 00:00:00 -0700</published>
+				<link>http://min-maxing.com/blog/2012/07/20/easy-date-range-selection-with-qlikview</link>
+			</item>
+		
+			<item>
 				<title>Importing Google Analytics Data into Your Data Warehouse with Pentaho</title>
 				<description>&lt;p&gt;Many companies that sell applications and games for desktop and mobile users build a data warehouse so they can create dashboards that show information about user patterns in these applications. By including web funnel data from your website into the data warehouse, you can go a step futher and get complete picture of your user acquisition and retention.&lt;/p&gt;
 

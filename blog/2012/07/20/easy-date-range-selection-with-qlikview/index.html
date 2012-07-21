@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+
+
+		<title>Easy Date Range Selection with Qlikview | Min-Maxing</title>
+		<meta name="description" content="Learn how to create easy-to-use date range selectors that modify multiple charts in Qlikview."/>
+
+		<meta itemprop="name" content="Easy Date Range Selection with Qlikview | Min-Maxing"/>
+		<meta itemprop="description" content="Learn how to create easy-to-use date range selectors that modify multiple charts in Qlikview."/>
+
+
+		<link rel="author" href="https://plus.google.com/108114208358329302855/posts"/>
+
+
+	
+		<link rel="canonical" href="http://min-maxing.com/blog/2012/07/20/easy-date-range-selection-with-qlikview"/>
+	
+
+
+
+        <link href="/assets/css/fonts.css" rel="stylesheet">
+
+        <link href="/assets/css/main.min.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	    <meta name="apple-mobile-web-app-capable" content="yes">  
+
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-32891765-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</head>
+
+
+	<body>
+		<div id="wrapper" class="clearfix">
+			<div id="header">
+
+                <div id="rss">
+                	<a href="http://feeds.feedburner.com/min-maxing">
+                		<img src="/assets/img/rss-32.png" alt="Subscribe to the Min-Maxing blog RSS feed." title="Subscribe to the Min-Maxing blog RSS feed."/>
+                	</a>
+                </div>			
+				<div class="container">					
+					<h1 id="title">
+						<a href="/">
+							Min Maxing
+						</a>
+					</h1>					
+				</div> <!-- /container -->				
+			</div> <!-- /header -->	
+
+			<div id="nav" class="clearfix">
+				<div class="container">		
+					<ul id="main-nav">
+	
+		
+		
+			
+		
+						<li class="active"><a href="/blog/">Blog</a></li>
+	
+		
+		
+						<li class=""><a href="/about/">About</a></li>
+					
+					</ul>				
+				</div> <!-- /container -->			
+			</div> <!-- /nav -->
+
+			<div id="content">
+			
+			<article>
+				<header>
+					<h1>Easy Date Range Selection with Qlikview</h1>
+					<hr/>
+					<ul>
+						<li><i class="icon-calendar"></i><time datetime="2012-07-20" pubdate="pubdate">July 20, 2012</time></li>
+						<li><i class="icon-tags"></i>
+						
+							
+								<a href="/blog/tag/qlikview" title="Posts tagged 'qlikview' | Min-Maxing">qlikview</a>,
+							
+						
+							
+								<a href="/blog/tag/data warehouse" title="Posts tagged 'data warehouse' | Min-Maxing">data warehouse</a>
+							
+						
+						</li>
+					</ul>
+				</header>
+
+				<p>By default, Qlikview allows you to use a date picker or slider object to select dates you can use as ranges to apply to a database field. There are a few problems with this approach:</p>
+<ul>
+<li>Slider objects don't allow you to easily select specific dates when you have lots of possible dates.</li>
+<li>Calendar objects don't allow for easy range selection across multiple months.</li>
+<li>Using list selection boxes can flood the screen with lists of months and years.</li>
+<li>By default, these date ranges will not affect charts based on different date fields.</li>
+</ul>
+<p>Fortunately, it's easy to set up Qlikview with a more standard "select two dates" widget that will affect all of your charts, regardless of what database date fields drive their display ranges.</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/qlikview-calendar-objects.png" alt="Qlikview calendar date pickers" title="I want to go to there." width="245px" height="47px"/>
+
+<p>The process consists of three steps:</p>
+<ul>
+<li>Define variables to hold your start and end dates.</li>
+<li>Create calendar widgets that set the values for these variables.</li>
+<li>Make your charts filter their different database date fields based on the values of these variables.</li>
+</ul>
+
+<h2>How do I set up variables in Qlikview?</h2>
+<p>In the 'Settings' menu, there's an item labeled 'Variable Overview...' which will allow you to define variables.</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/qlikview-menu-variable-overview.png" alt="Qlikview menu option for variable overview dialog" title="Access the Variable Overview via the Settings menu option." width="248px" height="137px"/>
+
+<p>After clicking on the menu item, use the 'Add' button to define your variables. For this example, I'll use <mark>vStartDate</mark> and <mark>vEndDate</mark>.</p>
+
+<h2>How do I make my date selectors use variables?</h2>
+<p>On the 'General' tab of the 'Slider/Calendar Object', you'll see that the 'Data' option is set to 'Field' by default, this causing the object to affect the range of values for the chosen database field. Change this option to 'Variable(s)', then enter the name of one of the two date fields.</p>
+
+<p>To limit the ranges a user can select, you can define a minimum and maximum value.</p>
+
+<img class="thumbnail" src="../../../../../assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png" alt="Qlikview calendar object properties dialog" title="Properties for the Calendar object in Qlikview" width="358px" height="352px"/>
+
+<p>The cleanest way to do this is base the minimum and maximum of your start date selector on the minimum and maximum values that your database table holds with the <mark>Min</mark> and <mark>Max</mark> functions:</p>
+
+<pre>=Max(database_field_date)</pre>
+
+<p>For the end date selector, base the minimum value on the current value for the start date variable:</p>
+
+<pre>=$(vStartDate)</pre>
+
+<h2>How do I make my date selectors affect multiple charts?</h2>
+
+<p>For each chart, go to the 'Expressions' tab in the properties, then click on the 'Definition' field and enter an expression to filter based on the variables your date selectors are now affecting:</p>
+
+<pre>=Sum( if( database_field_date >= $(vStartDate) AND database_field_date <= $(vEndDate), ga_visitors) )</pre>
+
+<p>The above statement will only select records where the database_field_date is between the two dates picked with the calendar selectors. For only those records, it will sum up the values in the ga_visitors field.</p>
+
+<p>Of course, you can use any other aggregate function you choose. You can, for example, count distinct instances of users based on date ranges as well:</p>
+
+<pre>=Count( DISTINCT if( database_field2_date >= $(vStartDate) AND database_field2_date <= $(vEndDate), visitor_id) )</pre>
+
+<p>So long as the result of this expression is a number, your charts will be able to use it to display the appropriate data.</p>
+
+<p>Once you've updated your charts, you are done! Simply adjust the dates using your selectors and watch as the charts update in real-time.</p>
+                
+                <footer>
+                    <hr/>
+                    <h2>If you liked this article, you may want to:</h2>                    
+                    <ul>                    
+                        <li>Read other articles with similar tags:
+                            <ul>
+						    
+							<li><a href="/blog/tag/qlikview" title="Posts tagged 'qlikview' | Min-Maxing">qlikview</a></li>
+						    
+							<li><a href="/blog/tag/data warehouse" title="Posts tagged 'data warehouse' | Min-Maxing">data warehouse</a></li>
+						
+                            </ul>
+                        </li>
+                        <li><a href="http://feeds.feedburner.com/min-maxing"><img src="/assets/img/rss-16.png" alt="Subscribe to the Min-Maxing blog RSS feed." title="Subscribe to the Min-Maxing blog RSS feed."/></a> <a href="http://feeds.feedburner.com/min-maxing">Subscribe to the RSS feed</a></li>                        
+                    </ul>
+                </footer>
+			</article>
+
+            </div> <!-- /content -->  
+
+            <footer id="footer">
+                <!-- no footer content for now -->
+            </footer>   
+
+            <footer id="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div id="rights" class="grid-6">
+                            <p>&copy; 2012 by <a href="mailto:shaun@min-maxing.com">Shaun Yelle</a>.</p> 
+                        </div> <!-- /grid-6 -->
+                        
+                        <div id="totop" class="grid-6">
+                            <p>Built with <a href="/about">&lt;3</a>.</a></p>
+                        </div> <!-- /grid-6 -->
+                    </div> <!-- /row --> 
+                </div> <!-- /container -->  
+            </footer> <!-- /copyright -->
+
+        </div> <!-- /wrapper -->       
+        
+
+        <script src="/assets/js/main.min.js"></script>
+        
+    </body>
+</html>
+
