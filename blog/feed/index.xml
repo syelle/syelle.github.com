@@ -16,7 +16,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Fortunately, it's easy to set up Qlikview with a more standard &quot;select two dates&quot; widget that will affect all of your charts, regardless of what database date fields drive their display ranges.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/qlikview-calendar-objects.png&quot; alt=&quot;Qlikview calendar date pickers&quot; title=&quot;I want to go to there.&quot; width=&quot;245px&quot; height=&quot;47px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-objects.png&quot; alt=&quot;Qlikview calendar date pickers&quot; title=&quot;I want to go to there.&quot; width=&quot;245px&quot; height=&quot;47px&quot;/&gt;
 
 &lt;p&gt;The process consists of three steps:&lt;/p&gt;
 &lt;ul&gt;
@@ -28,7 +28,7 @@
 &lt;h2&gt;How do I set up variables in Qlikview?&lt;/h2&gt;
 &lt;p&gt;In the 'Settings' menu, there's an item labeled 'Variable Overview...' which will allow you to define variables.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/qlikview-menu-variable-overview.png&quot; alt=&quot;Qlikview menu option for variable overview dialog&quot; title=&quot;Access the Variable Overview via the Settings menu option.&quot; width=&quot;248px&quot; height=&quot;137px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/qlikview-menu-variable-overview.png&quot; alt=&quot;Qlikview menu option for variable overview dialog&quot; title=&quot;Access the Variable Overview via the Settings menu option.&quot; width=&quot;248px&quot; height=&quot;137px&quot;/&gt;
 
 &lt;p&gt;After clicking on the menu item, use the 'Add' button to define your variables. For this example, I'll use &lt;mark&gt;vStartDate&lt;/mark&gt; and &lt;mark&gt;vEndDate&lt;/mark&gt;.&lt;/p&gt;
 
@@ -37,7 +37,7 @@
 
 &lt;p&gt;To limit the ranges a user can select, you can define a minimum and maximum value.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;../../../../../assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png&quot; alt=&quot;Qlikview calendar object properties dialog&quot; title=&quot;Properties for the Calendar object in Qlikview&quot; width=&quot;358px&quot; height=&quot;352px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png&quot; alt=&quot;Qlikview calendar object properties dialog&quot; title=&quot;Properties for the Calendar object in Qlikview&quot; width=&quot;358px&quot; height=&quot;352px&quot;/&gt;
 
 &lt;p&gt;The cleanest way to do this is base the minimum and maximum of your start date selector on the minimum and maximum values that your database table holds with the &lt;mark&gt;Min&lt;/mark&gt; and &lt;mark&gt;Max&lt;/mark&gt; functions:&lt;/p&gt;
 
