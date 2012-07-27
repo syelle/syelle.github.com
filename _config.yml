@@ -19,3 +19,6 @@ navigation:
 - text: About
   url: /about/
   layout: about
+- text: Email Me
+  url: mailto:shaun@min-maxing.com
+  layout: external-link
