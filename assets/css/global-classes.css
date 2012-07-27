@@ -2,7 +2,7 @@
   float: right;
   padding-top: 6px; }
 
-#nav li:before {
+#nav li:before, .pager li:before {
   content: ""; }
 
 .btn-primary {
@@ -19,3 +19,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); }
   .btn-primary:hover, .btn-primary:active, .btn-primary .active, .btn-primary .disabled, .btn-primary[disabled] {
     background-color: #F89406; }
+
+#disqus_thread {
+  padding-top: 10px; }

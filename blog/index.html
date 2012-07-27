@@ -80,6 +80,10 @@
 		
 		
 						<li class=""><a href="/about/">About</a></li>
+	
+		
+		
+						<li class=""><a href="mailto:shaun@min-maxing.com">Email Me</a></li>
 					
 					</ul>				
 				</div> <!-- /container -->			
@@ -110,7 +114,63 @@
 					</ul>
 				</header>
 
-				<p><a href="http://www.qlikview.com/">Qlikview</a> is a great tool for building dashboards for your data warehouse. However, by default, you have to create a date selector for every date field your charts use on your dashboard. By using variables, however, you can get around this limitation.</p>
+				
+					<p><p>By default, Qlikview allows you to use a date picker or slider object to select dates you can use as ranges to apply to a database field. There are a few problems with this approach:</p>
+<ul>
+<li>Slider objects don't allow you to easily select specific dates when you have lots of possible dates.</li>
+<li>Calendar objects don't allow for easy range selection across multiple months.</li>
+<li>Using list selection boxes can flood the screen with lists of months and years.</li>
+<li>By default, these date ranges will not affect charts based on different date fields.</li>
+</ul>
+<p>Fortunately, it's easy to set up Qlikview with a more standard "select two dates" widget that will affect all of your charts, regardless of what database date fields drive their display ranges.</p>
+
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-objects.png" alt="Qlikview calendar date pickers" title="I want to go to there." width="245px" height="47px"/>
+
+<p>The process consists of three steps:</p>
+<ul>
+<li>Define variables to hold your start and end dates.</li>
+<li>Create calendar widgets that set the values for these variables.</li>
+<li>Make your charts filter their different database date fields based on the values of these variables.</li>
+</ul>
+
+<h2>How do I set up variables in Qlikview?</h2>
+<p>In the 'Settings' menu, there's an item labeled 'Variable Overview...' which will allow you to define variables.</p>
+
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/qlikview-menu-variable-overview.png" alt="Qlikview menu option for variable overview dialog" title="Access the Variable Overview via the Settings menu option." width="248px" height="137px"/>
+
+<p>After clicking on the menu item, use the 'Add' button to define your variables. For this example, I'll use <mark>vStartDate</mark> and <mark>vEndDate</mark>.</p>
+
+<h2>How do I make my date selectors use variables?</h2>
+<p>On the 'General' tab of the 'Slider/Calendar Object', you'll see that the 'Data' option is set to 'Field' by default, this causing the object to affect the range of values for the chosen database field. Change this option to 'Variable(s)', then enter the name of one of the two date fields.</p>
+
+<p>To limit the ranges a user can select, you can define a minimum and maximum value.</p>
+
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png" alt="Qlikview calendar object properties dialog" title="Properties for the Calendar object in Qlikview" width="358px" height="352px"/>
+
+<p>The cleanest way to do this is base the minimum and maximum of your start date selector on the minimum and maximum values that your database table holds with the <mark>Min</mark> and <mark>Max</mark> functions:</p>
+
+<pre>=Max(database_field_date)</pre>
+
+<p>For the end date selector, base the minimum value on the current value for the start date variable:</p>
+
+<pre>=$(vStartDate)</pre>
+
+<h2>How do I make my date selectors affect multiple charts?</h2>
+
+<p>For each chart, go to the 'Expressions' tab in the properties, then click on the 'Definition' field and enter an expression to filter based on the variables your date selectors are now affecting:</p>
+
+<pre>=Sum( if( database_field_date >= $(vStartDate) AND database_field_date <= $(vEndDate), ga_visitors) )</pre>
+
+<p>The above statement will only select records where the database_field_date is between the two dates picked with the calendar selectors. For only those records, it will sum up the values in the ga_visitors field.</p>
+
+<p>Of course, you can use any other aggregate function you choose. You can, for example, count distinct instances of users based on date ranges as well:</p>
+
+<pre>=Count( DISTINCT if( database_field2_date >= $(vStartDate) AND database_field2_date <= $(vEndDate), visitor_id) )</pre>
+
+<p>So long as the result of this expression is a number, your charts will be able to use it to display the appropriate data.</p>
+
+<p>Once you've updated your charts, you are done! Simply adjust the dates using your selectors and watch as the charts update in real-time.</p></p>
+				
 
 				<a class="btn btn-primary" href="/blog/2012/07/20/easy-date-range-selection-with-qlikview" rel="bookmark" title="Easy Date Range Selection with Qlikview | Min-Maxing">Read More <i class="icon-chevron-right icon-white"></i></a>
 			</article>
@@ -143,7 +203,9 @@
 					</ul>
 				</header>
 
-				<p>Many companies have a data warehouse that contains information gathered from sources such as game server logs and support ticketing software. By using an ETL tool such as <a href="http://www.pentaho.com/">Pentaho</a>, it's easy to import your Google Analytics data so you can integrate it with the rest of your data warehouse.</p>
+				
+					<p>Many companies have a data warehouse that contains information gathered from sources such as game server logs and support ticketing software. By using an ETL tool such as <a href="http://www.pentaho.com/">Pentaho</a>, it's easy to import your Google Analytics data so you can integrate it with the rest of your data warehouse.</p>
+				
 
 				<a class="btn btn-primary" href="/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho" rel="bookmark" title="Importing Google Analytics Data into Your Data Warehouse with Pentaho | Min-Maxing">Read More <i class="icon-chevron-right icon-white"></i></a>
 			</article>
@@ -184,7 +246,9 @@
 					</ul>
 				</header>
 
-				<p>Google Analytics recently added the ability to see how different marketing channels are contributing to conversions. This report is a great tool for quantifying the value of your traffic sources. If you customize it based on your marketing efforts, it becomes an even more powerful tool.</p>
+				
+					<p>Google Analytics recently added the ability to see how different marketing channels are contributing to conversions. This report is a great tool for quantifying the value of your traffic sources. If you customize it based on your marketing efforts, it becomes an even more powerful tool.</p>
+				
 
 				<a class="btn btn-primary" href="/blog/2012/07/08/multi-channel-funnels-in-google-analytics" rel="bookmark" title="Multi-Channel Funnels in Google Analytics | Min-Maxing">Read More <i class="icon-chevron-right icon-white"></i></a>
 			</article>
@@ -213,7 +277,9 @@
 					</ul>
 				</header>
 
-				<p>Wondering what data is important in your web analytics reports? Don't worry&#58; it's easy to move beyond top-level stats and discover data that will have a real impact on your web efforts.</p>
+				
+					<p>Wondering what data is important in your web analytics reports? Don't worry&#58; it's easy to move beyond top-level stats and discover data that will have a real impact on your web efforts.</p>
+				
 
 				<a class="btn btn-primary" href="/blog/2012/07/04/using-analytics-to-find-actionable-data" rel="bookmark" title="Using Analytics to Find Actionable Data | Min-Maxing">Read More <i class="icon-chevron-right icon-white"></i></a>
 			</article>
@@ -221,35 +287,33 @@
 			<hr class="row-divider">
 
 			
-			<article>
-				<header>
-					<h2>
-						<a href="/blog/2012/06/24/losing-weight-for-geeks" rel="bookmark" title="Turning Weight Loss into a Game | Min-Maxing">Turning Weight Loss into a Game</a>
-					</h2>
-					<ul>
-						<li><i class="icon-calendar"></i><time datetime="2012-06-24" pubdate="pubdate">June 24, 2012</time></li>
-						<li><i class="icon-tags"></i>
-						
-							
-								<a href="/blog/tag/health" title="Posts tagged 'health' | Min-Maxing">health</a>
-							
-						
-						</li>
-					</ul>
-				</header>
 
-				<p>After gaining 90 lbs. in my college years, I tried a number of approaches to losing weight. The method that eventually worked was to feed into my fondness for min-maxing stats in video games and make that part of my weight loss plan.</p>
-
-				<a class="btn btn-primary" href="/blog/2012/06/24/losing-weight-for-geeks" rel="bookmark" title="Turning Weight Loss into a Game | Min-Maxing">Read More <i class="icon-chevron-right icon-white"></i></a>
-			</article>
-
-			<hr class="row-divider">
-
+			<ul class="pager">
 			
+				<li class="previous disabled"><a href="/blog/">&larr; Newer</a></li>
+			
+		  
+			
+		 		<li class="next"><a href="/blog/page-2">Older &rarr;</a></li>
+		  	
+		  	</ul>
 					</div>
 
 					<div class="grid-4">
 											<div class="sidebar">
+						<h3><span class="slash">//</span> Recent Posts</h3>
+						<ul>
+							
+								<li><a href="/blog/2012/07/20/easy-date-range-selection-with-qlikview" rel="bookmark" title="Easy Date Range Selection with Qlikview | Min-Maxing">Easy Date Range Selection with Qlikview</a></li>
+							
+								<li><a href="/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho" rel="bookmark" title="Importing Google Analytics Data into Your Data Warehouse with Pentaho | Min-Maxing">Importing Google Analytics Data into Your Data Warehouse with Pentaho</a></li>
+							
+								<li><a href="/blog/2012/07/08/multi-channel-funnels-in-google-analytics" rel="bookmark" title="Multi-Channel Funnels in Google Analytics | Min-Maxing">Multi-Channel Funnels in Google Analytics</a></li>
+							
+								<li><a href="/blog/2012/07/04/using-analytics-to-find-actionable-data" rel="bookmark" title="Using Analytics to Find Actionable Data | Min-Maxing">Using Analytics to Find Actionable Data</a></li>
+							
+						</ul>
+
 						<h3><span class="slash">//</span> About Me</h3>
 						<p>I'm passionate about:</p>
 						<ul>
@@ -260,7 +324,6 @@
                             <li><strong>min-maxing</strong> everything</li>
 						</ul>
 						<p>I follow these pursuits in both my career and personal life. This site is the result.</p>
-
 					</div>
 
 					</div>
