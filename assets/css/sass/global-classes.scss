@@ -3,7 +3,7 @@
     padding-top: 6px;    
 }
 
-#nav li {
+#nav li, .pager li {
     &:before {
         content: "";
     }

@@ -2,7 +2,7 @@
   float: right;
   padding-top: 6px; }
 
-#nav li:before {
+#nav li:before, .pager li:before {
   content: ""; }
 
 .btn-primary {
