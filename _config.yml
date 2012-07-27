@@ -12,6 +12,9 @@ description: Experiments in optimizing web pages, business processes, and life i
 url: http://min-maxing.com
 tag_dir: /blog/tag/
 
+paginate_path: "/page-:num"
+paginate: 4
+
 navigation:
 - text: Blog
   url: /blog/
