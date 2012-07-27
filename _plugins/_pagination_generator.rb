@@ -35,8 +35,6 @@ module Jekyll
       (1..pages).each do |num_page|
         pager = Pager.new(site.config, num_page, all_posts, pages)
         if num_page > 1
-          puts page.dir
-          puts page.name
           newpage = Page.new(site, File.join(site.source, "blog"), page.dir, page.name)
           newpage.pager = pager
           newpage.dir = File.join(page.dir, "blog/page-#{num_page}")
