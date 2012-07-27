@@ -4,7 +4,8 @@ a[rel=popover], a[data-toggle=modal] {
   text-decoration: none; }
 
 ul {
-  margin-left: 16px; }
+  margin-left: 16px;
+  margin-bottom: 16px; }
   ul li {
     list-style: none; }
     ul li:before {

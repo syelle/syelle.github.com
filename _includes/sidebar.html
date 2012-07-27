@@ -1,4 +1,11 @@
 					<div class="sidebar">
+						<h3><span class="slash">//</span> Recent Posts</h3>
+						<ul>
+							{% for post in site.posts limit:4 %}
+								<li><a href="{{ post.url }}" rel="bookmark" title="{{ post.title }} | {{ site.name }}">{{ post.title }}</a></li>
+							{% endfor %}
+						</ul>
+
 						<h3><span class="slash">//</span> About Me</h3>
 						<p>I'm passionate about:</p>
 						<ul>
@@ -9,5 +16,4 @@
                             <li><strong>min-maxing</strong> everything</li>
 						</ul>
 						<p>I follow these pursuits in both my career and personal life. This site is the result.</p>
-
 					</div>
