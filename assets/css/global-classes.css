@@ -22,3 +22,10 @@
 
 #disqus_thread {
   padding-top: 10px; }
+
+.comment-sidebar h2 {
+  font-size: 1.5em; }
+
+.post {
+  border-bottom: 1px solid #EEE;
+  margin-bottom: 10px; }

@@ -91,7 +91,7 @@
 
 			<div id="content">
 			
-			<article>
+			<article class="post">
 				<header>
 					<h1>Importing Google Analytics Data into Your Data Warehouse with Pentaho</h1>
 					<hr/>
@@ -226,23 +226,29 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 <h2>Next Steps</h2>
 <p>In one of my next articles, I will show how you can take the information you have just imported into your data warehouse and create funnel visualizations using <a href="http://www.qlikview.com">QlikView</a>. This will allow you to connect the dots between all of your funnels and allow you to visualize the end-to-end flow of your users.</p>
 
-				<hr/>
+			</article>
 
-				<div id="disqus_thread"></div>
-				<script type="text/javascript">
-					var disqus_shortname = 'minmaxing';
+			<div class="row">
+				<div class="grid-8">
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+						function disqus_config() {
+						    this.callbacks.onNewComment = [function() { _gaq.push(['_trackEvent', 'Blog', 'New Comment', 'Importing Google Analytics Data into Your Data Warehouse with Pentaho']); }];
+						}
 
-		            (function() {
-		                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		            })();
-		        </script>
-		        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>				
-                
-                <footer>
-                    <hr/>
+						var disqus_shortname = 'minmaxing';
+
+			            (function() {
+			                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			            })();
+			        </script>
+			        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</div>
+
+				<div class="grid-4 comment-sidebar">
                     <h2>If you liked this article, you may want to:</h2>                    
                     <ul>                    
                         <li>Read other articles with similar tags:
@@ -258,8 +264,8 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
                         </li>
                         <li><a href="http://feeds.feedburner.com/min-maxing"><img src="/assets/img/rss-16.png" alt="Subscribe to the Min-Maxing blog RSS feed." title="Subscribe to the Min-Maxing blog RSS feed."/></a> <a href="http://feeds.feedburner.com/min-maxing">Subscribe to the RSS feed</a></li>                        
                     </ul>
-                </footer>
-			</article>
+				</div>
+			</div>
 
             </div> <!-- /content -->  
 
