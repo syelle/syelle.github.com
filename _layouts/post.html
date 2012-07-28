@@ -27,6 +27,10 @@ category: blog
 
 				<div id="disqus_thread"></div>
 				<script type="text/javascript">
+					function disqus_config() {
+					    this.callbacks.onNewComment = [function() { _gaq.push(['_trackEvent', 'Blog', 'New Comment', '{{page.title}}']); }];
+					}
+
 					var disqus_shortname = 'minmaxing';
 
 		            (function() {
