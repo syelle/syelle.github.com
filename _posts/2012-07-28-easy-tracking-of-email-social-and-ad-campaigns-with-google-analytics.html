@@ -1,0 +1,79 @@
+---
+layout: post
+title: Tracking the Results of Your Email, Social, and Ad Marketing Efforts
+teaser: Do you want to move beyond 'clicks' and see how much money each of your marketing efforts made? Do you want to know what content is engaging users from each of your campaigns? By tagging your links in each of your campaigns, it becomes easy to answer these and other questions about your marketing efforts.
+tags:
+- google analytics
+- introduction
+- marketing
+---
+<p>Most social media and ad networks provide you with data regarding how your users initially engage with your marketing efforts. If you use an external vendor to send your marketing email, they will even go as far as telling you how many people open your messages and click on something inside of them. This information, while useful, only scratches the surface of the full impact your marketing efforts are having.</p>
+
+<h2>How can I determine which marketing efforts are driving traffic to my site?</h2>
+
+<p>The key to tracking this traffic is to tag links to your site with additional information at the end of each link. The format of this information will vary depending on what program you use to review the data. This tutorial will cover the format you will need to use if Google Analytics is your tool of choice.</p>
+
+<h2>What information can I tag my links with?</h2>
+<p></p>
+
+<dl class="dl-horizontal">
+<dt>Medium</dt>
+<dd>The format your marketing effort is taking.</dd>
+<dt>Source</dt>
+<dd>The company or site that is displaying your marketing to the user.</dd>
+<dt>Campaign</dt>
+<dd>The name of your marketing initiative.</dd>
+<dt>Content</dt>
+<dd>Optional. This helps differentiate multiple links to the same content on your site in your marketing efforts. For example, if you link to your homepage from a header logo and a footer link, you can use the content parameter to differentiate traffic that came in from those links. Another good use-case is differentiating clicks to a product through a product image, the product name, and a 'buy now' button.</dd>
+<dt>Term</dt>
+<dd>Optional. For marketing efforts where you are paying for specific keywords or terms, this will designate the specific term used for the link.</dd>
+</dl>
+
+<p>If you're having trouble building the links at first, you can use the <a href="http://support.google.com/googleanalytics/bin/answer.py?hl=en&answer=55578" title="URL Builder - Google Analytics">Google Analytics URL Builder</a> to get you started.</p>
+
+<h2>What are some examples of how I should tag my marketing efforts?</h2>
+<p>In the below examples, the pieces that change depending on the marketing effort are highlighted.</p>
+
+<h3>Email</h3>
+<p>Make sure to use the <code>content</code> parameter to differentiate which links are embedded in buttons, images, or text links. Knowing what draws the attention of your users and what drives the most site engagement can not only help improve your email marketing efforts, but your other efforts as well.</p>
+<pre><mark>http://widgets.com/</mark>?utm_source=<mark>my-widget-company</mark>&amp;utm_medium=<mark>email</mark>&amp;utm_content=<mark>product-image</mark>&amp;utm_campaign=<mark>widget-sale</mark></pre>
+
+<h3>Social Media</h3>
+<p>I recommend using the <code>content</code> parameter to help you uniquely identify which post on the social network had your link. This can help you connect the number of impressions, likes, shares, and other stats from that site with the number of pageviews and conversions on your site.</p>
+
+<pre><mark>http://widgets.com/</mark>?utm_source=<mark>facebook</mark>&amp;utm_medium=<mark>social-network</mark>&amp;utm_content=<mark>2012-07-28-promo-with-image</mark>&amp;utm_campaign=<mark>widget-sale</mark></pre>
+
+
+<h3>Banner Ads</h3>
+<p>The <code>content</code> parameter will help differentiate which ad units are getting clicked. You can use it to differentiate between medium rectangle (medrect), leaderboard, skyscraper, takeover, and other ad units.</p>
+
+<pre><mark>http://widgets.com/</mark>?utm_source=<mark>awesome-ad-network</mark>&amp;utm_medium=<mark>banner</mark>&amp;utm_content=<mark>leaderboard</mark>&amp;utm_campaign=<mark>widget-sale</mark></pre>
+
+<h3>Paid Search</h3>
+<p>The <code>content</code> parameter is most useful for indicating whether the cost method of paid search is cost-per-click (CPC), cost-per-acquisition (CPA) or something else.</p>
+
+<p>It's vital that the company you are buying paid search from be able to supply the specific <code>term</code> as part of the link to your site. Knowing which keywords resulted in clicks is great, but knowing how much you made from those sales will give you the most accurate picture of whether your paid search campaigns are effective.</p>
+
+<pre><mark>http://widgets.com/</mark>?utm_source=<mark>google</mark>&amp;utm_medium=<mark>cpc</mark>&amp;utm_campaign=<mark>brand-terms</mark>&amp;utm_term=<mark>awesome-widget-5000</mark></pre>
+
+<h3>RSS Feeds</h3>
+<pre><mark>http://widgets.com/</mark>?utm_source=<mark>my-widget-company</mark>&amp;utm_medium=<mark>rss</mark>&amp;utm_campaign=<mark>my-blog-post</mark></pre>
+
+<h3>...and more!</h3>
+<p>There are many other places that you might link from if you stop to think about it. If you'll be linking to your site from a mobile application or game client, make sure you tag your link with a <code>medium</code> parameter so you can see how those links perform.</p>
+
+<h2>What do I do after I've tagged all of my campaigns?</h2>
+<p>After you've collected some data, you can go to the "Campaigns" report found in the side menu under "Traffic Sources &gt; Sources". This report will allow you to filter based on your various mediums and can quickly show you which of your campaigns are generating users who stick around a while, perform favorable actions, and how much money they spent. Pretty neat!</p>
+
+<h2>A Word on URL Formats</h2>
+<p>The values you use for parameters are case-sensitive and character-sensitive. For example, the following items will show up as different mediums in Google Analytics reports:</p>
+<ul>
+<li><code>social-network</code></li>
+<li><code>Social-Network</code></li>
+<li><code>social_network</code></li>
+<li><code>social network</code></li>
+</ul>
+<p>It doesn't matter which format you use. However, make sure everyone who is involved in tagging links uses the same format or you'll end up with messy reports that take you longer to use.</p>
+<p>In addition, make sure everyone uses the same names for your campaigns as well. Otherwise, you might end up with a report like this:</p>
+
+<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/campaigns-with-bad-names.png" alt="Google Analytics campaign list with duplicate entries due to inconsistent campaign tags being used" title="Repetitive redundancy is negatively bad." width="124px" height="167px"/>
