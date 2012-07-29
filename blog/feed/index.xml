@@ -6,6 +6,83 @@
 		<link>http://min-maxing.com</link>
 		
 			<item>
+				<title>Tracking the Results of Your Email, Social, and Ad Marketing Efforts</title>
+				<description>&lt;p&gt;Most social media and ad networks provide you with data regarding how your users initially engage with your marketing efforts. If you use an external vendor to send your marketing email, they will even go as far as telling you how many people open your messages and click on something inside of them. This information, while useful, only scratches the surface of the full impact your marketing efforts are having.&lt;/p&gt;
+
+&lt;h2&gt;How can I determine which marketing efforts are driving traffic to my site?&lt;/h2&gt;
+
+&lt;p&gt;The key to tracking this traffic is to tag links to your site with additional information at the end of each link. The format of this information will vary depending on what program you use to review the data. This tutorial will cover the format you will need to use if Google Analytics is your tool of choice.&lt;/p&gt;
+
+&lt;h2&gt;What information can I tag my links with?&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;dl class=&quot;dl-horizontal&quot;&gt;
+&lt;dt&gt;Medium&lt;/dt&gt;
+&lt;dd&gt;The format your marketing effort is taking.&lt;/dd&gt;
+&lt;dt&gt;Source&lt;/dt&gt;
+&lt;dd&gt;The company or site that is displaying your marketing to the user.&lt;/dd&gt;
+&lt;dt&gt;Campaign&lt;/dt&gt;
+&lt;dd&gt;The name of your marketing initiative.&lt;/dd&gt;
+&lt;dt&gt;Content&lt;/dt&gt;
+&lt;dd&gt;Optional. This helps differentiate multiple links to the same content on your site in your marketing efforts. For example, if you link to your homepage from a header logo and a footer link, you can use the content parameter to differentiate traffic that came in from those links. Another good use-case is differentiating clicks to a product through a product image, the product name, and a 'buy now' button.&lt;/dd&gt;
+&lt;dt&gt;Term&lt;/dt&gt;
+&lt;dd&gt;Optional. For marketing efforts where you are paying for specific keywords or terms, this will designate the specific term used for the link.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;If you're having trouble building the links at first, you can use the &lt;a href=&quot;http://support.google.com/googleanalytics/bin/answer.py?hl=en&amp;answer=55578&quot; title=&quot;URL Builder - Google Analytics&quot;&gt;Google Analytics URL Builder&lt;/a&gt; to get you started.&lt;/p&gt;
+
+&lt;h2&gt;What are some examples of how I should tag my marketing efforts?&lt;/h2&gt;
+&lt;p&gt;In the below examples, the pieces that change depending on the marketing effort are highlighted.&lt;/p&gt;
+
+&lt;h3&gt;Email&lt;/h3&gt;
+&lt;p&gt;Make sure to use the &lt;code&gt;content&lt;/code&gt; parameter to differentiate which links are embedded in buttons, images, or text links. Knowing what draws the attention of your users and what drives the most site engagement can not only help improve your email marketing efforts, but your other efforts as well.&lt;/p&gt;
+&lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;my-widget-company&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;email&lt;/mark&gt;&amp;amp;utm_content=&lt;mark&gt;product-image&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;widget-sale&lt;/mark&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Social Media&lt;/h3&gt;
+&lt;p&gt;I recommend using the &lt;code&gt;content&lt;/code&gt; parameter to help you uniquely identify which post on the social network had your link. This can help you connect the number of impressions, likes, shares, and other stats from that site with the number of pageviews and conversions on your site.&lt;/p&gt;
+
+&lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;facebook&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;social-network&lt;/mark&gt;&amp;amp;utm_content=&lt;mark&gt;2012-07-28-promo-with-image&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;widget-sale&lt;/mark&gt;&lt;/pre&gt;
+
+
+&lt;h3&gt;Banner Ads&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;content&lt;/code&gt; parameter will help differentiate which ad units are getting clicked. You can use it to differentiate between medium rectangle (medrect), leaderboard, skyscraper, takeover, and other ad units.&lt;/p&gt;
+
+&lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;awesome-ad-network&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;banner&lt;/mark&gt;&amp;amp;utm_content=&lt;mark&gt;leaderboard&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;widget-sale&lt;/mark&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Paid Search&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;content&lt;/code&gt; parameter is most useful for indicating whether the cost method of paid search is cost-per-click (CPC), cost-per-acquisition (CPA) or something else.&lt;/p&gt;
+
+&lt;p&gt;It's vital that the company you are buying paid search from be able to supply the specific &lt;code&gt;term&lt;/code&gt; as part of the link to your site. Knowing which keywords resulted in clicks is great, but knowing how much you made from those sales will give you the most accurate picture of whether your paid search campaigns are effective.&lt;/p&gt;
+
+&lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;google&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;cpc&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;brand-terms&lt;/mark&gt;&amp;amp;utm_term=&lt;mark&gt;awesome-widget-5000&lt;/mark&gt;&lt;/pre&gt;
+
+&lt;h3&gt;RSS Feeds&lt;/h3&gt;
+&lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;my-widget-company&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;rss&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;my-blog-post&lt;/mark&gt;&lt;/pre&gt;
+
+&lt;h3&gt;...and more!&lt;/h3&gt;
+&lt;p&gt;There are many other places that you might link from if you stop to think about it. If you'll be linking to your site from a mobile application or game client, make sure you tag your link with a &lt;code&gt;medium&lt;/code&gt; parameter so you can see how those links perform.&lt;/p&gt;
+
+&lt;h2&gt;What do I do after I've tagged all of my campaigns?&lt;/h2&gt;
+&lt;p&gt;After you've collected some data, you can go to the &quot;Campaigns&quot; report found in the side menu under &quot;Traffic Sources &amp;gt; Sources&quot;. This report will allow you to filter based on your various mediums and can quickly show you which of your campaigns are generating users who stick around a while, perform favorable actions, and how much money they spent. Pretty neat!&lt;/p&gt;
+
+&lt;h2&gt;A Word on URL Formats&lt;/h2&gt;
+&lt;p&gt;The values you use for parameters are case-sensitive and character-sensitive. For example, the following items will show up as different mediums in Google Analytics reports:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;social-network&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Social-Network&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;social_network&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;social network&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It doesn't matter which format you use. However, make sure everyone who is involved in tagging links uses the same format or you'll end up with messy reports that take you longer to use.&lt;/p&gt;
+&lt;p&gt;In addition, make sure everyone uses the same names for your campaigns as well. Otherwise, you might end up with a report like this:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/campaigns-with-bad-names.png&quot; alt=&quot;Google Analytics campaign list with duplicate entries due to inconsistent campaign tags being used&quot; title=&quot;Repetitive redundancy is negatively bad.&quot; width=&quot;124px&quot; height=&quot;167px&quot;/&gt;
+</description>
+				<published>2012-07-28 00:00:00 -0700</published>
+				<link>http://min-maxing.com/blog/2012/07/28/easy-tracking-of-email-social-and-ad-campaigns-with-google-analytics</link>
+			</item>
+		
+			<item>
 				<title>Easy Date Range Selection with Qlikview</title>
 				<description>&lt;p&gt;By default, Qlikview allows you to use a date picker or slider object to select dates you can use as ranges to apply to a database field. There are a few problems with this approach:&lt;/p&gt;
 &lt;ul&gt;
