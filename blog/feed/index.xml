@@ -7,13 +7,13 @@
 		
 			<item>
 				<title>How Limited Run Discovered Worthless Clicks Using Analytics</title>
-				<description>&lt;p&gt;A company called Limited Run made &lt;a href=&quot;https://www.facebook.com/limitedpressing/posts/209534972507958&quot;&gt;a post on Facebook&lt;/a&gt; about how they discovered that roughly 80% of clicks they received on their Facebook ads turned out to have the signature of a bot. They noticed that their site analytics reported a much lower user count from their Facebook Ads than Facebook was reporting. After digging into the weird traffic by adding some custom tracking, they discovered:&lt;/p&gt;
+				<description>&lt;p&gt;A company called Limited Run made &lt;a href=&quot;https://www.facebook.com/limitedpressing/posts/209534972507958&quot;&gt;a post on Facebook&lt;/a&gt; about how they discovered that roughly 80% of clicks they received on their Facebook ads turned out to have the signature of a bot. They noticed that their site analytics reported a much lower user count from their Facebook ads than Facebook was reporting. After digging into the weird traffic by adding some custom tracking, they discovered:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;The visits from those clicks did not load client-side JavaScript (hence why the site analytics didn't track the visit)&lt;/li&gt;
 	&lt;li&gt;The visits were showing up as coming from non-standard browsers&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This is an excellent example of the power of &lt;a href=&quot;http://min-maxing.com/blog/2012/07/28/tracking-the-results-of-your-email-social-and-ad-marketing-efforts/&quot;&gt;tagging the links you use in your marketing campaigns&lt;/a&gt;. Since Limited Run tagged the links that their Facebook Ads used, they knew exactly which visits came from their Facebook Ad campaign. That led to them seeing that the numbers were much lower than Facebook reported.&lt;/p&gt;
+&lt;p&gt;This is an excellent example of the power of &lt;a href=&quot;http://min-maxing.com/blog/2012/07/28/tracking-the-results-of-your-email-social-and-ad-marketing-efforts/&quot;&gt;tagging the links you use in your marketing campaigns&lt;/a&gt;. Since Limited Run tagged the links that their Facebook ads used, they knew exactly which visits came from their Facebook Ad campaign. That led to seeing that the numbers were much lower than Facebook reported and ultimately that most of the clicks were worthless.&lt;/p&gt;
 
 &lt;p&gt;Remember to tag your links!&lt;/p&gt;</description>
 				<published>2012-07-30 00:00:00 -0700</published>
