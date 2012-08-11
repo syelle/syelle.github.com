@@ -26,11 +26,11 @@ canonical: /blog/
 
 				{% if post == site.posts.first %}
 					<p>{{ post.content }}</p>
+					<a class="btn btn-primary" href="{{ post.url }}#disqus_thread" rel="bookmark" title="{{ post.title }} | {{ site.name }}">Read Comments <i class="icon-chevron-right icon-white"></i></a>
 				{% else %}
 					<p>{{ post.teaser }}</p>
+					<a class="btn btn-primary" href="{{ post.url }}" rel="bookmark" title="{{ post.title }} | {{ site.name }}">Read More <i class="icon-chevron-right icon-white"></i></a>
 				{% endif %}
-
-				<a class="btn btn-primary" href="{{ post.url }}" rel="bookmark" title="{{ post.title }} | {{ site.name }}">Read More <i class="icon-chevron-right icon-white"></i></a>
 			</article>
 
 			<hr class="row-divider">
