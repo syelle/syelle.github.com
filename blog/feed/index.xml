@@ -6,6 +6,96 @@
 		<link>http://min-maxing.com</link>
 		
 			<item>
+				<title>How to Use SEO on Your Website</title>
+				<description>&lt;p&gt;You don't have to pay a firm thousands of dollars a month to apply the principles of Search Engine Optimization (SEO) to your site. All it takes is a little extra effort on the part of content creators and page template designers to increase your rank in search engine results.&lt;/p&gt;
+
+&lt;h3&gt;Overview&lt;/h3&gt;
+&lt;p&gt;The primary metric search engines use is the number of other high-quality sites that link to your content. The overall process for each piece of content looks something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Post interesting content&lt;/li&gt;
+&lt;li&gt;Build your page in such a way that search engines can 'read' your content&lt;/li&gt;
+&lt;li&gt;Make your results appear attractive in search engine results&lt;/li&gt;
+&lt;li&gt;Use &lt;em&gt;legitimate&lt;/em&gt; marketing means to spread word about the content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, it's up to other sites to link to you to help raise your relevance (and thus your rank).&lt;/p&gt;
+
+&lt;h3&gt;How to Build Your Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify content keywords&lt;/li&gt;
+&lt;li&gt;Write meaningful page and section titles using those keywords&lt;/li&gt;
+&lt;li&gt;Add the title of the page to the URL&lt;/li&gt;
+&lt;li&gt;Use meta tags and rich content snippets to improve appearance in search engine results&lt;/li&gt;
+&lt;li&gt;Make sure your pages load fast &amp;amp; are error-free&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Identify Content Keywords&lt;/h4&gt;
+&lt;p&gt;Since users discovering your site through search are doing so by searching for words or phrases related to your content, the first step to optimizing your site for search is to think about what words or phrases users are likely to enter into a search engine to get to content you write. For a product page, this may take the form of product names, brand names, nicknames, or key features. For articles, the topic, sections, and key concepts make good keywords.&lt;/p&gt;
+
+&lt;h4&gt;Write Meaningful Page &amp;amp; Section Titles&lt;/h4&gt;
+&lt;p&gt;Search engines give more weight to the content inside your page's header tags (&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;) as these tags are meant to indicate the overall topic of the page as well as define the titles for sections. Using clear and meaningful page and section headers helps search engines to understand the overall concepts your page is covering.&lt;/p&gt;
+
+&lt;p&gt;In addition to the fact that search engines place some importance on the content of the &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; tag, this tag also controls the title of the page in search engines:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/search-results-title.png&quot; alt=&quot;search engine results using title tag for page title&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Your content management systems (CMS) may handle the title and top-level header pieces for you when you enter the title of your page into the CMS.&lt;/p&gt;
+
+&lt;h4&gt;Add Page Title to URL&lt;/h4&gt;
+&lt;p&gt;Search engines give some weight to the text in the URL of a page as well, so placing the title into the URL as well can help rankings. In addition, users can look at a raw link and get an idea of what is behind it, which aids in overall understanding of what content hides behind it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Your CMS may also handle putting the title in the URL for you when you enter the title of your page into the CMS.&lt;/p&gt;
+
+&lt;h4&gt;Use Meta Tags and Rich Content Snippets&lt;/h4&gt;
+&lt;p&gt;By using the meta description tag(&lt;code&gt;&amp;lt;meta name=&quot;description&quot; content=&quot;Page description here&quot;&amp;gt;&lt;/code&gt;), you can tell search engines what you want the description of the page to be:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/search-results-description.png&quot; alt=&quot;search engine results using meta description tag&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
+
+&lt;p&gt;Keep in mind, however, that this doesn't &lt;em&gt;guarantee&lt;/em&gt; that a search engine will use your description. If, for example, you searched for terms that appeared to be more relevant in the content of the page, search engines would use a snippet from the content instead.&lt;/p&gt;
+
+&lt;p&gt;Depending on the search engine, you can use additional markup to highlight additional information such as the author of an article and the date it was published:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/search-results-rich-snippets.png&quot; alt=&quot;search engine results using rich snippets&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
+
+&lt;p&gt;Google has an article on how to show &lt;a href=&quot;http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=1408986&quot;&gt;author information in Google search results&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h4&gt;Make sure your pages load fast &amp;amp; are error-free&lt;/h4&gt;
+&lt;p&gt;To a minor degree, &lt;a href=&quot;http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html&quot;&gt;the time it takes for your pages to load can affect your page rank&lt;/a&gt;. While it only directly affects very slow sites, there is &lt;a href=&quot;http://googleresearch.blogspot.com/2009/06/speed-matters.html&quot;&gt;evidence that indicates users will spend less time on your site if it is slow&lt;/a&gt;. In addition, if your page has any errors, it can inhibit a search engine's ability to parse all of the content.&lt;/p&gt;
+
+&lt;h3&gt;What about images?&lt;/h3&gt;
+&lt;p&gt;The only clue search engines have for what your images contain is the &lt;code&gt;alt&lt;/code&gt; attribute on the &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. Make sure you desscribe what is inside the image using the alt text to make sure the image content is properly understood by search engines.&lt;/p&gt;
+
+&lt;h3&gt;What about social media?&lt;/h3&gt;
+&lt;p&gt;As of now, there's no huge argument for Facebook and Twitter affecting your page rank outside of marketing your content in hopes that people will link it elsewhere. Some search engines have begun looking at social networks for hints about popular content, but they only use it in limited situations. Search Engine Land has some more details on &lt;a href=&quot;http://searchengineland.com/what-social-signals-do-google-bing-really-count-55389&quot;&gt;what social signals are used by search engines&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Bad SEO Practices&lt;/h3&gt;
+&lt;p&gt;There are some methods people and SEO companies have attempted to use to 'game' search engine algorithms. In general, it's always a bad idea to attempt such methods as they are actively combated by search engine providers and they will penalize you if they detect that you use them.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Loading content via JavaScript after page load&lt;/li&gt;
+&lt;li&gt;Serving content to search engines that is different from what users see&lt;/li&gt;
+&lt;li&gt;Paid links &amp;amp; link spam&lt;/li&gt;
+&lt;li&gt;Duplicating Content&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Loading content via JavaScript after page load&lt;/h4&gt;
+&lt;p&gt;Search engine bots are like other bots in that they can parse the content that your page generates, but nothing that you inject after page load via JavaScript. Any such content will not be archived by a search engine.&lt;/p&gt;
+
+&lt;h4&gt;Serving Different Content&lt;/h4&gt;
+&lt;p&gt;Some people have attempted to increase the size of their page rank by stuffing keywords or extra content on a page such that normal users will not see them but a search engine would see them. Search engines are becoming progressively more able to detect this kind of content stuffing and will lower your rank if they detect this behavior.&lt;/p&gt;
+
+&lt;h4&gt;Paid links &amp;amp; link spam&lt;/h4&gt;
+&lt;p&gt;Since rank is dependent on how many sites link to you, some people have attempted to increase their rank by either spamming their links on other sites or by paying other sites to link to them. Just like with content hiding, search engines can detect spam patterns and will lower your rank accordingly. In addition, if there are links to your site from known 'bad neighborhoods' on the internet (link farms, for example), you will be penalized as a result.&lt;/p&gt;
+
+&lt;h4&gt;Duplicating Content&lt;/h4&gt;
+&lt;p&gt;Simply copying content from another site will not help increase your rank. Search engines look for duplicate content and penalize copycat pages. Google is even &lt;a href=&quot;http://insidesearch.blogspot.com/2012/08/an-update-to-our-search-algorithms.html&quot;&gt;taking valid copyright claims into account&lt;/a&gt; in their algorithms: any site that habitually violates copyright laws may be penalized as a result.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Overall, once you lock in a page template that is friendly to search engines, the only on-going tasks you have is to make sure each new piece of content has appropriate keywords used for titles, headers, and throughout the content to help aid discovery via search. From there, keep writing interesting content!&lt;/p&gt;</description>
+				<published>2012-08-11 00:00:00 -0700</published>
+				<link>http://min-maxing.com/blog/2012/08/11/how-to-use-seo-on-your-website</link>
+			</item>
+		
+			<item>
 				<title>How <em>Limited Run</em> Discovered Worthless Clicks Using Analytics</title>
 				<description>&lt;p&gt;A company called &lt;em&gt;Limited Run&lt;/em&gt; made &lt;a href=&quot;https://www.facebook.com/limitedpressing/posts/209534972507958&quot;&gt;a post on Facebook&lt;/a&gt; about how they discovered that roughly 80% of clicks they received on their Facebook ads turned out to have the signature of a bot. They noticed that their site analytics reported a much lower user count from their Facebook ads than Facebook was reporting. After digging into the weird traffic by adding some custom tracking, they discovered:&lt;/p&gt;
 &lt;ul&gt;
