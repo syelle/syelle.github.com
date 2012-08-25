@@ -6,6 +6,75 @@
 		<link>http://min-maxing.com</link>
 		
 			<item>
+				<title>Optimizing Emails for Blocked Images</title>
+				<description>&lt;p&gt;Emails that embed their content into images are not effective when a user's email client blocks images&amp;#8212;and, while numbers vary based on source, roughly 50% of users (or their email clients) block images by default. By moving your content into text and styling your email to be effective in the absence of images, you can increase the likelihood that a user will take action based on your marketing efforts.&lt;/p&gt;
+
+&lt;h3&gt;Why are images bad for email?&lt;/h3&gt;
+
+&lt;p&gt;The lure of relying on images for content is a strong one. After all, the result is often attractive and successful at communicating that you represent a high-quality brand.&lt;/p&gt;
+
+&lt;p&gt;I recently had a chance to assist a client (&lt;a href=&quot;http://www.uspatriottactical.com/&quot;&gt;U.S. Patriot Tactical&lt;/a&gt;) in improving their email template. This was the result:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/usp-images.png&quot; alt=&quot;email header with images shown&quot; title=&quot;That is a mighty fine email header, if I do say so myself.&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
+
+&lt;p&gt;The problem, though is that roughly half of email consumers use client that blocks image by default. As a result, this is what they would see in a worst-case scenario:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/usp-images-blocked.png&quot; alt=&quot;email header with images blocked&quot; title=&quot;...but... what happened to the content?&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
+
+&lt;p&gt;At this point, users have already made one decision to open your email, and with an image-heavy email you have now asked them to make a second choice: unblock images to see the content or ignore the message.&lt;/p&gt;
+
+&lt;p&gt;By placing another step between the user and your email content and giving them another opportunity to opt-out of consuming the content, you lessen the effectiveness of your email-based communication.&lt;/p&gt;
+
+&lt;h3&gt;How can I improve the appearance of my email when images are blocked?&lt;/h3&gt;
+
+&lt;p&gt;For the U.S. Patriot Template, we took some additional steps to improve their template code. This was the result:&lt;/p&gt;
+
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/usp-images-blocked-alt-text-styled.png&quot; alt=&quot;email header with images blocked and styled containers&quot; title=&quot;Here's an email that will make you want to allow images!&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
+
+&lt;p&gt;To achieve this effect, we had to spend some extra time to perform the following tweaks to image areas:&lt;/p&gt;
+
+&lt;h4&gt;Use alt text on images&lt;/h4&gt;
+
+&lt;p&gt;The &lt;code&gt;alt&lt;/code&gt; attribute on the &lt;code&gt;img&lt;/code&gt; HTML element is used to specify default text that should appear if an image does not load for some reason (such as having the wrong image path or images being blocked by an email client).&lt;/p&gt;
+
+&lt;code&gt;&amp;lt;img src=&quot;http://path/to/image&quot; &lt;mark&gt;alt=&quot;Text that will appear when the image is blocked&quot;&lt;/mark&gt;&amp;gt;&lt;/code&gt;
+
+&lt;p&gt;In our example, we duplicated the content of each of the images as alt text for that image. For the social icons, we got as close as we could with alpha-numeric characters.&lt;/p&gt;
+
+&lt;h4&gt;Use font and background styles on image elements&lt;/h4&gt;
+
+&lt;p&gt;To style the alt text and color the areas where the images would normally appear, we used CSS styling on the &lt;code&gt;img&lt;/code&gt; element. The following styles were used in this example in different ways:&lt;/p&gt;
+
+&lt;pre&gt;
+    font-weight: bold; // makes text bold
+    font-size: 16px; // controls the size of the alt text
+    font-style: italic; // italicize text to match the style of the actual logo
+    color: #FC6; // controls font color
+    background-color: #72884E; // shades the cell where the image would normally go
+    font-family: Arial,sans-serif; // specify the font style to use
+&lt;/pre&gt;
+
+&lt;p&gt;Keep in mind the following constraints when applying these styles:&lt;/p&gt;
+
+&lt;h5&gt;Use in-line styles&lt;/h5&gt;
+&lt;p&gt;Normally, you'd want to specify CSS styling in a separate CSS document (or, failing that, a &lt;code&gt;style&lt;/code&gt; element at the beginning of your HTML document. However, email clients are notorious for ignoring some of all of your styles defined with these methods and overriding them with their own styles.&lt;/p&gt;
+
+&lt;p&gt;The only way to ensure that your image styles carry through is to specify styles using the style attribute on the image element:&lt;/p&gt;
+
+&lt;pre&gt;&amp;lt;img border=&quot;0&quot; alt=&quot;U.S. Patriot Tactical&quot; &lt;mark&gt;style=&quot;display:block;font-size:20px;font-family: Arial,sans-serif;color:#222959;font-style:italic;font-weight:bold;&quot;&lt;/mark&gt; width=&quot;206&quot; height=&quot;50&quot;&amp;gt;&lt;/pre&gt;
+
+&lt;h5&gt;When specifying fonts, use web-safe font stacks&lt;/h5&gt;
+&lt;p&gt;Not all fonts are installed on all computers. If you have a specialized font that you embed on your site, chances are it is not installed on the user's computer. Since you can't embed fonts into an email, you should make sure that your alt text uses fonts that you know will be on most people's computers.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://cssfontstack.com/&quot;&gt;CSS Font Stack&lt;/a&gt; is a great resource for seeing the different options, learning how popular they are, and even copying code snippets for use in your emails.&lt;/p&gt;
+
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Users spend on average just a few second scanning an email for anything that may interest them before deleting it. Anything you can do to make your content easy to consume in those few seconds will ensure as many of your users see your key points as possible.&lt;/p&gt;</description>
+				<published>2012-08-24 00:00:00 -0700</published>
+				<link>http://min-maxing.com/blog/2012/08/24/optimizing-emails-for-blocked-images</link>
+			</item>
+		
+			<item>
 				<title>Sell Your Product, Then Ask For Money</title>
 				<description>&lt;p&gt;I had a discussion recently with someone about banner ad content. They showed me the first draft for their ad campaign, which consisted of:&lt;/p&gt;
 &lt;ul&gt;
