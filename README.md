@@ -3,7 +3,7 @@
 ### Install & Run Jekyll
 - gem install jekyll
 - sudo easy_install Pygments
-- jekyll --server
+- jekyll serve -w
 
 ### Install & Run SASS
 - gem install sass
