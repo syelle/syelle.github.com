@@ -1,7 +1,6 @@
-auto: true
 production: true
 destination: ../_site
-exclude: [publish.sh]
+exclude: [publish.sh, syelle.github.com.sublime-project, syelle.github.com.sublime-workspace]
 
 permalink: /blog/:year/:month/:day/:title
 
@@ -9,7 +8,7 @@ name: Min-Maxing
 tagline: Experiments in optimizing web pages, business processes, and life in general.
 description: Experiments in optimizing web pages, business processes, and life in general.
 
-url: http://min-maxing.com
+url: http://www.min-maxing.com
 tag_dir: /blog/tag/
 
 paginate_path: "/page-:num"
