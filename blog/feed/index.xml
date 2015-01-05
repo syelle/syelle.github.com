@@ -3,11 +3,11 @@
 	<channel>
 		<title>Min-Maxing</title>
 		<description>Experiments in optimizing web pages, business processes, and life in general.</description>
-		<link>http://min-maxing.com</link>
+		<link>http://www.min-maxing.com</link>
 		
 			<item>
 				<title>Optimizing Emails for Blocked Images</title>
-				<description>&lt;p&gt;Emails that embed their content into images are not effective when a user's email client blocks images&amp;#8212;and, while numbers vary based on source, roughly 50% of users (or their email clients) block images by default. By moving your content into text and styling your email to be effective in the absence of images, you can increase the likelihood that a user will take action based on your marketing efforts.&lt;/p&gt;
+				<description>&lt;p&gt;Emails that embed their content into images are not effective when a user&#39;s email client blocks images&amp;#8212;and, while numbers vary based on source, roughly 50% of users (or their email clients) block images by default. By moving your content into text and styling your email to be effective in the absence of images, you can increase the likelihood that a user will take action based on your marketing efforts.&lt;/p&gt;
 
 &lt;h3&gt;Why are images bad for email?&lt;/h3&gt;
 
@@ -15,11 +15,11 @@
 
 &lt;p&gt;I recently had a chance to help a client (&lt;a href=&quot;http://www.uspatriottactical.com/&quot;&gt;U.S. Patriot Tactical&lt;/a&gt;) improve their email template. This was the result:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/usp-images.png&quot; alt=&quot;email header with images shown&quot; title=&quot;That is a mighty fine email header, if I do say so myself.&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/usp-images.png&quot; alt=&quot;email header with images shown&quot; title=&quot;That is a mighty fine email header, if I do say so myself.&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
 
 &lt;p&gt;The problem, though is that roughly half of email consumers use client that blocks image by default. As a result, this is what they would see in a worst-case scenario:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/usp-images-blocked.png&quot; alt=&quot;email header with images blocked&quot; title=&quot;...but... what happened to the content?&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/usp-images-blocked.png&quot; alt=&quot;email header with images blocked&quot; title=&quot;...but... what happened to the content?&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
 
 &lt;p&gt;At this point, users have already made one decision to open your email, and with an image-heavy email you have now asked them to make a second choice: unblock images to see the content or ignore the message.&lt;/p&gt;
 
@@ -29,7 +29,7 @@
 
 &lt;p&gt;For the U.S. Patriot Template, we took some additional steps to improve their template code. This was the result:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/usp-images-blocked-alt-text-styled.png&quot; alt=&quot;email header with images blocked and styled containers&quot; title=&quot;Here's an email that will make you want to allow images!&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/usp-images-blocked-alt-text-styled.png&quot; alt=&quot;email header with images blocked and styled containers&quot; title=&quot;Here&#39;s an email that will make you want to allow images!&quot; width=&quot;620px&quot; height=&quot;226px&quot;/&gt;
 
 &lt;p&gt;To achieve this effect, we had to spend some extra time to perform the following tweaks to image areas:&lt;/p&gt;
 
@@ -57,21 +57,21 @@
 &lt;p&gt;Keep in mind the following constraints when applying these styles:&lt;/p&gt;
 
 &lt;h5&gt;Use in-line styles&lt;/h5&gt;
-&lt;p&gt;Normally, you'd want to specify CSS styling in a separate CSS document (or, failing that, a &lt;code&gt;style&lt;/code&gt; element at the beginning of your HTML document. However, email clients are notorious for ignoring some of all of your styles defined with these methods and overriding them with their own styles.&lt;/p&gt;
+&lt;p&gt;Normally, you&#39;d want to specify CSS styling in a separate CSS document (or, failing that, a &lt;code&gt;style&lt;/code&gt; element at the beginning of your HTML document. However, email clients are notorious for ignoring some of all of your styles defined with these methods and overriding them with their own styles.&lt;/p&gt;
 
 &lt;p&gt;The only way to ensure that your image styles carry through is to specify styles using the style attribute on the image element:&lt;/p&gt;
 
 &lt;pre&gt;&amp;lt;img border=&quot;0&quot; alt=&quot;U.S. Patriot Tactical&quot; &lt;mark&gt;style=&quot;display:block;font-size:20px;font-family: Arial,sans-serif;color:#222959;font-style:italic;font-weight:bold;&quot;&lt;/mark&gt; width=&quot;206&quot; height=&quot;50&quot;&amp;gt;&lt;/pre&gt;
 
 &lt;h5&gt;When specifying fonts, use web-safe font stacks&lt;/h5&gt;
-&lt;p&gt;Not all fonts are installed on all computers. If you have a specialized font that you embed on your site, chances are it is not installed on the user's computer. Since you can't embed fonts into an email, you should make sure that your alt text uses fonts that you know will be on most people's computers.&lt;/p&gt;
+&lt;p&gt;Not all fonts are installed on all computers. If you have a specialized font that you embed on your site, chances are it is not installed on the user&#39;s computer. Since you can&#39;t embed fonts into an email, you should make sure that your alt text uses fonts that you know will be on most people&#39;s computers.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://cssfontstack.com/&quot;&gt;CSS Font Stack&lt;/a&gt; is a great resource for seeing the different options, learning how popular they are, and even copying code snippets for use in your emails.&lt;/p&gt;
 
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Users spend on average just a few second scanning an email for anything that may interest them before deleting it. Anything you can do to make your content easy to consume in those few seconds will ensure as many of your users see your key points as possible.&lt;/p&gt;</description>
 				<published>2012-08-24 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/08/24/optimizing-emails-for-blocked-images</link>
+				<link>http://www.min-maxing.com/blog/2012/08/24/optimizing-emails-for-blocked-images</link>
 			</item>
 		
 			<item>
@@ -85,9 +85,9 @@
 &lt;p&gt;I proposed that we could split-test this version with others. However, I also submitted that there may be a more effective version of this ad.&lt;/p&gt;
 
 &lt;h3&gt;Show the Value Proposition First&lt;/h3&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/futurama-fry-shut-up-and-take-my-money.jpg&quot; alt=&quot;Futurama 6ACV03 - Attack of the Killer App. Image from Know Your Meme: http://knowyourmeme.com/photos/264200-shut-up-and-take-my-money&quot; title=&quot;If only it were this easy.&quot; width=&quot;500px&quot; height=&quot;281px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/futurama-fry-shut-up-and-take-my-money.jpg&quot; alt=&quot;Futurama 6ACV03 - Attack of the Killer App. Image from Know Your Meme: http://knowyourmeme.com/photos/264200-shut-up-and-take-my-money&quot; title=&quot;If only it were this easy.&quot; width=&quot;500px&quot; height=&quot;281px&quot;/&gt;
 
-&lt;p&gt;Imagine you are in a bar and you see an someone you'd like to get to know a little better. After approaching that person, what would you do?&lt;/p&gt;
+&lt;p&gt;Imagine you are in a bar and you see an someone you&#39;d like to get to know a little better. After approaching that person, what would you do?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Ask them to go home with you&lt;/li&gt;
 &lt;li&gt;Spend some time showing how awesome you are before asking them to go home with you&lt;/li&gt;
@@ -101,21 +101,21 @@
 
 &lt;p&gt;Generally-speaking, people go through the following phases in their product discovery:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;I've never heard of this product.&lt;/li&gt;
+&lt;li&gt;I&#39;ve never heard of this product.&lt;/li&gt;
 &lt;li&gt;I am interested enough in this product to learn more.&lt;/li&gt;
 &lt;li&gt;I like this product. Do other people like it too, or am I missing something?&lt;/li&gt;
 &lt;li&gt;Other people seem to like it as well. What will it cost me?&lt;/li&gt;
 &lt;li&gt;Shut up and take my money!&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The most natural marketing efforts will guide people along this path and make it as easy as possible to make the decision themselves. They'll be more interested in what others think if they believe that the product serves a useful purpose. If they've never heard of the product, telling them that someone else liked it will have much less of an impact than it otherwise could have.&lt;/p&gt;
+&lt;p&gt;The most natural marketing efforts will guide people along this path and make it as easy as possible to make the decision themselves. They&#39;ll be more interested in what others think if they believe that the product serves a useful purpose. If they&#39;ve never heard of the product, telling them that someone else liked it will have much less of an impact than it otherwise could have.&lt;/p&gt;
 
 &lt;h3&gt;Time is short. Make an impact.&lt;/h3&gt;
-&lt;p&gt;Not only do you need to help people move through the purchase funnel, but you don't have long to hook them in. You have a few seconds at most to hook in a user as they scan over your banner ads, landing page, email newsletter, or other non-video marketing effort. How do you get someone interested enough to learn more in those few seconds?&lt;/p&gt;
+&lt;p&gt;Not only do you need to help people move through the purchase funnel, but you don&#39;t have long to hook them in. You have a few seconds at most to hook in a user as they scan over your banner ads, landing page, email newsletter, or other non-video marketing effort. How do you get someone interested enough to learn more in those few seconds?&lt;/p&gt;
 
-&lt;p&gt;These few seconds are essentially an &lt;a href=&quot;http://en.wikipedia.org/wiki/Elevator_pitch&quot; title=&quot;Elevator Pitch - Wikipedia&quot;&gt;elevator pitch&lt;/a&gt; to the viewer. Imagine what you would say if you only had 5 seconds with someone on an elevator to convince them to research your product when they get out of the elevator. It might be the problem that the product solves, a key feature, an endorsement by someone they recognize, or something else. In fact, you'll probably come up with several ideas. It'll be a great opportunity to split-test different versions to test your assumptions!&lt;/p&gt;
+&lt;p&gt;These few seconds are essentially an &lt;a href=&quot;http://en.wikipedia.org/wiki/Elevator_pitch&quot; title=&quot;Elevator Pitch - Wikipedia&quot;&gt;elevator pitch&lt;/a&gt; to the viewer. Imagine what you would say if you only had 5 seconds with someone on an elevator to convince them to research your product when they get out of the elevator. It might be the problem that the product solves, a key feature, an endorsement by someone they recognize, or something else. In fact, you&#39;ll probably come up with several ideas. It&#39;ll be a great opportunity to split-test different versions to test your assumptions!&lt;/p&gt;
 
-&lt;h3&gt;What about funny/emotional ads? They don't show me value!&lt;/h3&gt;
+&lt;h3&gt;What about funny/emotional ads? They don&#39;t show me value!&lt;/h3&gt;
 &lt;p&gt;Advertisements that rely on emotion are relying on the assumptions that:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The ad will illicit positive emotion from the viewer&lt;/li&gt;
@@ -124,30 +124,30 @@
 &lt;li&gt;The viewer will want to seek out more information about the product after seeing the ad&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In effect, they attempt to short-circuit your brain. Rather than creating positive emotion or brand equity through showing how awesome the product is, they use humor or another mechanism as a proxy to establish those emotions before you've heard the &lt;a href=&quot;http://en.wikipedia.org/wiki/Value_proposition&quot; title=&quot;Value Proposition - Wikipedia&quot;&gt;value proposition&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In effect, they attempt to short-circuit your brain. Rather than creating positive emotion or brand equity through showing how awesome the product is, they use humor or another mechanism as a proxy to establish those emotions before you&#39;ve heard the &lt;a href=&quot;http://en.wikipedia.org/wiki/Value_proposition&quot; title=&quot;Value Proposition - Wikipedia&quot;&gt;value proposition&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;These ads are more effective for established, well-known brands. When executed properly, they can work for companies a viewer has never heard of as well, but usually takes more effort to find something that will resonate with the target audience enough to override the fact that your company is unknown.&lt;/p&gt;
 
 &lt;h3&gt;What should I do if I have multiple ideas?&lt;/h3&gt;
 
-&lt;p&gt;If you can't decide between direct, emotional, and value approaches, it's worth it to split test some ideas. Find a few small ad networks or user segments and run a few versions of your campaign across each group. You can see for yourself if you've struck gold and can run the best campaign against the rest of your networks or user segments.&lt;/p&gt;</description>
+&lt;p&gt;If you can&#39;t decide between direct, emotional, and value approaches, it&#39;s worth it to split test some ideas. Find a few small ad networks or user segments and run a few versions of your campaign across each group. You can see for yourself if you&#39;ve struck gold and can run the best campaign against the rest of your networks or user segments.&lt;/p&gt;</description>
 				<published>2012-08-12 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/08/12/sell-your-product-then-ask-for-money</link>
+				<link>http://www.min-maxing.com/blog/2012/08/12/sell-your-product-then-ask-for-money</link>
 			</item>
 		
 			<item>
 				<title>How to Use SEO on Your Website</title>
-				<description>&lt;p&gt;You don't have to pay a firm thousands of dollars a month to apply the principles of Search Engine Optimization (SEO) to your site. All it takes is a little extra effort on the part of content creators and page template designers to increase your rank in search engine results.&lt;/p&gt;
+				<description>&lt;p&gt;You don&#39;t have to pay a firm thousands of dollars a month to apply the principles of Search Engine Optimization (SEO) to your site. All it takes is a little extra effort on the part of content creators and page template designers to increase your rank in search engine results.&lt;/p&gt;
 
 &lt;h3&gt;Overview&lt;/h3&gt;
 &lt;p&gt;The primary metric search engines use is the number of other high-quality sites that link to your content. The overall process for each piece of content looks something like this:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Post interesting content&lt;/li&gt;
-&lt;li&gt;Build your page in such a way that search engines can 'read' your content&lt;/li&gt;
+&lt;li&gt;Build your page in such a way that search engines can &#39;read&#39; your content&lt;/li&gt;
 &lt;li&gt;Make your results appear attractive in search engine results&lt;/li&gt;
 &lt;li&gt;Use &lt;em&gt;legitimate&lt;/em&gt; marketing means to spread word about the content&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;After that, it's up to other sites to link to you to help raise your relevance (and thus your rank).&lt;/p&gt;
+&lt;p&gt;After that, it&#39;s up to other sites to link to you to help raise your relevance (and thus your rank).&lt;/p&gt;
 
 &lt;h3&gt;How to Build Your Content&lt;/h3&gt;
 &lt;ul&gt;
@@ -162,11 +162,11 @@
 &lt;p&gt;Since users discovering your site through search are doing so by searching for words or phrases related to your content, the first step to optimizing your site for search is to think about what words or phrases users are likely to enter into a search engine to get to content you write. For a product page, this may take the form of product names, brand names, nicknames, or key features. For articles, the topic, sections, and key concepts make good keywords.&lt;/p&gt;
 
 &lt;h4&gt;Write Meaningful Page &amp;amp; Section Titles&lt;/h4&gt;
-&lt;p&gt;Search engines give more weight to the content inside your page's header tags (&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;) as these tags are meant to indicate the overall topic of the page as well as define the titles for sections. Using clear and meaningful page and section headers helps search engines to understand the overall concepts your page is covering.&lt;/p&gt;
+&lt;p&gt;Search engines give more weight to the content inside your page&#39;s header tags (&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;) as these tags are meant to indicate the overall topic of the page as well as define the titles for sections. Using clear and meaningful page and section headers helps search engines to understand the overall concepts your page is covering.&lt;/p&gt;
 
 &lt;p&gt;In addition to the fact that search engines place some importance on the content of the &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; tag, this tag also controls the title of the page in search engines:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/search-results-title.png&quot; alt=&quot;search engine results using title tag for page title&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/search-results-title.png&quot; alt=&quot;search engine results using title tag for page title&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Your content management systems (CMS) may handle the title and top-level header pieces for you when you enter the title of your page into the CMS.&lt;/p&gt;
 
@@ -178,27 +178,27 @@
 &lt;h4&gt;Use Meta Tags and Rich Content Snippets&lt;/h4&gt;
 &lt;p&gt;By using the meta description tag(&lt;code&gt;&amp;lt;meta name=&quot;description&quot; content=&quot;Page description here&quot;&amp;gt;&lt;/code&gt;), you can tell search engines what you want the description of the page to be:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/search-results-description.png&quot; alt=&quot;search engine results using meta description tag&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/search-results-description.png&quot; alt=&quot;search engine results using meta description tag&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
 
-&lt;p&gt;Keep in mind, however, that this doesn't &lt;em&gt;guarantee&lt;/em&gt; that a search engine will use your description. If, for example, you searched for terms that appeared to be more relevant in the content of the page, search engines would use a snippet from the content instead.&lt;/p&gt;
+&lt;p&gt;Keep in mind, however, that this doesn&#39;t &lt;em&gt;guarantee&lt;/em&gt; that a search engine will use your description. If, for example, you searched for terms that appeared to be more relevant in the content of the page, search engines would use a snippet from the content instead.&lt;/p&gt;
 
 &lt;p&gt;Depending on the search engine, you can use additional markup to highlight additional information such as the author of an article and the date it was published:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-08/search-results-rich-snippets.png&quot; alt=&quot;search engine results using rich snippets&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-08/search-results-rich-snippets.png&quot; alt=&quot;search engine results using rich snippets&quot; title=&quot;&quot; width=&quot;488px&quot; height=&quot;97px&quot;/&gt;
 
 &lt;p&gt;Google has an article on how to show &lt;a href=&quot;http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=1408986&quot;&gt;author information in Google search results&lt;/a&gt;. &lt;/p&gt;
 
 &lt;h4&gt;Make sure your pages load fast &amp;amp; are error-free&lt;/h4&gt;
-&lt;p&gt;To a minor degree, &lt;a href=&quot;http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html&quot;&gt;the time it takes for your pages to load can affect your page rank&lt;/a&gt;. While it only directly affects very slow sites, there is &lt;a href=&quot;http://googleresearch.blogspot.com/2009/06/speed-matters.html&quot;&gt;evidence that indicates users will spend less time on your site if it is slow&lt;/a&gt;. In addition, if your page has any errors, it can inhibit a search engine's ability to parse all of the content.&lt;/p&gt;
+&lt;p&gt;To a minor degree, &lt;a href=&quot;http://googlewebmastercentral.blogspot.com/2010/04/using-site-speed-in-web-search-ranking.html&quot;&gt;the time it takes for your pages to load can affect your page rank&lt;/a&gt;. While it only directly affects very slow sites, there is &lt;a href=&quot;http://googleresearch.blogspot.com/2009/06/speed-matters.html&quot;&gt;evidence that indicates users will spend less time on your site if it is slow&lt;/a&gt;. In addition, if your page has any errors, it can inhibit a search engine&#39;s ability to parse all of the content.&lt;/p&gt;
 
 &lt;h3&gt;What about images?&lt;/h3&gt;
 &lt;p&gt;The only clue search engines have for what your images contain is the &lt;code&gt;alt&lt;/code&gt; attribute on the &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; tag. Make sure you desscribe what is inside the image using the alt text to make sure the image content is properly understood by search engines.&lt;/p&gt;
 
 &lt;h3&gt;What about social media?&lt;/h3&gt;
-&lt;p&gt;As of now, there's no huge argument for Facebook and Twitter affecting your page rank outside of marketing your content in hopes that people will link it elsewhere. Some search engines have begun looking at social networks for hints about popular content, but they only use it in limited situations. Search Engine Land has some more details on &lt;a href=&quot;http://searchengineland.com/what-social-signals-do-google-bing-really-count-55389&quot;&gt;what social signals are used by search engines&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As of now, there&#39;s no huge argument for Facebook and Twitter affecting your page rank outside of marketing your content in hopes that people will link it elsewhere. Some search engines have begun looking at social networks for hints about popular content, but they only use it in limited situations. Search Engine Land has some more details on &lt;a href=&quot;http://searchengineland.com/what-social-signals-do-google-bing-really-count-55389&quot;&gt;what social signals are used by search engines&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3&gt;Bad SEO Practices&lt;/h3&gt;
-&lt;p&gt;There are some methods people and SEO companies have attempted to use to 'game' search engine algorithms. In general, it's always a bad idea to attempt such methods as they are actively combated by search engine providers and they will penalize you if they detect that you use them.&lt;/p&gt;
+&lt;p&gt;There are some methods people and SEO companies have attempted to use to &#39;game&#39; search engine algorithms. In general, it&#39;s always a bad idea to attempt such methods as they are actively combated by search engine providers and they will penalize you if they detect that you use them.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Loading content via JavaScript after page load&lt;/li&gt;
@@ -214,7 +214,7 @@
 &lt;p&gt;Some people have attempted to increase the size of their page rank by stuffing keywords or extra content on a page such that normal users will not see them but a search engine would see them. Search engines are becoming progressively more able to detect this kind of content stuffing and will lower your rank if they detect this behavior.&lt;/p&gt;
 
 &lt;h4&gt;Paid links &amp;amp; link spam&lt;/h4&gt;
-&lt;p&gt;Since rank is dependent on how many sites link to you, some people have attempted to increase their rank by either spamming their links on other sites or by paying other sites to link to them. Just like with content hiding, search engines can detect spam patterns and will lower your rank accordingly. In addition, if there are links to your site from known 'bad neighborhoods' on the internet (link farms, for example), you will be penalized as a result.&lt;/p&gt;
+&lt;p&gt;Since rank is dependent on how many sites link to you, some people have attempted to increase their rank by either spamming their links on other sites or by paying other sites to link to them. Just like with content hiding, search engines can detect spam patterns and will lower your rank accordingly. In addition, if there are links to your site from known &#39;bad neighborhoods&#39; on the internet (link farms, for example), you will be penalized as a result.&lt;/p&gt;
 
 &lt;h4&gt;Duplicating Content&lt;/h4&gt;
 &lt;p&gt;Simply copying content from another site will not help increase your rank. Search engines look for duplicate content and penalize copycat pages. Google is even &lt;a href=&quot;http://insidesearch.blogspot.com/2012/08/an-update-to-our-search-algorithms.html&quot;&gt;taking valid copyright claims into account&lt;/a&gt; in their algorithms: any site that habitually violates copyright laws may be penalized as a result.&lt;/p&gt;
@@ -222,22 +222,22 @@
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Overall, once you lock in a page template that is friendly to search engines, the only on-going tasks you have is to make sure each new piece of content has appropriate keywords used for titles, headers, and throughout the content to help aid discovery via search. From there, keep writing interesting content!&lt;/p&gt;</description>
 				<published>2012-08-11 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/08/11/how-to-use-seo-on-your-website</link>
+				<link>http://www.min-maxing.com/blog/2012/08/11/how-to-use-seo-on-your-website</link>
 			</item>
 		
 			<item>
 				<title>How <em>Limited Run</em> Discovered Worthless Clicks Using Analytics</title>
 				<description>&lt;p&gt;A company called &lt;em&gt;Limited Run&lt;/em&gt; made &lt;a href=&quot;https://www.facebook.com/limitedpressing/posts/209534972507958&quot;&gt;a post on Facebook&lt;/a&gt; about how they discovered that roughly 80% of clicks they received on their Facebook ads turned out to have the signature of a bot. They noticed that their site analytics reported a much lower user count from their Facebook ads than Facebook was reporting. After digging into the weird traffic by adding some custom tracking, they discovered:&lt;/p&gt;
 &lt;ul&gt;
-	&lt;li&gt;The visits from those clicks did not load client-side JavaScript (hence why the site analytics didn't track the visit)&lt;/li&gt;
+	&lt;li&gt;The visits from those clicks did not load client-side JavaScript (hence why the site analytics didn&#39;t track the visit)&lt;/li&gt;
 	&lt;li&gt;The visits were showing up as coming from non-standard browsers&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;This is an excellent example of the power of &lt;a href=&quot;http://min-maxing.com/blog/2012/07/28/tracking-the-results-of-your-email-social-and-ad-marketing-efforts/&quot;&gt;tagging the links you use in your marketing campaigns&lt;/a&gt;. Since &lt;em&gt;Limited Run&lt;/em&gt; tagged the links that their Facebook ads used, they knew exactly which visits came from their Facebook ad campaign. That led to seeing that the numbers were much lower than Facebook reported and ultimately that most of the clicks were worthless.&lt;/p&gt;
+&lt;p&gt;This is an excellent example of the power of &lt;a href=&quot;http://www.min-maxing.com/blog/2012/07/28/tracking-the-results-of-your-email-social-and-ad-marketing-efforts/&quot;&gt;tagging the links you use in your marketing campaigns&lt;/a&gt;. Since &lt;em&gt;Limited Run&lt;/em&gt; tagged the links that their Facebook ads used, they knew exactly which visits came from their Facebook ad campaign. That led to seeing that the numbers were much lower than Facebook reported and ultimately that most of the clicks were worthless.&lt;/p&gt;
 
 &lt;p&gt;Remember to tag your links!&lt;/p&gt;</description>
 				<published>2012-07-30 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/07/30/how-limited-run-discovered-worthless-clicks-using-analytics</link>
+				<link>http://www.min-maxing.com/blog/2012/07/30/how-limited-run-discovered-worthless-clicks-using-analytics</link>
 			</item>
 		
 			<item>
@@ -259,12 +259,12 @@
 &lt;dt&gt;Campaign&lt;/dt&gt;
 &lt;dd&gt;The name of your marketing initiative.&lt;/dd&gt;
 &lt;dt&gt;Content&lt;/dt&gt;
-&lt;dd&gt;Optional. This helps differentiate multiple links to the same content on your site in your marketing efforts. For example, if you link to your homepage from a header logo and a footer link, you can use the content parameter to differentiate traffic that came in from those links. Another good use-case is differentiating clicks to a product through a product image, the product name, and a 'buy now' button.&lt;/dd&gt;
+&lt;dd&gt;Optional. This helps differentiate multiple links to the same content on your site in your marketing efforts. For example, if you link to your homepage from a header logo and a footer link, you can use the content parameter to differentiate traffic that came in from those links. Another good use-case is differentiating clicks to a product through a product image, the product name, and a &#39;buy now&#39; button.&lt;/dd&gt;
 &lt;dt&gt;Term&lt;/dt&gt;
 &lt;dd&gt;Optional. For marketing efforts where you are paying for specific keywords or terms, this will designate the specific term used for the link.&lt;/dd&gt;
 &lt;/dl&gt;
 
-&lt;p&gt;If you're having trouble building the links at first, you can use the &lt;a href=&quot;http://support.google.com/googleanalytics/bin/answer.py?hl=en&amp;answer=55578&quot; title=&quot;URL Builder - Google Analytics&quot;&gt;Google Analytics URL Builder&lt;/a&gt; to get you started.&lt;/p&gt;
+&lt;p&gt;If you&#39;re having trouble building the links at first, you can use the &lt;a href=&quot;http://support.google.com/googleanalytics/bin/answer.py?hl=en&amp;answer=55578&quot; title=&quot;URL Builder - Google Analytics&quot;&gt;Google Analytics URL Builder&lt;/a&gt; to get you started.&lt;/p&gt;
 
 &lt;h2&gt;What are some examples of how I should tag my marketing efforts?&lt;/h2&gt;
 &lt;p&gt;In the below examples, the pieces that change depending on the marketing effort are highlighted.&lt;/p&gt;
@@ -287,7 +287,7 @@
 &lt;h3&gt;Paid Search&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;content&lt;/code&gt; parameter is most useful for indicating whether the cost method of paid search is cost-per-click (CPC), cost-per-acquisition (CPA) or something else.&lt;/p&gt;
 
-&lt;p&gt;It's vital that the company you are buying paid search from be able to supply the specific &lt;code&gt;term&lt;/code&gt; as part of the link to your site. Knowing which keywords resulted in clicks is great, but knowing how much you made from those sales will give you the most accurate picture of whether your paid search campaigns are effective.&lt;/p&gt;
+&lt;p&gt;It&#39;s vital that the company you are buying paid search from be able to supply the specific &lt;code&gt;term&lt;/code&gt; as part of the link to your site. Knowing which keywords resulted in clicks is great, but knowing how much you made from those sales will give you the most accurate picture of whether your paid search campaigns are effective.&lt;/p&gt;
 
 &lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;google&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;cpc&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;brand-terms&lt;/mark&gt;&amp;amp;utm_term=&lt;mark&gt;awesome-widget-5000&lt;/mark&gt;&lt;/pre&gt;
 
@@ -295,10 +295,10 @@
 &lt;pre&gt;&lt;mark&gt;http://widgets.com/&lt;/mark&gt;?utm_source=&lt;mark&gt;my-widget-company&lt;/mark&gt;&amp;amp;utm_medium=&lt;mark&gt;rss&lt;/mark&gt;&amp;amp;utm_campaign=&lt;mark&gt;my-blog-post&lt;/mark&gt;&lt;/pre&gt;
 
 &lt;h3&gt;...and more!&lt;/h3&gt;
-&lt;p&gt;There are many other places that you might link from if you stop to think about it. If you'll be linking to your site from a mobile application or game client, make sure you tag your link with a &lt;code&gt;medium&lt;/code&gt; parameter so you can see how those links perform.&lt;/p&gt;
+&lt;p&gt;There are many other places that you might link from if you stop to think about it. If you&#39;ll be linking to your site from a mobile application or game client, make sure you tag your link with a &lt;code&gt;medium&lt;/code&gt; parameter so you can see how those links perform.&lt;/p&gt;
 
-&lt;h2&gt;What do I do after I've tagged all of my campaigns?&lt;/h2&gt;
-&lt;p&gt;After you've collected some data, you can go to the &quot;Campaigns&quot; report found in the side menu under &quot;Traffic Sources &amp;gt; Sources&quot;. This report will allow you to filter based on your various mediums and can quickly show you which of your campaigns are generating users who stick around a while, perform favorable actions, and how much money they spent. Pretty neat!&lt;/p&gt;
+&lt;h2&gt;What do I do after I&#39;ve tagged all of my campaigns?&lt;/h2&gt;
+&lt;p&gt;After you&#39;ve collected some data, you can go to the &quot;Campaigns&quot; report found in the side menu under &quot;Traffic Sources &amp;gt; Sources&quot;. This report will allow you to filter based on your various mediums and can quickly show you which of your campaigns are generating users who stick around a while, perform favorable actions, and how much money they spent. Pretty neat!&lt;/p&gt;
 
 &lt;h2&gt;A Word on URL Formats&lt;/h2&gt;
 &lt;p&gt;The values you use for parameters are case-sensitive and character-sensitive. For example, the following items will show up as different mediums in Google Analytics reports:&lt;/p&gt;
@@ -308,27 +308,27 @@
 &lt;li&gt;&lt;code&gt;social_network&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;social network&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It doesn't matter which format you use. However, make sure everyone who is involved in tagging links uses the same format or you'll end up with messy reports that take you longer to use.&lt;/p&gt;
+&lt;p&gt;It doesn&#39;t matter which format you use. However, make sure everyone who is involved in tagging links uses the same format or you&#39;ll end up with messy reports that take you longer to use.&lt;/p&gt;
 &lt;p&gt;In addition, make sure everyone uses the same names for your campaigns as well. Otherwise, you might end up with a report like this:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/campaigns-with-bad-names.png&quot; alt=&quot;Google Analytics campaign list with duplicate entries due to inconsistent campaign tags being used&quot; title=&quot;Repetitive redundancy is negatively bad.&quot; width=&quot;124px&quot; height=&quot;167px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/campaigns-with-bad-names.png&quot; alt=&quot;Google Analytics campaign list with duplicate entries due to inconsistent campaign tags being used&quot; title=&quot;Repetitive redundancy is negatively bad.&quot; width=&quot;124px&quot; height=&quot;167px&quot;/&gt;
 </description>
 				<published>2012-07-28 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/07/28/tracking-the-results-of-your-email-social-and-ad-marketing-efforts</link>
+				<link>http://www.min-maxing.com/blog/2012/07/28/tracking-the-results-of-your-email-social-and-ad-marketing-efforts</link>
 			</item>
 		
 			<item>
 				<title>Easy Date Range Selection with Qlikview</title>
 				<description>&lt;p&gt;By default, Qlikview allows you to use a date picker or slider object to select dates you can use as ranges to apply to a database field. There are a few problems with this approach:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Slider objects don't allow you to easily select specific dates when you have lots of possible dates.&lt;/li&gt;
-&lt;li&gt;Calendar objects don't allow for easy range selection across multiple months.&lt;/li&gt;
+&lt;li&gt;Slider objects don&#39;t allow you to easily select specific dates when you have lots of possible dates.&lt;/li&gt;
+&lt;li&gt;Calendar objects don&#39;t allow for easy range selection across multiple months.&lt;/li&gt;
 &lt;li&gt;Using list selection boxes can flood the screen with lists of months and years.&lt;/li&gt;
 &lt;li&gt;By default, these date ranges will not affect charts based on different date fields.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Fortunately, it's easy to set up Qlikview with a more standard &quot;select two dates&quot; widget that will affect all of your charts, regardless of what database date fields drive their display ranges.&lt;/p&gt;
+&lt;p&gt;Fortunately, it&#39;s easy to set up Qlikview with a more standard &quot;select two dates&quot; widget that will affect all of your charts, regardless of what database date fields drive their display ranges.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-objects.png&quot; alt=&quot;Qlikview calendar date pickers&quot; title=&quot;I want to go to there.&quot; width=&quot;245px&quot; height=&quot;47px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-objects.png&quot; alt=&quot;Qlikview calendar date pickers&quot; title=&quot;I want to go to there.&quot; width=&quot;245px&quot; height=&quot;47px&quot;/&gt;
 
 &lt;p&gt;The process consists of three steps:&lt;/p&gt;
 &lt;ul&gt;
@@ -338,18 +338,18 @@
 &lt;/ul&gt;
 
 &lt;h2&gt;How do I set up variables in Qlikview?&lt;/h2&gt;
-&lt;p&gt;In the 'Settings' menu, there's an item labeled 'Variable Overview...' which will allow you to define variables.&lt;/p&gt;
+&lt;p&gt;In the &#39;Settings&#39; menu, there&#39;s an item labeled &#39;Variable Overview...&#39; which will allow you to define variables.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/qlikview-menu-variable-overview.png&quot; alt=&quot;Qlikview menu option for variable overview dialog&quot; title=&quot;Access the Variable Overview via the Settings menu option.&quot; width=&quot;248px&quot; height=&quot;137px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/qlikview-menu-variable-overview.png&quot; alt=&quot;Qlikview menu option for variable overview dialog&quot; title=&quot;Access the Variable Overview via the Settings menu option.&quot; width=&quot;248px&quot; height=&quot;137px&quot;/&gt;
 
-&lt;p&gt;After clicking on the menu item, use the 'Add' button to define your variables. For this example, I'll use &lt;mark&gt;vStartDate&lt;/mark&gt; and &lt;mark&gt;vEndDate&lt;/mark&gt;.&lt;/p&gt;
+&lt;p&gt;After clicking on the menu item, use the &#39;Add&#39; button to define your variables. For this example, I&#39;ll use &lt;mark&gt;vStartDate&lt;/mark&gt; and &lt;mark&gt;vEndDate&lt;/mark&gt;.&lt;/p&gt;
 
 &lt;h2&gt;How do I make my date selectors use variables?&lt;/h2&gt;
-&lt;p&gt;On the 'General' tab of the 'Slider/Calendar Object', you'll see that the 'Data' option is set to 'Field' by default, this causing the object to affect the range of values for the chosen database field. Change this option to 'Variable(s)', then enter the name of one of the two date fields.&lt;/p&gt;
+&lt;p&gt;On the &#39;General&#39; tab of the &#39;Slider/Calendar Object&#39;, you&#39;ll see that the &#39;Data&#39; option is set to &#39;Field&#39; by default, this causing the object to affect the range of values for the chosen database field. Change this option to &#39;Variable(s)&#39;, then enter the name of one of the two date fields.&lt;/p&gt;
 
 &lt;p&gt;To limit the ranges a user can select, you can define a minimum and maximum value.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png&quot; alt=&quot;Qlikview calendar object properties dialog&quot; title=&quot;Properties for the Calendar object in Qlikview&quot; width=&quot;358px&quot; height=&quot;352px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/qlikview-calendar-properties-dialog-small.png&quot; alt=&quot;Qlikview calendar object properties dialog&quot; title=&quot;Properties for the Calendar object in Qlikview&quot; width=&quot;358px&quot; height=&quot;352px&quot;/&gt;
 
 &lt;p&gt;The cleanest way to do this is base the minimum and maximum of your start date selector on the minimum and maximum values that your database table holds with the &lt;mark&gt;Min&lt;/mark&gt; and &lt;mark&gt;Max&lt;/mark&gt; functions:&lt;/p&gt;
 
@@ -361,7 +361,7 @@
 
 &lt;h2&gt;How do I make my date selectors affect multiple charts?&lt;/h2&gt;
 
-&lt;p&gt;For each chart, go to the 'Expressions' tab in the properties, then click on the 'Definition' field and enter an expression to filter based on the variables your date selectors are now affecting:&lt;/p&gt;
+&lt;p&gt;For each chart, go to the &#39;Expressions&#39; tab in the properties, then click on the &#39;Definition&#39; field and enter an expression to filter based on the variables your date selectors are now affecting:&lt;/p&gt;
 
 &lt;pre&gt;=Sum( if( database_field_date &gt;= $(vStartDate) AND database_field_date &lt;= $(vEndDate), ga_visitors) )&lt;/pre&gt;
 
@@ -373,9 +373,9 @@
 
 &lt;p&gt;So long as the result of this expression is a number, your charts will be able to use it to display the appropriate data.&lt;/p&gt;
 
-&lt;p&gt;Once you've updated your charts, you are done! Simply adjust the dates using your selectors and watch as the charts update in real-time.&lt;/p&gt;</description>
+&lt;p&gt;Once you&#39;ve updated your charts, you are done! Simply adjust the dates using your selectors and watch as the charts update in real-time.&lt;/p&gt;</description>
 				<published>2012-07-20 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/07/20/easy-date-range-selection-with-qlikview</link>
+				<link>http://www.min-maxing.com/blog/2012/07/20/easy-date-range-selection-with-qlikview</link>
 			</item>
 		
 			<item>
@@ -385,19 +385,19 @@
 &lt;h2&gt;Prerequisites&lt;/h2&gt;
 
 &lt;h3&gt;Data Source&lt;/h3&gt;
-&lt;p&gt;Our data source is &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt;. To access the data, we'll need access to the profiles via a username and password.&lt;/p&gt;
+&lt;p&gt;Our data source is &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt;. To access the data, we&#39;ll need access to the profiles via a username and password.&lt;/p&gt;
 
-&lt;p&gt;For the purposes of this project, I recommend creating a new Google Analytics account for this project and giving it read-only access to the specific profiles you want to retrieve. Since you'll need to enter this account's password in another piece of software, it's generally a better practice never to use your own accounts.&lt;/p&gt;
+&lt;p&gt;For the purposes of this project, I recommend creating a new Google Analytics account for this project and giving it read-only access to the specific profiles you want to retrieve. Since you&#39;ll need to enter this account&#39;s password in another piece of software, it&#39;s generally a better practice never to use your own accounts.&lt;/p&gt;
 
 &lt;h3&gt;ETL Software&lt;/h3&gt;
-&lt;p&gt;To get the data into your data warehouse, you will need software that can extract the data, transform it into the necessary format, then load it into your data warehouse. Such software is called Extract, Transform, and Load (ETL) software. For this project, I'll be using &lt;a href=&quot;http://www.pentaho.com/explore/pentaho-data-integration/&quot;&gt;Pentaho Data Integration&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get the data into your data warehouse, you will need software that can extract the data, transform it into the necessary format, then load it into your data warehouse. Such software is called Extract, Transform, and Load (ETL) software. For this project, I&#39;ll be using &lt;a href=&quot;http://www.pentaho.com/explore/pentaho-data-integration/&quot;&gt;Pentaho Data Integration&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The ETL software will need to be able to connect to your data warehouse. You will also need the ability to create new tables and insert/update data into these tables.&lt;/p&gt;
 
 &lt;h2&gt;Retrieving &amp;amp; Storing Data with Pentaho&lt;/h2&gt;
 &lt;p&gt;Pentaho comes with a free connector that you can use to query data from Google Analytics. It uses the same syntax as the &lt;a href=&quot;ga-etl-query-ga-transformation.png&quot;&gt;Google Analytics Core Reporting API&lt;/a&gt; to define filters.&lt;/p&gt;
 
-&lt;p&gt;Before you query Google Analytics, you'll need to grab the following information with the ETL:&lt;/p&gt;
+&lt;p&gt;Before you query Google Analytics, you&#39;ll need to grab the following information with the ETL:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;A date range&lt;/li&gt;
 	&lt;li&gt;The filters for each filter step you want&lt;/li&gt;
@@ -406,13 +406,13 @@
 &lt;p&gt;On top of that, we will hard-code the user authentication information, the dimension (time), and metric (visitors).&lt;/p&gt;
 
 &lt;h3&gt;Job: Master&lt;/h3&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-master-job.png&quot; alt=&quot;master Pentaho job for Google Analytics ETL&quot; title=&quot;Pentaho: master job for Google Analytics data retrieval&quot; width=&quot;567px&quot; height=&quot;197px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-master-job.png&quot; alt=&quot;master Pentaho job for Google Analytics ETL&quot; title=&quot;Pentaho: master job for Google Analytics data retrieval&quot; width=&quot;567px&quot; height=&quot;197px&quot;/&gt; 
 &lt;p&gt;The main thing you should ensure is that the &lt;mark&gt;Get Web Funnel Data&lt;/mark&gt; job is set to execute for every input row on the &quot;Advanced&quot; properties tab. This will cause it to execute for every row that is returned in the previous transformation where we look up the web funnel steps.&lt;/p&gt;
 
 &lt;p&gt;Beyond that, this job houses little direct logic. The notification emails are helpful if you schedule your ETL to run daily so you know whether or not it succeeded.&lt;/p&gt;
 
 &lt;h3&gt;Transformation: Lookup Web Funnel Steps&lt;/h3&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-lookup-web-funnel-steps-transformation.png&quot; alt=&quot;Pentaho transformation for looking up funnel steps for Google Analytics&quot; title=&quot;Pentaho: transformation for retrieving funnel lookup table from the data warehouse&quot; width=&quot;368px&quot; height=&quot;68px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-lookup-web-funnel-steps-transformation.png&quot; alt=&quot;Pentaho transformation for looking up funnel steps for Google Analytics&quot; title=&quot;Pentaho: transformation for retrieving funnel lookup table from the data warehouse&quot; width=&quot;368px&quot; height=&quot;68px&quot;/&gt; 
 &lt;p&gt;To make the ETL more dynamic, it is helpful to store information about each funnel step in a database table. This will allow you to query for a new step in the future simply by adding a new row to this table. The table schema should look something like this:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;&lt;strong&gt;funnel_step_id&lt;/strong&gt;
@@ -438,24 +438,24 @@
 &lt;p&gt;The &quot;Copy Rows to result&quot; output ensures the data is carried over into the next step of the ETL.&lt;/p&gt;
 
 &lt;h3&gt;Job: Get Web Funnel Data&lt;/h3&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-web-funnel-data-job.png&quot; alt=&quot;Pentaho job for querying Google Analytics&quot; title=&quot;Pentaho: job that manages Google Analytics query&quot; width=&quot;411px&quot; height=&quot;181px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-web-funnel-data-job.png&quot; alt=&quot;Pentaho job for querying Google Analytics&quot; title=&quot;Pentaho: job that manages Google Analytics query&quot; width=&quot;411px&quot; height=&quot;181px&quot;/&gt; 
 &lt;p&gt;Like the master job, this one has little direct logic. It represents the loop that should execute for each funnel step that is returned from your earlier lookup.&lt;/p&gt;
 
 &lt;h3&gt;Transformation: Set Variables for GA Query&lt;/h3&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-variables-transformation.png&quot; alt=&quot;Pentaho transformation for getting date and funnel information to set as global variables&quot; title=&quot;Pentaho: transformation for getting dynamic date and funnel data to store as global variables&quot; width=&quot;584px&quot; height=&quot;61px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-set-variables-transformation.png&quot; alt=&quot;Pentaho transformation for getting date and funnel information to set as global variables&quot; title=&quot;Pentaho: transformation for getting dynamic date and funnel data to store as global variables&quot; width=&quot;584px&quot; height=&quot;61px&quot;/&gt; 
 &lt;p&gt;This transformation is responsible for setting up the variables that you will need to feed into the actual query to Google Analytics.&lt;/p&gt;
 
 &lt;h4&gt;Get rows from result&lt;/h4&gt;
-&lt;p&gt;For this input, you should specify each of the table columns from your lookup table that you'll eventually set as an environment variable:&lt;/p&gt;
+&lt;p&gt;For this input, you should specify each of the table columns from your lookup table that you&#39;ll eventually set as an environment variable:&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-lookup-rows.png&quot; alt=&quot;Pentaho dialog to get rows from previous result&quot; title=&quot;Pentaho: 'Get rows from previous result' input dialog&quot; width=&quot;304px&quot; height=&quot;217px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-lookup-rows.png&quot; alt=&quot;Pentaho dialog to get rows from previous result&quot; title=&quot;Pentaho: &#39;Get rows from previous result&#39; input dialog&quot; width=&quot;304px&quot; height=&quot;217px&quot;/&gt; 
 
 &lt;h4&gt;Get Start and End Dates&lt;/h4&gt;
-&lt;p&gt;Because Google Analytics sometimes doesn't update their data for 24 hours, you want to be sure you're fetching data for the past few days so you can update days that might have incomplete data. The easiest way to do that is to use the start of last week for your beginning date and yesterday for your end date. This will mean you're always retrieving between 7-14 days of data.&lt;/p&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-dates.png&quot; alt=&quot;Pentaho dialog for getting system data&quot; title=&quot;Pentaho: 'Get System Dialog' input dialog&quot; width=&quot;399px&quot; height=&quot;209px&quot;/&gt; 
+&lt;p&gt;Because Google Analytics sometimes doesn&#39;t update their data for 24 hours, you want to be sure you&#39;re fetching data for the past few days so you can update days that might have incomplete data. The easiest way to do that is to use the start of last week for your beginning date and yesterday for your end date. This will mean you&#39;re always retrieving between 7-14 days of data.&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-dates.png&quot; alt=&quot;Pentaho dialog for getting system data&quot; title=&quot;Pentaho: &#39;Get System Dialog&#39; input dialog&quot; width=&quot;399px&quot; height=&quot;209px&quot;/&gt; 
 
 &lt;h4&gt;Scrub Date Fields&lt;/h4&gt;
-&lt;p&gt;Pentaho's date format differs from the format you have to use to query Google Analytics. You can use JavaScript to transform the data into the proper format.&lt;/p&gt;
+&lt;p&gt;Pentaho&#39;s date format differs from the format you have to use to query Google Analytics. You can use JavaScript to transform the data into the proper format.&lt;/p&gt;
 &lt;pre&gt;var dateFormat = &quot;yyyy-MM-dd&quot;;
 
 sYesterday = date2str(sYesterday, dateFormat);
@@ -463,45 +463,45 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 &lt;/pre&gt;
 
 &lt;p&gt;Afterward, make sure you set up the fields to update with the new values in the table below the JavaScript text area:&lt;/p&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-scrub-dates.png&quot; alt=&quot;Pentaho dialog for modifying values with JavaScript&quot; title=&quot;Pentaho: 'Script Values / Mod' transformation dialog&quot; width=&quot;609px&quot; height=&quot;448px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-scrub-dates.png&quot; alt=&quot;Pentaho dialog for modifying values with JavaScript&quot; title=&quot;Pentaho: &#39;Script Values / Mod&#39; transformation dialog&quot; width=&quot;609px&quot; height=&quot;448px&quot;/&gt; 
 
 &lt;h4&gt;Set Global Variables&lt;/h4&gt;
-&lt;p&gt;Now that you have all the variables you'll need for the query, make sure you set them with a scope of &quot;Valid in the root job&quot; so that other transformations and jobs have access to the them:&lt;/p&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-vars.png&quot; alt=&quot;Pentaho dialog for setting environment variables&quot; title=&quot;Pentaho: 'Set Environment Variables' output dialog&quot; width=&quot;454px&quot; height=&quot;261px&quot;/&gt; 
+&lt;p&gt;Now that you have all the variables you&#39;ll need for the query, make sure you set them with a scope of &quot;Valid in the root job&quot; so that other transformations and jobs have access to the them:&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-set-vars.png&quot; alt=&quot;Pentaho dialog for setting environment variables&quot; title=&quot;Pentaho: &#39;Set Environment Variables&#39; output dialog&quot; width=&quot;454px&quot; height=&quot;261px&quot;/&gt; 
 
 &lt;h3&gt;Transformation: Query GA and Store Results&lt;/h3&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga-transformation.png&quot; alt=&quot;Pentaho transformation for sending a query to Google Analytics and storing the results&quot; title=&quot;Pentaho: transformation for sending the query to Google Analytics and storing the result&quot; width=&quot;366px&quot; height=&quot;67px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga-transformation.png&quot; alt=&quot;Pentaho transformation for sending a query to Google Analytics and storing the results&quot; title=&quot;Pentaho: transformation for sending the query to Google Analytics and storing the result&quot; width=&quot;366px&quot; height=&quot;67px&quot;/&gt; 
 &lt;p&gt;At this point, the ETL has all the data it needs. All that is left is to execute the query and store the results.&lt;/p&gt;
 
 &lt;h4&gt;Get Visitors&lt;/h4&gt;
 &lt;p&gt;Enter your user credentials, select the appropriate Google Analytics profile, then enter all of the static and variable information as part of your query definition:&lt;/p&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga.png&quot; alt=&quot;Pentaho dialog for getting environment variables&quot; title=&quot;Pentaho: 'Google Analytics' input dialog&quot; width=&quot;632px&quot; height=&quot;589px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga.png&quot; alt=&quot;Pentaho dialog for getting environment variables&quot; title=&quot;Pentaho: &#39;Google Analytics&#39; input dialog&quot; width=&quot;632px&quot; height=&quot;589px&quot;/&gt; 
 &lt;p&gt;Google Analytics will return several fields that you do not need. To remove them, select them in the &quot;Output Fields&quot; section, right-click on them, and choose &quot;Delete selected lines&quot; from the menu.&lt;/p&gt;
 
 &lt;h4&gt;Get funnel_step_id&lt;/h4&gt;
-&lt;p&gt;At this stage, the date and visitor count is part of your result set. You'll need to add the funnel_step_id to the result set so we can link this result to the correct funnel step in your lookup table:&lt;/p&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-funnel-step-id.png&quot; alt=&quot;Pentaho dialog for getting environment variables&quot; title=&quot;Pentaho: 'Get Variable' input dialog&quot; width=&quot;417px&quot; height=&quot;202px&quot;/&gt; 
+&lt;p&gt;At this stage, the date and visitor count is part of your result set. You&#39;ll need to add the funnel_step_id to the result set so we can link this result to the correct funnel step in your lookup table:&lt;/p&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-funnel-step-id.png&quot; alt=&quot;Pentaho dialog for getting environment variables&quot; title=&quot;Pentaho: &#39;Get Variable&#39; input dialog&quot; width=&quot;417px&quot; height=&quot;202px&quot;/&gt; 
 
 &lt;h4&gt;Insert / Update&lt;/h4&gt;
 &lt;p&gt;Now that we have  the date, funnel step, and visitor count in our result set, we can insert the data into our data warehouse (or update existing rows):&lt;/p&gt;
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/ga-etl-insert-update.png&quot; alt=&quot;Pentaho dialog for inserting or updating to a database table&quot; title=&quot;Pentaho: 'Insert / Update' output dialog&quot; width=&quot;457px&quot; height=&quot;507px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-insert-update.png&quot; alt=&quot;Pentaho dialog for inserting or updating to a database table&quot; title=&quot;Pentaho: &#39;Insert / Update&#39; output dialog&quot; width=&quot;457px&quot; height=&quot;507px&quot;/&gt; 
 
 &lt;p&gt;In the first table, make sure to specify both the date and the funnel_step_id as the keys to use to look up the values. If Pentaho finds an existing record for that date and funnel_step_id, it will simply update it with the new results rather than add a duplicate entry.&lt;/p&gt;
 
 &lt;h2&gt;Next Steps&lt;/h2&gt;
 &lt;p&gt;In one of my next articles, I will show how you can take the information you have just imported into your data warehouse and create funnel visualizations using &lt;a href=&quot;http://www.qlikview.com&quot;&gt;QlikView&lt;/a&gt;. This will allow you to connect the dots between all of your funnels and allow you to visualize the end-to-end flow of your users.&lt;/p&gt;</description>
 				<published>2012-07-15 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho</link>
+				<link>http://www.min-maxing.com/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho</link>
 			</item>
 		
 			<item>
 				<title>Multi-Channel Funnels in Google Analytics</title>
 				<description>&lt;p&gt;When reviewing the success of your &lt;a data-toggle=&quot;modal&quot; href=&quot;#funnel-definition&quot; &gt;funnels&lt;/a&gt;, one way you can &lt;a data-toggle=&quot;modal&quot; href=&quot;#segment-definition&quot; &gt;segment&lt;/a&gt; your users is by where they came from when they arrived on your site. This can give you a better idea of which traffic sources are proving valuable to your efforts.&lt;/p&gt; 
 
-&lt;p&gt;However, not everyone will perform a key action on their first visit to your site, and it may take some users several visits to reach the end of your primary funnel, and each visit can come from a different source. To assess the value of each of these sources properly, you'll need to understand multi-channel funnels and how to analyze them.&lt;/p&gt;
+&lt;p&gt;However, not everyone will perform a key action on their first visit to your site, and it may take some users several visits to reach the end of your primary funnel, and each visit can come from a different source. To assess the value of each of these sources properly, you&#39;ll need to understand multi-channel funnels and how to analyze them.&lt;/p&gt;
 
 &lt;h2&gt;What are multi-channel funnels?&lt;/h2&gt;
-&lt;p&gt;In marketing parlance, a channel is one avenue via which your site is advertized. How you categorize these sources differs depending on what's important to you, but some general categories for your marketing efforts might include:&lt;/p&gt;
+&lt;p&gt;In marketing parlance, a channel is one avenue via which your site is advertized. How you categorize these sources differs depending on what&#39;s important to you, but some general categories for your marketing efforts might include:&lt;/p&gt;
 &lt;ul&gt;
 	&lt;li&gt;Display (banner) ads&lt;/li&gt;
 	&lt;li&gt;Web video ads&lt;/li&gt;	
@@ -510,52 +510,52 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 	&lt;li&gt;Paid and organic search&lt;/li&gt;	
 	&lt;li&gt;Social media&lt;/li&gt;	
 &lt;/ul&gt;
-&lt;p&gt;Anytime you rely on multiple strategies to help drive traffic through a funnel on your site, you're using a multi-channel funnel.&lt;/p&gt;
+&lt;p&gt;Anytime you rely on multiple strategies to help drive traffic through a funnel on your site, you&#39;re using a multi-channel funnel.&lt;/p&gt;
 
 &lt;h2&gt;What can I learn from a multi-channel funnel report?&lt;/h2&gt;
 &lt;p&gt;There are several aspects to a multi-channel funnel that you may want to pay attention to when figuring out the value of each channel to your site. Different companies will place importance on each of these aspects differently depending on their use-case.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-anatomy.png&quot; alt=&quot;Google Analytics multi-channel funnel overview&quot; title=&quot;Anatomy of a conversion path - Taken from Google Analytics&quot; width=&quot;469px&quot; height=&quot;184px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-anatomy.png&quot; alt=&quot;Google Analytics multi-channel funnel overview&quot; title=&quot;Anatomy of a conversion path - Taken from Google Analytics&quot; width=&quot;469px&quot; height=&quot;184px&quot;/&gt; 
 
 &lt;h3&gt;Last Interactions&lt;/h3&gt;
-&lt;p&gt;The channel that drove a user to your site right before they completed a conversion funnel is flagged as a 'last interaction' channel. If a marketing effort has a high percentage of last interactions, it's helping to close the deal with your users. While this is the initial place most companies look when assessing the value of their marketing efforts, it doesn't paint the full picture.&lt;/p&gt;
+&lt;p&gt;The channel that drove a user to your site right before they completed a conversion funnel is flagged as a &#39;last interaction&#39; channel. If a marketing effort has a high percentage of last interactions, it&#39;s helping to close the deal with your users. While this is the initial place most companies look when assessing the value of their marketing efforts, it doesn&#39;t paint the full picture.&lt;/p&gt;
 
 &lt;h3&gt;First Interactions&lt;/h3&gt;
 &lt;p&gt;By discovering what is driving a user to visit your site for the first time, you can discover which marketing efforts are helping spread initial awareness or interest about your brand. This will not allow you to easily differentiate between users who are just hearing about your site and users who have heard about it before and who simply saw something new that was convincing enough to check out your site. However, the value in either case is that a channel with a high percent of first interactions is clearly successful at driving initial interest in your brand.&lt;/p&gt;
 
 &lt;h3&gt;Assisted Interactions&lt;/h3&gt;
-&lt;p&gt;While both the first and last interactions are key conversions points, any channel along the way that engages the user will get credit for an 'assisted conversion'.&lt;/p&gt;
+&lt;p&gt;While both the first and last interactions are key conversions points, any channel along the way that engages the user will get credit for an &#39;assisted conversion&#39;.&lt;/p&gt;
 
-&lt;p&gt;Many marketing efforts that have a seemingly-low return on investment (ROI) can actually turn out to be fairly important. You may have an email campaign you use to nudge new users to offer them help as they learn more about your site or product. This email itself may not convert a lot of users and it won't be how they discover your site, but noting that this effort assists in a lot of conversions will help identify whether this nudge email is truly succeeding at nudging users along your conversion funnel.&lt;/p&gt;
+&lt;p&gt;Many marketing efforts that have a seemingly-low return on investment (ROI) can actually turn out to be fairly important. You may have an email campaign you use to nudge new users to offer them help as they learn more about your site or product. This email itself may not convert a lot of users and it won&#39;t be how they discover your site, but noting that this effort assists in a lot of conversions will help identify whether this nudge email is truly succeeding at nudging users along your conversion funnel.&lt;/p&gt;
 
 &lt;h3&gt;Popular Conversion Paths&lt;/h3&gt;
 &lt;p&gt;This report will show which paths of first, assisted, and last conversions are responsible for converting the most users. While this information can be useful, the utility is somewhat limited. It helps to visualize channel funnels from a high level, but most of the actions you take will be related to first, last, and assisted conversions.&lt;/p&gt;
 
 &lt;h3&gt;Time Through Path&lt;/h3&gt;
-&lt;p&gt;One way to assess the success of marketing efforts is how much time passed between a user's first interaction and last interaction to conversion. You can use it to assess whether your efforts are resulting in people making decisions quickly. If you see that users are taking their time, you can use this information to experiment with ways to speed up their decision-making process.&lt;/p&gt;
+&lt;p&gt;One way to assess the success of marketing efforts is how much time passed between a user&#39;s first interaction and last interaction to conversion. You can use it to assess whether your efforts are resulting in people making decisions quickly. If you see that users are taking their time, you can use this information to experiment with ways to speed up their decision-making process.&lt;/p&gt;
 
 &lt;h2&gt;How can I customize this report with my marketing channels in mind?&lt;/h2&gt;
-&lt;p&gt;The default channels make a few assumptions about how you tag your marketing campaigns. When your existing tags don't match those assumptions, it can create a rather messy report.&lt;/p&gt;
+&lt;p&gt;The default channels make a few assumptions about how you tag your marketing campaigns. When your existing tags don&#39;t match those assumptions, it can create a rather messy report.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-duplication.png&quot; alt=&quot;Google Analytics default channel grouping issues&quot; title=&quot;Well, that's repetitively redundant.&quot; width=&quot;534px&quot; height=&quot;109px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-duplication.png&quot; alt=&quot;Google Analytics default channel grouping issues&quot; title=&quot;Well, that&#39;s repetitively redundant.&quot; width=&quot;534px&quot; height=&quot;109px&quot;/&gt; 
 
-&lt;p&gt;Fortunately, Google Analytics allows you to override their default grouping and fix any issues you're encountering. You can do this through the admin menus, but I recommend starting by copying their default and editing it to meet your needs.&lt;/p&gt;
+&lt;p&gt;Fortunately, Google Analytics allows you to override their default grouping and fix any issues you&#39;re encountering. You can do this through the admin menus, but I recommend starting by copying their default and editing it to meet your needs.&lt;/p&gt;
 
 &lt;p&gt;To copy the default grouping, click on &quot;Channel Groupings&quot; in the menu above the &quot;Assisted Conversions&quot; report and select &quot;Copy Basic Channel Grouping template...&quot;.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-channel-grouping.png&quot; alt=&quot;Google Analytics channel grouping menu &quot; title=&quot;Channel Grouping menu&quot; width=&quot;787px&quot; height=&quot;114px&quot;/&gt; 
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-channel-grouping.png&quot; alt=&quot;Google Analytics channel grouping menu &quot; title=&quot;Channel Grouping menu&quot; width=&quot;787px&quot; height=&quot;114px&quot;/&gt; 
 
 &lt;p&gt;On the next screen, you can give your new template a name. then, hover over any of the &quot;Label Rules&quot; to get an option to edit. This will allow you to see what rules are used to create these groups.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-social-media-channel-default-filter.png&quot; alt=&quot;Google Analytics social network channel default filter&quot; title=&quot;What a difference one character can make.&quot; width=&quot;903px&quot; height=&quot;35px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-social-media-channel-default-filter.png&quot; alt=&quot;Google Analytics social network channel default filter&quot; title=&quot;What a difference one character can make.&quot; width=&quot;903px&quot; height=&quot;35px&quot;/&gt;
 
 &lt;p&gt;As you can see, my original example used an underscore (&quot;social_media&quot;) whereas Google Analytics uses dashes or spaces in its original filter. I can easily edit the filter to include my variant so all of my existing campaigns are caught by the &quot;Social Network&quot; channel.&lt;/p&gt;
 
 &lt;p&gt;This screen also allows you to add new filters. For example, if you had a mobile app that has several links to your site, you might tag your links with a utm_medium parameter set to &quot;mobile&quot;. Then, you can create a custom label rule to group all links with a utm_medium of &quot;mobile&quot; as a channel called &quot;Mobile App&quot;.  &lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-mobile-app-example.png&quot; alt=&quot;Google Analytics mobile app example&quot; title=&quot;Go back! I liked that channel!&quot; width=&quot;132px&quot; height=&quot;140px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/multi-channel-funnel-mobile-app-example.png&quot; alt=&quot;Google Analytics mobile app example&quot; title=&quot;Go back! I liked that channel!&quot; width=&quot;132px&quot; height=&quot;140px&quot;/&gt;
 
-&lt;p&gt;Armed with a report customized for your website, it's much easier to make informed decisions on which of your marketing efforts are working and which ones need improvement.&lt;/p&gt;
+&lt;p&gt;Armed with a report customized for your website, it&#39;s much easier to make informed decisions on which of your marketing efforts are working and which ones need improvement.&lt;/p&gt;
 
 &lt;div class=&quot;modal hide&quot; id=&quot;funnel-definition&quot;&gt;
     &lt;div class=&quot;modal-header&quot;&gt;
@@ -583,27 +583,27 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
     &lt;/div&gt;
 &lt;/div&gt;</description>
 				<published>2012-07-08 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/07/08/multi-channel-funnels-in-google-analytics</link>
+				<link>http://www.min-maxing.com/blog/2012/07/08/multi-channel-funnels-in-google-analytics</link>
 			</item>
 		
 			<item>
 				<title>Using Analytics to Find Actionable Data</title>
-				<description>&lt;p&gt;Pageviews don't make a site successful, but it's usually the first thing you see when you look at an analytics dashboard.&lt;/p&gt;
+				<description>&lt;p&gt;Pageviews don&#39;t make a site successful, but it&#39;s usually the first thing you see when you look at an analytics dashboard.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/dashboard-top-level.png&quot; alt=&quot;Google Analytics top-level dashboard metrics: visits, unique visitors, pageviews, pages per visit, average visit duration, bounce rate, and percent of visits that are new visits&quot; title=&quot;That's... good, right?&quot; width=&quot;328px&quot; height=&quot;303px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/dashboard-top-level.png&quot; alt=&quot;Google Analytics top-level dashboard metrics: visits, unique visitors, pageviews, pages per visit, average visit duration, bounce rate, and percent of visits that are new visits&quot; title=&quot;That&#39;s... good, right?&quot; width=&quot;328px&quot; height=&quot;303px&quot;/&gt;
 
-&lt;/p&gt;These stats are displayed so prominently that it's easy to think that they're &lt;a data-toggle=&quot;modal&quot; href=&quot;#kpi-definition&quot;&gt;key performance indicators&lt;/a&gt; (KPIs), and many companies treat them as such. The problem is that these aren't true KPIs; They're vanity metrics.&lt;/p&gt;
+&lt;/p&gt;These stats are displayed so prominently that it&#39;s easy to think that they&#39;re &lt;a data-toggle=&quot;modal&quot; href=&quot;#kpi-definition&quot;&gt;key performance indicators&lt;/a&gt; (KPIs), and many companies treat them as such. The problem is that these aren&#39;t true KPIs; They&#39;re vanity metrics.&lt;/p&gt;
 
 &lt;h2&gt;What are vanity metrics?&lt;/h2&gt;
-&lt;p&gt;Vanity metrics are metrics whose changes don't directly correlate to increased &lt;a data-toggle=&quot;modal&quot; href=&quot;#conversion-definition&quot;&gt;conversions&lt;/a&gt;. While they might look pretty, they're only important in that they are the core building blocks for the data you &lt;em&gt;really&lt;/em&gt; want to be analyzing. If you focus on vanity metrics, you cannot answer the questions you need to answer to make sure your site is healthy.&lt;/p&gt;
+&lt;p&gt;Vanity metrics are metrics whose changes don&#39;t directly correlate to increased &lt;a data-toggle=&quot;modal&quot; href=&quot;#conversion-definition&quot;&gt;conversions&lt;/a&gt;. While they might look pretty, they&#39;re only important in that they are the core building blocks for the data you &lt;em&gt;really&lt;/em&gt; want to be analyzing. If you focus on vanity metrics, you cannot answer the questions you need to answer to make sure your site is healthy.&lt;/p&gt;
 
 &lt;h2&gt;Why are vanity metrics dangerous to use as performance indicators?&lt;/h2&gt;
 
-&lt;p&gt;Suppose I told you that my eCommerce storefront had 5% more unique visitors last month. At a very high level, that sounds great. Now, suppose I told you that revenue dropped 2% last month. Suddenly, it doesn't sound so good. Why am I making less money with more users?&lt;/p&gt;
+&lt;p&gt;Suppose I told you that my eCommerce storefront had 5% more unique visitors last month. At a very high level, that sounds great. Now, suppose I told you that revenue dropped 2% last month. Suddenly, it doesn&#39;t sound so good. Why am I making less money with more users?&lt;/p&gt;
 
 &lt;p&gt;Even focusing on overall revenue is dangerous. Suppose I said my storefront was making 5% more money. Cause for celebration? Not if I had 50% more new users during that period. Why did so many more new users result in such a low increase in revenue?&lt;/p&gt;
 
-&lt;p&gt;Each of these scenarios create more questions than answers. However, it's easy to dig past these vanity metrics and answer those questions with actionable metrics.&lt;/p&gt;
+&lt;p&gt;Each of these scenarios create more questions than answers. However, it&#39;s easy to dig past these vanity metrics and answer those questions with actionable metrics.&lt;/p&gt;
 
 &lt;h2&gt;What are actionable metrics?&lt;/h2&gt;
 &lt;p&gt;Actionable metrics answer specific questions about the performance of a site:&lt;/p&gt;
@@ -619,11 +619,11 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 
 &lt;p&gt;In my previous example, I mentioned a site that saw 50% more new visitors but only 5% increased revenue. To figure out why, a good step would be to see how those users progressed through the purchase &lt;a data-toggle=&quot;modal&quot; href=&quot;#funnel-definition&quot;&gt;funnel&lt;/a&gt;.&lt;/p&gt;
 
-&lt;img class=&quot;thumbnail&quot; src=&quot;http://min-maxing.com/assets/img/blog/2012-07/funnel.png&quot; alt=&quot;Google Analytics example conversion funnel&quot; title=&quot;Come back! I have stuff!&quot; width=&quot;258px&quot; height=&quot;805px&quot;/&gt;
+&lt;img class=&quot;thumbnail&quot; src=&quot;http://www.min-maxing.com/assets/img/blog/2012-07/funnel.png&quot; alt=&quot;Google Analytics example conversion funnel&quot; title=&quot;Come back! I have stuff!&quot; width=&quot;258px&quot; height=&quot;805px&quot;/&gt;
 
-&lt;p&gt;Now, the problem in the example is a bit more clear. The ad landing page had a lot of traffic that never got to the product page. The product page was pretty successful in that most people added the product to the cart, but most of those people didn't follow through with the purchase. Armed with this kind of information, it's easy to identify part of the site that should be considered for &lt;a data-toggle=&quot;modal&quot; href=&quot;#split-testing-definition&quot;&gt;split-testing&lt;/a&gt;. With some tweaks, it's possible to reduce the friction of this funnel and end up with more sales.&lt;/p&gt;
+&lt;p&gt;Now, the problem in the example is a bit more clear. The ad landing page had a lot of traffic that never got to the product page. The product page was pretty successful in that most people added the product to the cart, but most of those people didn&#39;t follow through with the purchase. Armed with this kind of information, it&#39;s easy to identify part of the site that should be considered for &lt;a data-toggle=&quot;modal&quot; href=&quot;#split-testing-definition&quot;&gt;split-testing&lt;/a&gt;. With some tweaks, it&#39;s possible to reduce the friction of this funnel and end up with more sales.&lt;/p&gt;
 
-&lt;p&gt;You'll have to dig deeper for actionable metrics than you do for vanity metrics, but it's worth it. Fortunately, most modern web analytics solutions provide standard reports that help discover many common actionable metrics pretty quickly. For information that's specific to your organization, you can also create custom reports that you can refer back to for tracking the progress of important actionable metrics.&lt;/p&gt;
+&lt;p&gt;You&#39;ll have to dig deeper for actionable metrics than you do for vanity metrics, but it&#39;s worth it. Fortunately, most modern web analytics solutions provide standard reports that help discover many common actionable metrics pretty quickly. For information that&#39;s specific to your organization, you can also create custom reports that you can refer back to for tracking the progress of important actionable metrics.&lt;/p&gt;
 
 &lt;div class=&quot;modal hide&quot; id=&quot;kpi-definition&quot;&gt;
     &lt;div class=&quot;modal-header&quot;&gt;
@@ -679,7 +679,7 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 &lt;/div&gt;
 </description>
 				<published>2012-07-04 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/07/04/using-analytics-to-find-actionable-data</link>
+				<link>http://www.min-maxing.com/blog/2012/07/04/using-analytics-to-find-actionable-data</link>
 			</item>
 		
 			<item>
@@ -780,7 +780,7 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 &lt;/ol&gt;
 </description>
 				<published>2012-06-24 00:00:00 -0700</published>
-				<link>http://min-maxing.com/blog/2012/06/24/losing-weight-for-geeks</link>
+				<link>http://www.min-maxing.com/blog/2012/06/24/losing-weight-for-geeks</link>
 			</item>
 		
 	</channel>

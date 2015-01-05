@@ -15,7 +15,7 @@
 
 
 	
-		<link rel="canonical" href="http://min-maxing.com/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho"/>
+		<link rel="canonical" href="http://www.min-maxing.com/blog/2012/07/15/importing-google-analytics-data-into-your-data-warehouse-with-pentaho"/>
 	
 
 
@@ -141,13 +141,13 @@
 <p>On top of that, we will hard-code the user authentication information, the dimension (time), and metric (visitors).</p>
 
 <h3>Job: Master</h3>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-master-job.png" alt="master Pentaho job for Google Analytics ETL" title="Pentaho: master job for Google Analytics data retrieval" width="567px" height="197px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-master-job.png" alt="master Pentaho job for Google Analytics ETL" title="Pentaho: master job for Google Analytics data retrieval" width="567px" height="197px"/> 
 <p>The main thing you should ensure is that the <mark>Get Web Funnel Data</mark> job is set to execute for every input row on the "Advanced" properties tab. This will cause it to execute for every row that is returned in the previous transformation where we look up the web funnel steps.</p>
 
 <p>Beyond that, this job houses little direct logic. The notification emails are helpful if you schedule your ETL to run daily so you know whether or not it succeeded.</p>
 
 <h3>Transformation: Lookup Web Funnel Steps</h3>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-lookup-web-funnel-steps-transformation.png" alt="Pentaho transformation for looking up funnel steps for Google Analytics" title="Pentaho: transformation for retrieving funnel lookup table from the data warehouse" width="368px" height="68px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-lookup-web-funnel-steps-transformation.png" alt="Pentaho transformation for looking up funnel steps for Google Analytics" title="Pentaho: transformation for retrieving funnel lookup table from the data warehouse" width="368px" height="68px"/> 
 <p>To make the ETL more dynamic, it is helpful to store information about each funnel step in a database table. This will allow you to query for a new step in the future simply by adding a new row to this table. The table schema should look something like this:</p>
 <ul>
 	<li><strong>funnel_step_id</strong>
@@ -173,21 +173,21 @@
 <p>The "Copy Rows to result" output ensures the data is carried over into the next step of the ETL.</p>
 
 <h3>Job: Get Web Funnel Data</h3>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-web-funnel-data-job.png" alt="Pentaho job for querying Google Analytics" title="Pentaho: job that manages Google Analytics query" width="411px" height="181px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-web-funnel-data-job.png" alt="Pentaho job for querying Google Analytics" title="Pentaho: job that manages Google Analytics query" width="411px" height="181px"/> 
 <p>Like the master job, this one has little direct logic. It represents the loop that should execute for each funnel step that is returned from your earlier lookup.</p>
 
 <h3>Transformation: Set Variables for GA Query</h3>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-variables-transformation.png" alt="Pentaho transformation for getting date and funnel information to set as global variables" title="Pentaho: transformation for getting dynamic date and funnel data to store as global variables" width="584px" height="61px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-set-variables-transformation.png" alt="Pentaho transformation for getting date and funnel information to set as global variables" title="Pentaho: transformation for getting dynamic date and funnel data to store as global variables" width="584px" height="61px"/> 
 <p>This transformation is responsible for setting up the variables that you will need to feed into the actual query to Google Analytics.</p>
 
 <h4>Get rows from result</h4>
 <p>For this input, you should specify each of the table columns from your lookup table that you'll eventually set as an environment variable:</p>
 
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-lookup-rows.png" alt="Pentaho dialog to get rows from previous result" title="Pentaho: 'Get rows from previous result' input dialog" width="304px" height="217px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-lookup-rows.png" alt="Pentaho dialog to get rows from previous result" title="Pentaho: 'Get rows from previous result' input dialog" width="304px" height="217px"/> 
 
 <h4>Get Start and End Dates</h4>
 <p>Because Google Analytics sometimes doesn't update their data for 24 hours, you want to be sure you're fetching data for the past few days so you can update days that might have incomplete data. The easiest way to do that is to use the start of last week for your beginning date and yesterday for your end date. This will mean you're always retrieving between 7-14 days of data.</p>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-dates.png" alt="Pentaho dialog for getting system data" title="Pentaho: 'Get System Dialog' input dialog" width="399px" height="209px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-dates.png" alt="Pentaho dialog for getting system data" title="Pentaho: 'Get System Dialog' input dialog" width="399px" height="209px"/> 
 
 <h4>Scrub Date Fields</h4>
 <p>Pentaho's date format differs from the format you have to use to query Google Analytics. You can use JavaScript to transform the data into the proper format.</p>
@@ -198,28 +198,28 @@ sStartLastWeek = date2str(sStartLastWeek, dateFormat);
 </pre>
 
 <p>Afterward, make sure you set up the fields to update with the new values in the table below the JavaScript text area:</p>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-scrub-dates.png" alt="Pentaho dialog for modifying values with JavaScript" title="Pentaho: 'Script Values / Mod' transformation dialog" width="609px" height="448px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-scrub-dates.png" alt="Pentaho dialog for modifying values with JavaScript" title="Pentaho: 'Script Values / Mod' transformation dialog" width="609px" height="448px"/> 
 
 <h4>Set Global Variables</h4>
 <p>Now that you have all the variables you'll need for the query, make sure you set them with a scope of "Valid in the root job" so that other transformations and jobs have access to the them:</p>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-set-vars.png" alt="Pentaho dialog for setting environment variables" title="Pentaho: 'Set Environment Variables' output dialog" width="454px" height="261px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-set-vars.png" alt="Pentaho dialog for setting environment variables" title="Pentaho: 'Set Environment Variables' output dialog" width="454px" height="261px"/> 
 
 <h3>Transformation: Query GA and Store Results</h3>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga-transformation.png" alt="Pentaho transformation for sending a query to Google Analytics and storing the results" title="Pentaho: transformation for sending the query to Google Analytics and storing the result" width="366px" height="67px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga-transformation.png" alt="Pentaho transformation for sending a query to Google Analytics and storing the results" title="Pentaho: transformation for sending the query to Google Analytics and storing the result" width="366px" height="67px"/> 
 <p>At this point, the ETL has all the data it needs. All that is left is to execute the query and store the results.</p>
 
 <h4>Get Visitors</h4>
 <p>Enter your user credentials, select the appropriate Google Analytics profile, then enter all of the static and variable information as part of your query definition:</p>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga.png" alt="Pentaho dialog for getting environment variables" title="Pentaho: 'Google Analytics' input dialog" width="632px" height="589px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-query-ga.png" alt="Pentaho dialog for getting environment variables" title="Pentaho: 'Google Analytics' input dialog" width="632px" height="589px"/> 
 <p>Google Analytics will return several fields that you do not need. To remove them, select them in the "Output Fields" section, right-click on them, and choose "Delete selected lines" from the menu.</p>
 
 <h4>Get funnel_step_id</h4>
 <p>At this stage, the date and visitor count is part of your result set. You'll need to add the funnel_step_id to the result set so we can link this result to the correct funnel step in your lookup table:</p>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-get-funnel-step-id.png" alt="Pentaho dialog for getting environment variables" title="Pentaho: 'Get Variable' input dialog" width="417px" height="202px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-get-funnel-step-id.png" alt="Pentaho dialog for getting environment variables" title="Pentaho: 'Get Variable' input dialog" width="417px" height="202px"/> 
 
 <h4>Insert / Update</h4>
 <p>Now that we have  the date, funnel step, and visitor count in our result set, we can insert the data into our data warehouse (or update existing rows):</p>
-<img class="thumbnail" src="http://min-maxing.com/assets/img/blog/2012-07/ga-etl-insert-update.png" alt="Pentaho dialog for inserting or updating to a database table" title="Pentaho: 'Insert / Update' output dialog" width="457px" height="507px"/> 
+<img class="thumbnail" src="http://www.min-maxing.com/assets/img/blog/2012-07/ga-etl-insert-update.png" alt="Pentaho dialog for inserting or updating to a database table" title="Pentaho: 'Insert / Update' output dialog" width="457px" height="507px"/> 
 
 <p>In the first table, make sure to specify both the date and the funnel_step_id as the keys to use to look up the values. If Pentaho finds an existing record for that date and funnel_step_id, it will simply update it with the new results rather than add a duplicate entry.</p>
 

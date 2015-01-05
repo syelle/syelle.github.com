@@ -3,7 +3,7 @@
 ### Install & Run Jekyll
 - gem install jekyll
 - sudo easy_install Pygments
-- jekyll --server
+- jekyll serve -w
 
 ### Install & Run SASS
 - gem install sass
@@ -22,7 +22,7 @@
 
 ### Publish to web
 - git checkout source
-- jekyll --no-auto
+- jekyll build
 - git checkout master
 - git rm -r . > /dev/null
 - cp -r ../_site/* .
