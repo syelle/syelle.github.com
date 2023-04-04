@@ -7,12 +7,12 @@
 
 .btn-primary {
   background-color: #FAA732;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -ms-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(top, #fbb450, #f89406);
+  background-image: -moz-linear-gradient(top, #FBB450, #F89406);
+  background-image: -ms-linear-gradient(top, #FBB450, #F89406);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FBB450), to(#F89406));
+  background-image: -webkit-linear-gradient(top, #FBB450, #F89406);
+  background-image: -o-linear-gradient(top, #FBB450, #F89406);
+  background-image: linear-gradient(top, #FBB450, #F89406);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89406', GradientType=0);
   border-color: #F89406 #F89406 #AD6704;
@@ -29,3 +29,5 @@
 .post {
   border-bottom: 1px solid #EEE;
   margin-bottom: 10px; }
+
+/*# sourceMappingURL=global-classes.css.map */
